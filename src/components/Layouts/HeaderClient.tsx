@@ -82,7 +82,7 @@ export default function HeaderClient({
 
   // MOBILE BOTTOM DOCK
   return (
-    <div className=" bg-blue-400  backdrop-blur-2xl border border-white/10 rounded-1xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+    <div className=" bg-white rounded backdrop-blur-2xl border border-white/10 rounded-1xl p-2 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
       <ul className="flex items-center justify-around">
         {items.map((item) => {
           const isActive = pathname === item.href;
@@ -107,13 +107,13 @@ export default function HeaderClient({
                 <Icon
                   className={cn(
                     "w-5 h-5 mb-1",
-                    isActive ? "text-white" : "text-gray-100",
+                    isActive ? "text-black" : "text-black",
                   )}
                 />
                 <span
                   className={cn(
                     "text-[8px] font-black uppercase tracking-[0.2em]",
-                    isActive ? "text-white" : "text-white/40",
+                    isActive ? "text-black" : "text-black",
                   )}
                 >
                   {item.name}

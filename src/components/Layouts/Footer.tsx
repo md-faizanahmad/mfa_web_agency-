@@ -1,66 +1,103 @@
 // src/components/layout/Footer.tsx
 import Link from "next/link";
 import { FooterInteraction } from "./FooterInteraction";
+import {
+  Mail,
+  Phone,
+  MessageCircle,
+  Instagram,
+  Linkedin,
+  Twitter,
+} from "lucide-react";
+import { technicalSolutions, companyLinks } from "@/data/services";
+
+const socialLinks = [
+  { Icon: Linkedin, href: "#", label: "LinkedIn" },
+  { Icon: Instagram, href: "#", label: "Instagram" },
+  { Icon: Twitter, href: "#", label: "Twitter" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-midnight text-white pt-20 pb-28 md:pb-12 border-t border-blue-900/20">
+    <footer className="bg-brand-midnight text-white pt-24 pb-32 md:pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-          <div className="md:col-span-1">
-            <Link
-              href="/"
-              className="text-2xl font-bold tracking-tighter mb-4 block"
-            >
-              MFA<span className="text-brand-cobalt">.</span>
-            </Link>
-            <p className="text-blue-100/60 text-sm leading-relaxed">
-              Engineering high-performance digital systems for the next
-              generation of industry leaders.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+          {/* Brand & Contact Hub */}
+          <div className="md:col-span-4 space-y-8">
+            <header>
+              <Link
+                href="/"
+                aria-label="MFA Home"
+                className="text-3xl font-black tracking-tighter block uppercase"
+              >
+                MFA<span className="text-sky-400">.</span>
+              </Link>
+              <p className="mt-4 text-slate-400 text-sm leading-relaxed max-w-xs">
+                We build fast websites and custom Next.js systems. Our goal is
+                to grow your business with speed and SEO.
+              </p>
+            </header>
+
+            <address className="not-italic space-y-4">
+              <ContactLink
+                href="mailto:hello@mfa.agency"
+                icon={<Mail size={16} />}
+              >
+                hello@mfa.agency
+              </ContactLink>
+              <ContactLink href="tel:+1555000000" icon={<Phone size={16} />}>
+                +1 (555) 000-MFA
+              </ContactLink>
+              <ContactLink
+                href="https://wa.me/1555000000"
+                icon={<MessageCircle size={16} />}
+                className="hover:text-emerald-400"
+                iconBg="group-hover:bg-emerald-500/10 text-emerald-500"
+              >
+                WhatsApp Specialist
+              </ContactLink>
+            </address>
+
+            <nav aria-label="Social Media" className="flex gap-4">
+              {socialLinks.map(({ Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="p-2.5 rounded-full border border-white/10 text-slate-400 hover:border-sky-400 hover:text-sky-400 transition-all bg-white/5"
+                >
+                  <Icon size={18} aria-hidden="true" />
+                </a>
+              ))}
+            </nav>
           </div>
 
-          {/* Links Section */}
-          <div>
-            <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-widest">
-              Solutions
-            </h4>
-            <ul className="space-y-4 text-sm text-blue-100/50">
-              <li className="hover:text-brand-cobalt transition-colors">
-                <Link href="/services">Web Systems</Link>
-              </li>
-              <li className="hover:text-brand-cobalt transition-colors">
-                <Link href="/services">SEO Strategy</Link>
-              </li>
-              <li className="hover:text-brand-cobalt transition-colors">
-                <Link href="/services">Cloud Hosting</Link>
-              </li>
-            </ul>
-          </div>
+          {/* Mapped Solutions */}
+          <FooterNav
+            title="Technical Solutions"
+            links={technicalSolutions}
+            className="md:col-span-3"
+          />
 
-          <div>
-            <h4 className="text-white font-semibold mb-6 text-sm uppercase tracking-widest">
-              Company
-            </h4>
-            <ul className="space-y-4 text-sm text-blue-100/50">
-              <li className="hover:text-brand-cobalt transition-colors">
-                <Link href="/work">Case Studies</Link>
-              </li>
-              <li className="hover:text-brand-cobalt transition-colors">
-                <Link href="/process">Our Method</Link>
-              </li>
-              <li className="hover:text-brand-cobalt transition-colors">
-                <Link href="/contact">Get in Touch</Link>
-              </li>
-            </ul>
-          </div>
+          {/* Mapped Company Links */}
+          <FooterNav
+            title="Company"
+            links={companyLinks}
+            className="md:col-span-2"
+          />
 
-          <FooterInteraction />
+          {/* Newsletter */}
+          <div className="md:col-span-3">
+            <FooterInteraction />
+          </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-blue-100/30">
-          <p>© {new Date().getFullYear()} MFA. Built for Performance.</p>
-          <div className="flex gap-6">
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[10px] font-black uppercase tracking-widest text-slate-500">
+            © {new Date().getFullYear()} MFA Agency. Built for speed.
+          </p>
+          <div className="flex gap-8 text-[10px] font-black uppercase tracking-widest text-slate-500">
             <Link
               href="/privacy"
               className="hover:text-white transition-colors"
@@ -74,5 +111,57 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+/** * Sub-components to keep the main Footer clean
+ */
+function FooterNav({
+  title,
+  links,
+  className,
+}: {
+  title: string;
+  links: any[];
+  className?: string;
+}) {
+  return (
+    <nav className={className}>
+      <h4 className="text-white font-black mb-6 text-[10px] uppercase tracking-[0.3em]">
+        {title}
+      </h4>
+      <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-slate-400">
+        {links.map((link) => (
+          <li key={link.name}>
+            <Link
+              href={link.href}
+              className="hover:text-sky-400 transition-colors"
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+function ContactLink({
+  href,
+  icon,
+  children,
+  className = "hover:text-sky-400",
+  iconBg = "group-hover:bg-sky-400/10",
+}: any) {
+  return (
+    <a
+      href={href}
+      className={`flex items-center gap-3 text-sm font-bold text-slate-400 transition-all group ${className}`}
+    >
+      <div className={`p-2 rounded-lg bg-white/5 transition-colors ${iconBg}`}>
+        {icon}
+      </div>
+      {children}
+    </a>
   );
 }

@@ -43,22 +43,26 @@ export default function ServicesClient({
               delay: index * 0.1,
               ease: [0.21, 0.47, 0.32, 0.98],
             }}
-            className="group relative h-105 overflow-hidden rounded-2xl border border-brand-midnight/5 bg-white shadow-sm"
+            className="group relative cursor-pointer h-105 overflow-hidden rounded-2xl border border-brand-midnight/5 bg-white shadow-sm"
           >
             {/* Parallax Image Overlay */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 ">
               <Image
                 src={service.img}
                 alt={service.title}
                 fill
-                className="object-cover  group-hover:scale-105 group-hover:opacity-20 transition-all duration-700"
+                sizes="(max-width: 640px) 100vw,
+             (max-width: 1024px) 50vw,
+             33vw"
+                className="object-cover  transition-all duration-700 group-hover:scale-105 group-hover:opacity-20"
+                priority={false}
               />
-              <div className="absolute inset-0 bg-linear-to-t from-sky-200 via-white/50 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-sky-200/90 via-sky/100 to-transparent" />
             </div>
 
             <div className="relative z-10 h-full p-8 flex flex-col justify-between">
               <div className="flex justify-between items-start">
-                <div className="p-3 rounded-xl bg-brand-ice text-brand-midnight border border-brand-midnight/5 group-hover:bg-sky-900 group-hover:text-white transition-colors duration-500">
+                <div className="p-3  rounded-xl bg-brand-ice text-brand-midnight border border-brand-midnight/5 group-hover:bg-sky-900 group-hover:text-white transition-colors duration-500">
                   <Icon className="w-6 h-6" />
                 </div>
                 <div className="text-brand-midnight/10 group-hover:text-green-800 transition-colors transform group-hover:rotate-45">
@@ -67,7 +71,7 @@ export default function ServicesClient({
               </div>
 
               <div>
-                <h3 className="text-2xl font-black text-brand-midnight tracking-tighter uppercase mb-2">
+                <h3 className="text-2xl  font-black text-brand-midnight tracking-tighter uppercase mb-2">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground text-sm font-semibold leading-relaxed">
@@ -77,7 +81,7 @@ export default function ServicesClient({
             </div>
 
             {/* Tactical Lighting Line */}
-            <div className="absolute bottom-0 left-0 h-0.75 w-0 bg-brand-cobalt transition-all duration-700 group-hover:w-full" />
+            <div className="absolute bottom-0 left-0 h-0.75 w-0 bg-sky-600 transition-all duration-700 group-hover:w-full" />
           </motion.div>
         );
       })}

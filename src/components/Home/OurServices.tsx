@@ -21,7 +21,7 @@ export const servicesData = [
     title: "Performance",
     desc: "We crush the 'Speed Tax' with sub-second load times.",
     iconName: "Zap",
-    img: "https://images.unsplash.com/photo-1551288049-bbbda536339a?q=80&w=800&auto=format&fit=crop",
+    img: "/ourservices/performance.png",
   },
   {
     id: "mobile",

@@ -1,6 +1,6 @@
 // src/components/sections/contact/ContactServer.tsx
 import ContactClient from "@/components/Section/Contact/ContactClient";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -34,7 +34,7 @@ export default function Contact() {
                     Email Us
                   </p>
                   <p className="text-lg font-black text-brand-midnight tracking-tight">
-                    hello@mfa.agency
+                    md.faizan.ahmad.web@gmail.com
                   </p>
                 </div>
               </div>
@@ -48,7 +48,7 @@ export default function Contact() {
                     Call Directly
                   </p>
                   <p className="text-lg font-black text-brand-midnight tracking-tight">
-                    +1 (555) 000-MFA
+                    +91 75630 92029
                   </p>
                 </div>
               </div>

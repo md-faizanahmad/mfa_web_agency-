@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Layouts/Header";
 import Footer from "@/components/Layouts/Footer";
+import { navItems } from "@/data/navigation";
+import NewHeader from "@/components/Layouts/NewHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,7 +96,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-white text-brand-midnight selection:bg-brand-cobalt selection:text-white`}
       >
-        <Header />
+        <NewHeader items={navItems} />
+        {/* <Header /> */}
         {/* Added min-h-screen to ensure footer stays at bottom on short pages */}
         <main className="min-h-screen">{children}</main>
         <Footer />

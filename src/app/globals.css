@@ -55,3 +55,28 @@
     color-scheme: light;
   }
 }
+/* Typography and Spacing Refinements */
+@layer base {
+  html {
+    @apply antialiased selection:bg-sky-400 selection:text-slate-900;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply tracking-tighter uppercase font-black;
+  }
+  p {
+    @apply text-slate-500 font-medium leading-relaxed;
+  }
+}
+
+/* Custom Scrollbar for the Premium Sleek look */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 hover:bg-sky-400 transition-colors;
+}

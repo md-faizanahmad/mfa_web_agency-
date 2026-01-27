@@ -6,61 +6,61 @@ import { useRef } from "react";
 import Image from "next/image";
 
 export default function AboutClient() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  // Scale and rotate effects for a kinetic feel
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
-  const rotate = useTransform(scrollYProgress, [0, 0.5], [-5, 0]);
+  // Sharp kinetic motion
+  const y = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [0.95, 1]);
 
   return (
     <div ref={containerRef} className="relative aspect-4/5 w-full group">
-      {/* Tactical Background Grid (Decorative) */}
-      <div className="absolute -top-6 -right-6 w-full h-full border border-brand-midnight/5 rounded-[2.5rem] -z-10 group-hover:border-brand-cobalt/20 transition-colors duration-700" />
+      {/* Sharp Border Frame */}
+      <div className="absolute -top-4 -right-4 w-full h-full border border-slate-200 -z-10 group-hover:border-sky-400/30 transition-colors duration-700" />
 
       <motion.div
-        style={{ scale, rotate }}
-        className="relative w-full h-full rounded-[2.5rem] overflow-hidden border border-brand-midnight/5 shadow-2xl"
+        style={{ scale }}
+        className="relative w-full h-full border border-slate-100 shadow-2xl overflow-hidden bg-slate-50"
       >
         <Image
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
-          alt="Engineering Team"
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800"
+          alt="Our Team Workspace"
           fill
-          className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+          sizes="(max-width: 768px) 100vw, 500px"
+          className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
         />
 
-        {/* Technical Overlay */}
-        <div className="absolute inset-0 bg-linear-to-t from-brand-midnight/60 to-transparent" />
+        {/* Tactical Glass Overlay */}
+        <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent opacity-60" />
 
-        <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end text-white">
+        <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end text-white z-10">
           <div className="space-y-1">
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-60">
-              Est. 2024
+            <span className="text-[9px] font-black uppercase tracking-[0.3em] text-sky-400">
+              Active_Studio
             </span>
-            <p className="font-black uppercase tracking-tighter text-xl">
-              Engineering Mastery.
+            <p className="font-black uppercase tracking-tighter text-2xl leading-none">
+              Built to Scale.
             </p>
           </div>
-          <div className="p-3 rounded-full bg-brand-cobalt">
-            <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+          <div className="p-3 bg-sky-400 text-slate-900">
+            <div className="w-1.5 h-1.5 bg-white animate-pulse" />
           </div>
         </div>
       </motion.div>
 
-      {/* Ambition Floating Badge */}
+      {/* Floating Tactical Stat */}
       <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        className="absolute -bottom-10 -left-10 bg-white p-8 rounded-2xl shadow-xl border border-brand-midnight/5 hidden xl:block"
+        style={{ y }}
+        className="absolute -bottom-6 -right-6 bg-slate-900 p-6 shadow-2xl hidden xl:block"
       >
-        <div className="text-4xl font-black text-brand-midnight tracking-tighter uppercase">
-          100%
+        <div className="text-3xl font-black text-white tracking-tighter uppercase leading-none">
+          +420%
         </div>
-        <div className="text-[10px] font-bold text-brand-cobalt uppercase tracking-widest mt-1">
-          Focus on Performance
+        <div className="text-[9px] font-black text-sky-400 uppercase tracking-widest mt-1">
+          Traffic Uplift
         </div>
       </motion.div>
     </div>

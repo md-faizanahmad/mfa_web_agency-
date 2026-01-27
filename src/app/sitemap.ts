@@ -1,6 +1,5 @@
 // src/app/sitemap.ts
 import { MetadataRoute } from "next";
-import workData from "../../public/work.json";
 import { navItems } from "@/data/navigation";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -17,12 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
   // 2. Map individual work/portfolio items if they have their own pages
-  const workPages = workData.map((project) => ({
-    url: `${baseUrl}/work/${project.title.toLowerCase().replace(/\s+/g, "-")}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
 
   return [...mainPages];
   // If you create dynamic pages for work later, use: return [...mainPages, ...workPages];

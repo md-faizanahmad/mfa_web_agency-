@@ -4,7 +4,6 @@ import "./globals.css";
 import Footer from "@/components/Layouts/Footer";
 import { navItems } from "@/data/navigation";
 import NewHeader from "@/components/Layouts/NewHeader";
-import SwipeProvider from "@/components/SwipeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -101,7 +100,7 @@ export default function RootLayout({
         {/* <Header /> */}
         {/* Added min-h-screen to ensure footer stays at bottom on short pages */}
         <main className="min-h-screen">
-          <SwipeProvider>{children}</SwipeProvider>
+          {children}
         </main>
         <Footer />
       </body>

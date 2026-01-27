@@ -1,0 +1,68 @@
+[
+  {
+    "title": "MyStore Admin Dashboard",
+    "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1766169967/AdminDash_c87c4j.png",
+
+    "liveUrl": "https://admin.myazstore.shop"
+  },
+  {
+    "title": "MyStore Shop",
+    "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1766169968/ShopUI_evspte.png",
+
+    "liveUrl": "https://myazstore.shop"
+  },
+  {
+    "title": "Luman Studio – Interactive Storytelling Website",
+    "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1768824853/luman-stdio-2_h1llq5.png",
+
+    "liveUrl": "https://luman-studio.vercel.app"
+  },
+  {
+    "title": "Luman Hotel – Luxury Hotel Frontend Experience",
+    "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1768824858/luman-hotel1_v5vv6v.png",
+
+    "liveUrl": "https://luman-hotel.vercel.app"
+  },
+  {
+    "title": "QuickSuite",
+    "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1767721909/quicksuite.vercel.app__zluudy.png",
+    "liveUrl": "https://www.emimitra.online/"
+  },
+
+  {
+    "title": "School Website",
+    "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1769510303/schoo_uvcdaa.png",
+    "liveUrl": "https://school-demo-sepia.vercel.app/"
+  },
+  {
+    "title": "MV Hotel",
+    "image": "https://res.cloudinary.com/duvavjepw/image/upload/v1740425168/mvhotel_gmlxvm.png",
+    "liveUrl": "https://mvhotell.web.app/"
+  },
+  {
+    "title": "Nerd Nest",
+    "image": "https://res.cloudinary.com/duvavjepw/image/upload/v1740425162/Nerdnest_czsfhr.png",
+    "liveUrl": "https://nerdnestt.web.app/"
+  },
+  {
+    "title": "AB Dental",
+    "image": "https://res.cloudinary.com/duvavjepw/image/upload/v1740425165/dental_juwtil.png",
+    "liveUrl": "https://iamfaizandev.github.io/abdental/"
+  },
+  {
+    "title": "Rent Ride",
+    "image": "https://res.cloudinary.com/duvavjepw/image/upload/v1753026934/rentride_eb2in3.png",
+    "liveUrl": "https://rentrideapp.vercel.app/"
+  },
+  {
+    "title": "MsShop",
+    "image": "https://res.cloudinary.com/duvavjepw/image/upload/v1753026923/mshop_yiw93l.png",
+    "liveUrl": "https://mshop-iota.vercel.app/"
+  },
+
+  {
+    "title": "OnE.com",
+    "image": "https://res.cloudinary.com/duvavjepw/image/upload/v1740425166/One-com_od3fwr.png",
+    "liveUrl": "https://one-ecom-388ea.web.app/"
+  }
+]

@@ -62,7 +62,7 @@ export default function ServicesClient({
 
             <div className="relative z-10 h-full p-8 flex flex-col justify-between">
               <div className="flex justify-between items-start">
-                <div className="p-3  rounded-xl bg-brand-ice text-brand-midnight border border-brand-midnight/5 group-hover:bg-sky-900 group-hover:text-white transition-colors duration-500">
+                <div className="p-3  rounded-xl bg-brand-ice text-brand-midnight border border-brand-midnight/5 group-hover:bg-green-900 group-hover:text-white transition-colors duration-500">
                   <Icon className="w-6 h-6" />
                 </div>
                 <div className="text-brand-midnight/10 group-hover:text-green-800 transition-colors transform group-hover:rotate-45">

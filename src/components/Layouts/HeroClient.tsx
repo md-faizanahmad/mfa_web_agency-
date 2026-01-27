@@ -14,7 +14,7 @@ export default function HeroClient() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       >
         {/* Compact Tactical Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-sky-400/20 text-sky-400 text-[10px] font-black uppercase tracking-[0.3em] mb-8 backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-sky-400/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8 backdrop-blur-md">
           <div className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
           <span>System.Initialized(2026)</span>
         </div>

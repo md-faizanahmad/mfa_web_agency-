@@ -4,11 +4,12 @@ export interface NavLink {
 }
 
 export const technicalSolutions: NavLink[] = [
-  { name: "Next.js Web Systems", href: "/services/web-development" },
-  { name: "E-Commerce Architecture", href: "/services/ecommerce" },
+  { name: "Webite Development", href: "/services/web-development" },
+  { name: "E-Commerce ", href: "/services/ecommerce" },
   { name: "Technical SEO", href: "/services/seo" },
   { name: "Fast UI/UX Design", href: "/services/ui-ux" },
   { name: "Cloud Maintenance", href: "/services/maintenance" },
+  { name: "Hosting and Domain", href: "/services/maintenance" },
 ];
 
 export const companyLinks: NavLink[] = [

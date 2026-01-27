@@ -1,21 +1,18 @@
 // src/components/layout/Footer.tsx
 import Link from "next/link";
 import { FooterInteraction } from "./FooterInteraction";
-import {
-  Mail,
-  Phone,
-  MessageCircle,
-  Instagram,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 import { technicalSolutions, companyLinks } from "@/data/services";
 
-const socialLinks = [
-  { Icon: Linkedin, href: "#", label: "LinkedIn" },
-  { Icon: Instagram, href: "#", label: "Instagram" },
-  { Icon: Twitter, href: "#", label: "Twitter" },
-];
+// const socialLinks = [
+//   // { Icon: Linkedin, href: "#", label: "LinkedIn" },
+//   {
+//     Icon: Instagram,
+//     href: "https://www.instagram.com/ahmadfaizan.log",
+//     label: "Instagram",
+//   },
+//   // { Icon: Twitter, href: "#", label: "Twitter" },
+// ];
 
 export default function Footer() {
   return (
@@ -40,16 +37,16 @@ export default function Footer() {
 
             <address className="not-italic space-y-4">
               <ContactLink
-                href="mailto:hello@mfa.agency"
+                href="mailto:md.faizan.ahmad.web@gmail.com"
                 icon={<Mail size={16} />}
               >
-                hello@mfa.agency
+                md.faizan.ahmad.web@gmail.com
               </ContactLink>
-              <ContactLink href="tel:+1555000000" icon={<Phone size={16} />}>
-                +1 (555) 000-MFA
+              <ContactLink href="tel:+917563092029" icon={<Phone size={16} />}>
+                +91 7563092029
               </ContactLink>
               <ContactLink
-                href="https://wa.me/1555000000"
+                href="https://wa.me/+917563092029"
                 icon={<MessageCircle size={16} />}
                 className="hover:text-emerald-400"
                 iconBg="group-hover:bg-emerald-500/10 text-emerald-500"
@@ -58,7 +55,7 @@ export default function Footer() {
               </ContactLink>
             </address>
 
-            <nav aria-label="Social Media" className="flex gap-4">
+            {/* <nav aria-label="Social Media" className="flex gap-4">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a
                   key={label}
@@ -69,7 +66,7 @@ export default function Footer() {
                   <Icon size={18} aria-hidden="true" />
                 </a>
               ))}
-            </nav>
+            </nav> */}
           </div>
 
           {/* Mapped Solutions */}

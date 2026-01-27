@@ -41,7 +41,7 @@ export default function OurServices() {
             <span className="text-brand-cobalt font-bold text-xs uppercase tracking-[0.3em]"></span>
             <h2 className="text-5xl md:text-7xl font-black text-brand-midnight tracking-tighter uppercase leading-[0.8]">
               High Impact <br />
-              <span className="text-brand-midnight/10 font-outline-2">
+              <span className=" font-outline-2 text-transparent bg-clip-text bg-linear-to-r from-sky-300  to-amber-400">
                 Deliverables.
               </span>
             </h2>

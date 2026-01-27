@@ -6,3 +6,11 @@ export interface MetricItem {
   desc: string;
   iconName: "Zap" | "Activity" | "TrendingUp" | "ShieldCheck";
 }
+// src/types/index.ts
+export interface TechItem {
+  id: string;
+  name: string;
+  category: string;
+  benefit: string; // Refactored from 'desc' to show business value
+  iconName: "Globe" | "Layout" | "Database" | "Server" | "Shield" | "Search";
+}

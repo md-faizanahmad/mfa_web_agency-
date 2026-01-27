@@ -1,56 +1,67 @@
 // src/components/sections/services/TechStackClient.tsx
 "use client";
 
+import { TechItem } from "@/@types";
 import { motion } from "framer-motion";
-import { Cpu, Layers, Zap, Shield, Workflow, Globe } from "lucide-react";
+import {
+  Globe,
+  Layout,
+  Database,
+  Server,
+  Shield,
+  Search,
+  LucideIcon,
+} from "lucide-react";
 
-const iconMap = {
-  next: Globe,
-  ts: Shield,
-  tailwind: Layers,
-  framer: Zap,
-  shadcn: Cpu,
-  vercel: Workflow,
+const iconMap: Record<TechItem["iconName"], LucideIcon> = {
+  Globe,
+  Layout,
+  Database,
+  Server,
+  Shield,
+  Search,
 };
 
-export default function TechStackClient({ stack }: { stack: any[] }) {
+export default function TechStackClient({ stack }: { stack: TechItem[] }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
       {stack.map((item, index) => {
-        const Icon = iconMap[item.id as keyof typeof iconMap] || Cpu;
+        const Icon = iconMap[item.iconName] || Globe;
 
         return (
           <motion.div
             key={item.id}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative p-8 rounded-2xl bg-white/2 border border-white/10 hover:border-brand-cobalt/50 transition-all duration-500 overflow-hidden"
+            transition={{ duration: 0.5, delay: index * 0.05 }}
+            className="group relative p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-sky-400/30 hover:bg-white transition-all duration-500 overflow-hidden"
           >
-            {/* Scan-line Effect */}
-            <div className="absolute inset-0 w-full h-px bg-brand-cobalt/20 -translate-y-full group-hover:animate-scan z-0" />
+            {/* WATERMARK ICON */}
+            <div className="absolute -right-6 -bottom-6 opacity-[0.03] text-sky-500 group-hover:opacity-[0.1] group-hover:-rotate-12 group-hover:scale-110 transition-all duration-700 pointer-events-none">
+              <Icon size={140} strokeWidth={1} />
+            </div>
 
             <div className="relative z-10 flex flex-col h-full">
-              <div className="flex justify-between items-start mb-12">
-                <div className="p-3 rounded-lg bg-white/5 text-brand-cobalt border border-white/10 group-hover:bg-brand-cobalt group-hover:text-white transition-all duration-300">
-                  <Icon className="w-6 h-6" />
+              <div className="flex justify-between items-start mb-10">
+                <div className="p-3 rounded-xl bg-white text-sky-500 border border-slate-100 group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                  <Icon className="w-5 h-5" />
                 </div>
-                <span className="text-[10px] font-bold text-white/20 uppercase tracking-widest group-hover:text-white/40">
+                <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest group-hover:text-sky-400 transition-colors">
                   {item.category}
                 </span>
               </div>
 
-              <h3 className="text-2xl font-black text-white tracking-tighter uppercase mb-2">
+              <h3 className="text-[19px] font-black text-slate-900 tracking-tighter uppercase mb-2">
                 {item.name}
               </h3>
-              <p className="text-blue-100/30 text-sm font-medium leading-relaxed">
-                {item.desc}
+              <p className="text-slate-500 text-xs font-semibold leading-relaxed">
+                {item.benefit}
               </p>
             </div>
 
-            {/* Subtle Gradient Glow */}
-            <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-brand-cobalt/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+            {/* Bottom Progress Line */}
+            <div className="absolute bottom-0 left-0 h-1 w-0 bg-sky-400 transition-all duration-700 group-hover:w-full" />
           </motion.div>
         );
       })}

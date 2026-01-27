@@ -24,11 +24,11 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[120] bg-white/80 backdrop-blur-md border-b border-slate-100">
+      <header className="fixed top-0 left-0 right-0 z-120 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <nav className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-black tracking-tighter text-slate-950 z-[130]"
+            className="text-2xl font-black tracking-tighter text-slate-950 z-130"
           >
             MFA<span className="text-sky-400">.</span>
           </Link>
@@ -76,7 +76,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
             {/* ANIMATED HAMBURGER */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="relative z-[130] w-10 h-10 flex flex-col items-center justify-center gap-1.5 md:hidden"
+              className="relative z-130 w-10 h-10 flex flex-col items-center justify-center gap-1.5 md:hidden"
               aria-label="Toggle Menu"
             >
               <motion.span
@@ -105,7 +105,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-slate-950/20 backdrop-blur-sm z-[110] md:hidden"
+              className="fixed inset-0 bg-slate-950/20 backdrop-blur-sm z-110 md:hidden"
             />
             <motion.aside
               initial={{ x: "100%" }}

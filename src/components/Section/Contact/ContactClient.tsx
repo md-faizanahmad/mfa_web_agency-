@@ -1,8 +1,10 @@
 // src/components/sections/contact/ContactClient.tsx
 "use client";
 
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Loader2 } from "lucide-react";
+import { toast } from "react-toastify";
 import { useContactForm } from "@/hooks/useContactForm";
 
 export default function ContactClient() {
@@ -12,6 +14,17 @@ export default function ContactClient() {
     e.preventDefault();
     submit(e.currentTarget);
   };
+
+  // 🔔 Toast side-effects (professional pattern)
+  useEffect(() => {
+    if (status === "success") {
+      toast.success("Your request has been sent successfully.");
+    }
+
+    if (status === "error" && error) {
+      toast.error(error.message);
+    }
+  }, [status, error]);
 
   return (
     <div className="relative bg-brand-ice/30 rounded-[2.5rem] border border-brand-midnight/5 p-8 md:p-12 shadow-2xl shadow-brand-midnight/5 overflow-hidden">
@@ -54,6 +67,21 @@ export default function ContactClient() {
                 />
               </div>
 
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-brand-midnight/40 ml-1">
+                  Mobile Number
+                </label>
+                <input
+                  name="mobile"
+                  required
+                  type="tel"
+                  inputMode="numeric"
+                  maxLength={10}
+                  placeholder="9876543210"
+                  className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
+                />
+              </div>
+
               {/* Honeypot */}
               <input
                 type="text"
@@ -91,10 +119,6 @@ export default function ContactClient() {
               />
             </div>
 
-            {error && (
-              <p className="text-sm font-medium text-red-600">{error}</p>
-            )}
-
             <button
               disabled={status === "sending"}
               type="submit"
@@ -103,7 +127,7 @@ export default function ContactClient() {
               {status === "sending" ? (
                 <>
                   <Loader2 className="w-5 h-5 animate-spin" />
-                  Initializing…
+                  Sending…
                 </>
               ) : (
                 <>

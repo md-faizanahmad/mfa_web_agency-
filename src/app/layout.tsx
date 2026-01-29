@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Layouts/Footer";
 import { navItems } from "@/data/navigation";
 import NewHeader from "@/components/Layouts/NewHeader";
+import ToastProvider from "@/providers/ToastProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,7 +95,10 @@ export default function RootLayout({
         <NewHeader items={navItems} />
         {/* <Header /> */}
         {/* Added min-h-screen to ensure footer stays at bottom on short pages */}
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen">
+          {children}
+          <ToastProvider />
+        </main>
         <Footer />
       </body>
     </html>

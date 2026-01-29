@@ -26,63 +26,58 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agency.mdfaizanahmad.in/"), // Replace with your actual domain
+  metadataBase: new URL("https://agency.mdfaizanahmad.in"),
+
   title: {
-    default: "MFA | High-Performance Digital Engineering Systems",
+    default: "MFA Agency – Digital Engineering & Performance Systems",
     template: "%s | MFA Agency",
   },
+
   description:
-    "Specialized in sub-second Next.js systems, technical SEO, and conversion-engineered UI for ambitious brands.",
-  keywords: [
-    "Next.js Engineering",
-    "Technical SEO Agency",
-    "Performance Optimization",
-    "Conversion Rate Optimization",
-    "High-End Web Systems",
-    "MFA Digital Agency",
-    "Enterprise Web Development",
-  ],
-  authors: [{ name: "MFA Engineering Team" }],
-  creator: "MFA Agency",
-  publisher: "MFA Agency",
-  icons: {
-    icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png" }],
-  },
-  // Open Graph for high-energy social sharing
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: "https://agency.mdfaizanahmad.in/",
-    siteName: "MFA",
-    title: "MFA | Engineering Systems for Digital Dominance",
-    description:
-      "We build sub-second, SEO-dominant digital assets for high-growth businesses.",
-    images: [
-      {
-        url: "/og-image.jpg", // Create a 1200x630 high-energy image
-        width: 1200,
-        height: 630,
-        alt: "MFA Digital Systems",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "MFA | Digital Engineering",
-    description: "Performance-first Next.js systems.",
-    images: ["/og-image.jpg"],
-  },
+    "MFA Agency builds high-performance web systems using Next.js, technical SEO, and conversion-focused UI engineering.",
+
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+  },
+
+  alternates: {
+    canonical: "https://agency.mdfaizanahmad.in",
+  },
+
+  authors: [{ name: "MFA Agency" }],
+  creator: "MFA Agency",
+  publisher: "MFA Agency",
+
+  icons: {
+    icon: [{ url: "/favicon.ico" }],
+    apple: [{ url: "/apple-icon.png" }],
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: "https://agency.mdfaizanahmad.in",
+    siteName: "MFA Agency",
+    title: "MFA Agency – Digital Engineering & Performance Systems",
+    description:
+      "We engineer fast, SEO-ready, conversion-focused digital systems for ambitious businesses.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "MFA Agency – Digital Engineering Systems",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "MFA Agency – Digital Engineering",
+    description:
+      "Performance-first web systems built with Next.js and technical SEO.",
+    images: ["/og-image.jpg"],
   },
 };
 
@@ -99,9 +94,7 @@ export default function RootLayout({
         <NewHeader items={navItems} />
         {/* <Header /> */}
         {/* Added min-h-screen to ensure footer stays at bottom on short pages */}
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
       </body>
     </html>

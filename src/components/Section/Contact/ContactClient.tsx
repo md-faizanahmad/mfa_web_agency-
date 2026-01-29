@@ -1,41 +1,16 @@
 // src/components/sections/contact/ContactClient.tsx
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Loader2 } from "lucide-react";
+import { useContactForm } from "@/hooks/useContactForm";
 
 export default function ContactClient() {
-  const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
+  const { status, error, submit, reset } = useContactForm();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus("sending");
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          goal: formData.get("goal"),
-          message: formData.get("message"),
-        }),
-      });
-
-      if (!res.ok) throw new Error("Failed");
-
-      setStatus("success");
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      alert("Failed to send message. Try again.");
-      setStatus("idle");
-    }
+    submit(e.currentTarget);
   };
 
   return (
@@ -58,13 +33,14 @@ export default function ContactClient() {
                   Full Name
                 </label>
                 <input
-                  name="fullname"
+                  name="name"
                   required
                   type="text"
                   placeholder="John Doe"
                   className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
+
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase tracking-widest text-brand-midnight/40 ml-1">
                   Company Email
@@ -77,6 +53,8 @@ export default function ContactClient() {
                   className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
+
+              {/* Honeypot */}
               <input
                 type="text"
                 name="company"
@@ -113,6 +91,10 @@ export default function ContactClient() {
               />
             </div>
 
+            {error && (
+              <p className="text-sm font-medium text-red-600">{error}</p>
+            )}
+
             <button
               disabled={status === "sending"}
               type="submit"
@@ -121,7 +103,7 @@ export default function ContactClient() {
               {status === "sending" ? (
                 <>
                   <Loader2 className="w-5 h-5 animate-spin" />
-                  Initialzing...
+                  Initializing…
                 </>
               ) : (
                 <>
@@ -141,6 +123,7 @@ export default function ContactClient() {
             <div className="w-20 h-20 rounded-full bg-brand-cobalt/10 flex items-center justify-center text-brand-cobalt">
               <CheckCircle2 className="w-10 h-10" />
             </div>
+
             <div className="space-y-2">
               <h3 className="text-3xl font-black text-brand-midnight uppercase tracking-tighter">
                 Transmission Received.
@@ -149,8 +132,9 @@ export default function ContactClient() {
                 Our lead engineer will review your audit within 24 hours.
               </p>
             </div>
+
             <button
-              onClick={() => setStatus("idle")}
+              onClick={reset}
               className="text-xs font-black uppercase tracking-[0.2em] text-brand-cobalt"
             >
               Back to form

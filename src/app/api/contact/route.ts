@@ -42,20 +42,22 @@ export async function POST(req: Request) {
     if (!name || !email || !message) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
-
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.SMTP_EMAIL,
-        pass: process.env.SMTP_PASSWORD,
-      },
+    console.log({ name, email, goal, message, company });
+    console.log({
+      SMTP_EMAIL: process.env.EMAIL_USER,
+      SMTP_PASSWORD: process.env.EMAIL_PASS ? "SET" : "MISSING",
     });
 
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
     // 1️⃣ Admin email
     await transporter.sendMail({
-      from: `"Website Contact" <${process.env.SMTP_EMAIL}>`,
+      from: `"Website Contact" <${process.env.EMAIL_USER}>`,
       to: process.env.RECEIVER_EMAIL,
       replyTo: email,
       subject: `New Website Enquiry Request – ${goal}`,
@@ -70,7 +72,7 @@ export async function POST(req: Request) {
 
     // 2️⃣ Auto-reply to user
     await transporter.sendMail({
-      from: `"Your Company" <${process.env.SMTP_EMAIL}>`,
+      from: `"Your Company" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: "We received your request ✔",
       html: `

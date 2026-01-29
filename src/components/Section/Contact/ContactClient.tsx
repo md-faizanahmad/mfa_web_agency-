@@ -8,11 +8,34 @@ import { Send, CheckCircle2, Loader2 } from "lucide-react";
 export default function ContactClient() {
   const [status, setStatus] = useState<"idle" | "sending" | "success">("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
-    // Simulate API Delay
-    setTimeout(() => setStatus("success"), 2000);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          goal: formData.get("goal"),
+          message: formData.get("message"),
+        }),
+      });
+
+      if (!res.ok) throw new Error("Failed");
+
+      setStatus("success");
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      alert("Failed to send message. Try again.");
+      setStatus("idle");
+    }
   };
 
   return (
@@ -35,6 +58,7 @@ export default function ContactClient() {
                   Full Name
                 </label>
                 <input
+                  name="fullname"
                   required
                   type="text"
                   placeholder="John Doe"
@@ -46,19 +70,30 @@ export default function ContactClient() {
                   Company Email
                 </label>
                 <input
+                  name="email"
                   required
                   type="email"
                   placeholder="john@company.com"
                   className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
+              <input
+                type="text"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+              />
             </div>
 
             <div className="space-y-2">
               <label className="text-[10px] font-black uppercase tracking-widest text-brand-midnight/40 ml-1">
                 The Goal
               </label>
-              <select className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all appearance-none">
+              <select
+                name="goal"
+                className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all appearance-none"
+              >
                 <option>New High-Performance Website</option>
                 <option>SEO Strategy & Implementation</option>
                 <option>System Speed Optimization</option>
@@ -71,6 +106,7 @@ export default function ContactClient() {
                 Message
               </label>
               <textarea
+                name="message"
                 rows={4}
                 placeholder="Briefly describe your current technical challenges..."
                 className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all resize-none"

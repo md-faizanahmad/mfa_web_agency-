@@ -30,12 +30,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://agency.mdfaizanahmad.in"),
 
   title: {
-    default: "MFA Agency – Digital Engineering & Performance Systems",
+    default: "MFA Agency – Web Development & SEO Services",
     template: "%s | MFA Agency",
   },
 
   description:
-    "MFA Agency builds high-performance web systems using Next.js, technical SEO, and conversion-focused UI engineering.",
+    "MFA Agency provides modern website development, SEO optimization, and high-performance Next.js solutions for growing businesses.",
 
   robots: {
     index: true,
@@ -45,14 +45,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://agency.mdfaizanahmad.in",
   },
-
-  authors: [{ name: "MFA Agency" }],
-  creator: "MFA Agency",
-  publisher: "MFA Agency",
-
-  icons: {
-    icon: [{ url: "/favicon.ico" }],
-    apple: [{ url: "/apple-icon.png" }],
+  verification: {
+    google: "Qszt7iG9xG-ULVPCLsXaKo-vKTFVPoee4MLccTyabVI",
   },
 
   openGraph: {
@@ -60,24 +54,24 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "https://agency.mdfaizanahmad.in",
     siteName: "MFA Agency",
-    title: "MFA Agency – Digital Engineering & Performance Systems",
+    title: "MFA Agency – Web Development & SEO Services",
     description:
-      "We engineer fast, SEO-ready, conversion-focused digital systems for ambitious businesses.",
+      "High-performance websites, technical SEO, and conversion-focused UI engineering.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "MFA Agency – Digital Engineering Systems",
+        alt: "MFA Agency – Web Development & SEO",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "MFA Agency – Digital Engineering",
+    title: "MFA Agency – Web Development & SEO",
     description:
-      "Performance-first web systems built with Next.js and technical SEO.",
+      "Modern websites and SEO-first digital solutions built with Next.js.",
     images: ["/og-image.jpg"],
   },
 };

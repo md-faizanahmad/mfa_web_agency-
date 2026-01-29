@@ -1,22 +1,38 @@
-// src/app/sitemap.ts
 import { MetadataRoute } from "next";
-import { navItems } from "@/data/navigation";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://agency.mdfaizanahmad.in"; // Replace with your actual domain
+  const baseUrl = "https://agency.mdfaizanahmad.in";
 
-  // 1. Map main navigation pages
-  const mainPages = navItems
-    .filter((item) => item.href.startsWith("/"))
-    .map((item) => ({
-      url: `${baseUrl}${item.href}`,
+  return [
+    {
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: item.href === "/" ? 1 : 0.8,
-    }));
-
-  // 2. Map individual work/portfolio items if they have their own pages
-
-  return [...mainPages];
-  // If you create dynamic pages for work later, use: return [...mainPages, ...workPages];
+      changeFrequency: "monthly",
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/work`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.5,
+    },
+  ];
 }

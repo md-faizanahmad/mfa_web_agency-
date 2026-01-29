@@ -7,7 +7,7 @@ import Hero from "@/components/Layouts/Hero";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Web Development & SEO Agency for High-Performance Sites",
+  title: "Website Development & SEO Agency for High-Performance Sites",
   description:
     "MFA Agency is a performance-focused web development and SEO agency. We build fast, scalable Next.js websites optimized for conversions and growth.",
 };

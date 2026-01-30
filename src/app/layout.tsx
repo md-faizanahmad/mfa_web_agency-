@@ -5,6 +5,7 @@ import Footer from "@/components/Layouts/Footer";
 import { navItems } from "@/data/navigation";
 import NewHeader from "@/components/Layouts/NewHeader";
 import ToastProvider from "@/providers/ToastProvider";
+import LocalSchema from "@/components/seo/LocalSchema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -83,6 +84,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <LocalSchema />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-white text-brand-midnight selection:bg-brand-cobalt selection:text-white`}
       >

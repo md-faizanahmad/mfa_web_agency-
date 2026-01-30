@@ -67,7 +67,9 @@ export default function Footer() {
                 iconBg=" text-emerald-500 mb-3"
               ></ContactLink>
             </address>
-
+            <address className="not-italic flex gap-4">
+              <span className="text-sky-500">Available_Worldwide</span>
+            </address>
             {/* <nav aria-label="Social Media" className="flex gap-4">
               {socialLinks.map(({ Icon, href, label }) => (
                 <a

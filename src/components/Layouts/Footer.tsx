@@ -3,6 +3,8 @@ import Link from "next/link";
 import { FooterInteraction } from "./FooterInteraction";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import { technicalSolutions, companyLinks } from "@/data/services";
+import Image from "next/image";
+import React from "react";
 
 // const socialLinks = [
 //   // { Icon: Linkedin, href: "#", label: "LinkedIn" },
@@ -24,35 +26,46 @@ export default function Footer() {
             <header>
               <Link
                 href="/"
+                className="relative flex items-center h-8 md:h-10 z-130 hover:opacity-80 transition-opacity"
                 aria-label="MFA Home"
-                className="text-3xl font-black tracking-tighter block uppercase"
               >
-                MFA<span className="text-sky-400">.</span>
+                <span className="sr-only">
+                  MFA Agency - Web Development & SEO
+                </span>
+                <Image
+                  src="/brand_logo.png"
+                  alt="MFA - High Performance Next.js Development Agency"
+                  width={120} // Adjust based on your logo's actual shape
+                  height={40} // Keep this small (md-size)
+                  className="w-auto h-full object-contain rounded-full"
+                  priority // Eager load for LCP performance
+                />
               </Link>
               <p className="mt-4 text-slate-400 text-sm leading-relaxed max-w-xs">
-                We build fast websites and custom Next.js systems. Our goal is
-                to grow your business with speed and SEO.
+                We build fast websites and custom design. Our goal is to grow
+                your business with speed and SEO.
               </p>
             </header>
 
-            <address className="not-italic space-y-4">
+            <address className="not-italic flex gap-4 items-center  space-y-4">
               <ContactLink
                 href="mailto:md.faizan.ahmad.web@gmail.com"
                 icon={<Mail size={16} />}
-              >
-                md.faizan.ahmad.web@gmail.com
-              </ContactLink>
-              <ContactLink href="tel:+917563092029" icon={<Phone size={16} />}>
-                +91 7563092029
-              </ContactLink>
+                className="hover:text-pink-800"
+                iconBg=" text-red-400"
+              ></ContactLink>
+              <ContactLink
+                href="tel:+917563092029"
+                icon={<Phone size={16} />}
+                className="hover:to-blue-400"
+                iconBg=" text-blue-400"
+              ></ContactLink>
               <ContactLink
                 href="https://wa.me/+917563092029"
                 icon={<MessageCircle size={16} />}
                 className="hover:text-emerald-400"
-                iconBg="group-hover:bg-emerald-500/10 text-emerald-500"
-              >
-                WhatsApp Specialist
-              </ContactLink>
+                iconBg=" text-emerald-500 mb-3"
+              ></ContactLink>
             </address>
 
             {/* <nav aria-label="Social Media" className="flex gap-4">
@@ -112,14 +125,17 @@ export default function Footer() {
 }
 
 /** * Sub-components to keep the main Footer clean
- */
+ */ interface FooterLink {
+  name: string;
+  href: string;
+}
 function FooterNav({
   title,
   links,
   className,
 }: {
   title: string;
-  links: any[];
+  links: FooterLink[];
   className?: string;
 }) {
   return (
@@ -142,23 +158,29 @@ function FooterNav({
     </nav>
   );
 }
-
+interface ContactLink {
+  href: string;
+  // children: string;
+  className: string;
+  iconBg: string;
+  icon: React.ReactElement;
+}
 function ContactLink({
   href,
   icon,
-  children,
+  // children,
   className = "hover:text-sky-400",
   iconBg = "group-hover:bg-sky-400/10",
-}: any) {
+}: ContactLink) {
   return (
     <a
       href={href}
-      className={`flex items-center gap-3 text-sm font-bold text-slate-400 transition-all group ${className}`}
+      className={`flex items-center gap-3  text-sm font-bold text-slate-400 transition-all group ${className}`}
     >
       <div className={`p-2 rounded-lg bg-white/5 transition-colors ${iconBg}`}>
         {icon}
       </div>
-      {children}
+      {/* {children} */}
     </a>
   );
 }

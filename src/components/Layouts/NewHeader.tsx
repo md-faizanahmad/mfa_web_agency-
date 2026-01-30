@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-
+import Image from "next/image";
 // Ensure this matches your interface in types
 interface NavItem {
   name: string;
@@ -28,9 +28,18 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
         <nav className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-black tracking-tighter text-slate-950 z-130"
+            className="relative flex items-center h-8 md:h-10 z-130 hover:opacity-80 transition-opacity"
+            aria-label="MFA Home"
           >
-            MFA<span className="text-sky-400">.</span>
+            <span className="sr-only">MFA Agency - Web Development & SEO</span>
+            <Image
+              src="/brand_logo.png"
+              alt="MFA - High Performance Next.js Development Agency"
+              width={120} // Adjust based on your logo's actual shape
+              height={40} // Keep this small (md-size)
+              className="w-auto h-full object-contain rounded-full"
+              priority // Eager load for LCP performance
+            />
           </Link>
 
           {/* DESKTOP NAV PILLS */}

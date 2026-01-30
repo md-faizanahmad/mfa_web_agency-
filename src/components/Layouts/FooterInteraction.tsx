@@ -25,7 +25,7 @@ export function FooterInteraction() {
           Stay Updated
         </h4>
         <p className="text-slate-400 text-sm">
-          Get weekly insights on Next.js performance and SEO growth.
+          Get weekly insights on website performance and SEO growth.
         </p>
       </div>
 

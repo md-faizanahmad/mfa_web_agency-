@@ -20,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-midnight text-white pt-24 pb-32 md:pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-10 gap-12 mb-20">
           {/* Brand & Contact Hub */}
           <div className="md:col-span-4 space-y-8">
             <header>
@@ -70,18 +70,6 @@ export default function Footer() {
             <address className="not-italic flex gap-4">
               <span className="text-sky-500">Available_Worldwide</span>
             </address>
-            {/* <nav aria-label="Social Media" className="flex gap-4">
-              {socialLinks.map(({ Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="p-2.5 rounded-full border border-white/10 text-slate-400 hover:border-sky-400 hover:text-sky-400 transition-all bg-white/5"
-                >
-                  <Icon size={18} aria-hidden="true" />
-                </a>
-              ))}
-            </nav> */}
           </div>
 
           {/* Mapped Solutions */}
@@ -95,13 +83,10 @@ export default function Footer() {
           <FooterNav
             title="Company"
             links={companyLinks}
-            className="md:col-span-2"
+            className="md:col-span-3"
           />
 
           {/* Newsletter */}
-          <div className="md:col-span-3">
-            <FooterInteraction />
-          </div>
         </div>
 
         {/* Bottom Bar */}

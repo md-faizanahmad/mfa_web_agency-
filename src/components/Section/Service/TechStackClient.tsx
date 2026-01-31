@@ -35,7 +35,7 @@ export default function TechStackClient({ stack }: { stack: TechItem[] }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
-            className="group relative p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-sky-400/30 hover:bg-white transition-all duration-500 overflow-hidden"
+            className="group relative p-8 cursor-pointer rounded-3xl bg-slate-50 border border-slate-100 hover:border-sky-400/30 hover:bg-white transition-all duration-500 overflow-hidden"
           >
             {/* WATERMARK ICON */}
             <div className="absolute -right-6 -bottom-6 opacity-[0.03] text-sky-500 group-hover:opacity-[0.1] group-hover:-rotate-12 group-hover:scale-110 transition-all duration-700 pointer-events-none">

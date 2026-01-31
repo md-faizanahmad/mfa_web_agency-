@@ -2,6 +2,21 @@
 
 import AboutClient from "@/components/Section/About/AboutClient";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://agency.mdfaizanahmad.in"),
+
+  title: "About MFA Agency | Website Development for Small Businesses",
+
+  description:
+    "Learn about MFA Agency, a website development and SEO team helping small businesses build fast, simple websites that attract real customers.",
+
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default function About() {
   return (
     <section className="bg-white mt-12 py-20 px-6 border-b border-slate-100">
@@ -10,34 +25,37 @@ export default function About() {
         <div className="lg:col-span-7 space-y-6">
           <div className="space-y-3">
             <span className="text-sky-500 font-bold text-[9px] uppercase tracking-[0.4em] font-mono"></span>
-            <h2 className="text-4xl md:text-7xl font-black text-slate-900 leading-[0.85]">
-              We Make <br />
-              <span className="text-sky-200 ">Sites Faster.</span>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
+              Simple Websites <br />
+              <span className="text-sky-200">That Bring Customers</span>
             </h2>
           </div>
 
           <p className="text-sm md:text-base text-slate-500 max-w-lg">
-            Most business websites are slow and hard to manage. We solve that.
-            We build simple, high-speed systems that help you rank higher on
-            Google and turn visitors into customers.
+            Many small businesses have websites that look fine but don’t bring
+            any enquiries. We help fix that by building fast, mobile-friendly
+            websites with proper Google setup, so people can find your business
+            and contact you easily.
           </p>
 
           <div className="flex gap-10 pt-4">
             <div>
-              <div className="text-3xl font-black text-slate-950 italic leading-none">
-                1.2s
-              </div>
-              <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 mt-2">
-                Avg Load Time
+              <p className="text-sm font-semibold text-slate-900">
+                Mobile-Friendly Design
+              </p>
+              <p className="text-[11px] uppercase tracking-widest text-slate-400 mt-1">
+                Works on all devices
               </p>
             </div>
+
             <div className="h-10 w-px bg-slate-100" />
+
             <div>
-              <div className="text-3xl font-black text-slate-950 italic leading-none">
-                100%
-              </div>
-              <p className="text-[9px] font-black uppercase tracking-widest text-slate-400 mt-2">
-                SEO Health
+              <p className="text-sm font-semibold text-slate-900">
+                Google Search Ready
+              </p>
+              <p className="text-[11px] uppercase tracking-widest text-slate-400 mt-1">
+                SEO setup included
               </p>
             </div>
           </div>

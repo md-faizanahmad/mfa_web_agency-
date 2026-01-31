@@ -158,9 +158,10 @@ export default function ServiceGrid() {
                   </div>
 
                   <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-6">
-                    <span className="text-[10px] font-black text-slate-300 tracking-[0.3em] uppercase">
-                      Build_Code: {s.id}_v2
+                    <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+                      Support & guidance included
                     </span>
+
                     <button className="w-full sm:w-auto bg-sky-400 text-slate-900 px-10 py-4 rounded-xl font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 hover:text-white transition-all shadow-lg shadow-sky-400/20">
                       Get Started
                     </button>

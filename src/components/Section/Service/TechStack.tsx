@@ -54,14 +54,14 @@ export default function TechStackServer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-16">
           <div className="space-y-4">
             <span className="text-sky-500 font-bold text-[10px] uppercase tracking-[0.4em] font-mono"></span>
-            <h2 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter uppercase leading-[0.85]">
-              Core <br />
-              <span className="text-sky-400 italic">Capabilities.</span>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+              How We Build <br />
+              <span className="text-sky-400 italic">Reliable Websites</span>
             </h2>
           </div>
           <p className="text-slate-500 font-medium max-w-sm border-l-2 border-sky-400/30 pl-6 text-sm">
-            We use a refined selection of modern tools to ensure your business
-            system is fast, secure, and easy for your customers to use.
+            We focus on speed, security, and ease of use so your customers can
+            browse your website smoothly and contact you without any confusion.
           </p>
         </div>
 

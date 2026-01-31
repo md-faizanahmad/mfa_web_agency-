@@ -3,11 +3,16 @@
 import ResultsTicker from "@/components/Section/Work/ResultsTicker";
 import WorkGrid from "@/components/Section/Work/WorkGrid";
 import WorkHero from "@/components/Section/Work/WorkHero";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Case Studies | Engineered Digital Systems | MFA",
+export const metadata: Metadata = {
+  metadataBase: new URL("https://agency.mdfaizanahmad.in"),
+  title: "Our Work | Website Projects for Small Businesses",
   description:
-    "Explore how we transform business bottlenecks into high-speed digital assets.",
+    "See real website projects we’ve built for small businesses, including business websites, landing pages, and online stores.",
+  alternates: {
+    canonical: "/work",
+  },
 };
 
 export default function WorkPage() {

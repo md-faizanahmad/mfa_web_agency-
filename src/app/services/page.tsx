@@ -4,10 +4,16 @@ import ServiceGrid from "@/components/Section/Service/ServiceGrid";
 import ServiceHero from "@/components/Section/Service/ServiceHero";
 import TechStackServer from "@/components/Section/Service/TechStack";
 
-export const metadata = {
-  title: "Precision Engineering Services | MFA Agency",
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://agency.mdfaizanahmad.in"),
+  title: "Website Development & SEO Services for Small Businesses",
   description:
-    "High-performance Next.js development, technical SEO, and mobile-first systems built for ambitious businesses.",
+    "Professional website development, landing pages, and SEO services to help small businesses get more enquiries and online visibility.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function Services() {

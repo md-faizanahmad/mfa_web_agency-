@@ -3,14 +3,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import {
-  Activity,
-  Zap,
-  ShieldCheck,
-  Search,
-  Phone,
-  Smartphone,
-} from "lucide-react";
+import { Activity, Search, Phone, Smartphone } from "lucide-react";
 
 const metrics = [
   {

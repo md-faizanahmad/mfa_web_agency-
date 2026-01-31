@@ -6,18 +6,19 @@ export default function WorkHero() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
           <div className="max-w-3xl space-y-6">
             <span className="text-sky-500 font-bold text-[10px] uppercase tracking-[0.4em] font-mono"></span>
-            <h1 className="text-6xl md:text-9xl font-black text-slate-900 tracking-tighter uppercase leading-[0.8]">
-              REAL <br />
-              <span className="text-slate-100 font-outline-2">RESULTS.</span>
+            <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tight leading-tight">
+              Our Work <br />
+              <span className="text-slate-200">Real Business Websites</span>
             </h1>
           </div>
 
           <div className="flex flex-col gap-2 border-l-2 border-sky-400 pl-6 py-2">
             <span className="text-4xl font-black text-slate-900 tracking-tighter uppercase leading-none">
-              +1.2M
+              Practical results
             </span>
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest max-w-35">
-              Total visitors gained for our clients
+              Websites designed to improve visibility, enquiries, and user
+              experience.
             </span>
           </div>
         </div>

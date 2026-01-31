@@ -4,7 +4,7 @@ export interface MetricItem {
   suffix: string;
   label: string;
   desc: string;
-  iconName: "Zap" | "Activity" | "TrendingUp" | "ShieldCheck";
+  iconName: "Search" | "Smartphone" | "Zap" | "ShieldCheck";
 }
 // src/types/index.ts
 export interface TechItem {

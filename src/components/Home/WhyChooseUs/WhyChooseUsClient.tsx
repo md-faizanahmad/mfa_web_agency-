@@ -9,20 +9,14 @@ import {
   useScroll,
 } from "framer-motion";
 import { useEffect, useRef } from "react";
-import {
-  Zap,
-  Activity,
-  TrendingUp,
-  ShieldCheck,
-  LucideIcon,
-} from "lucide-react";
+import { Search, Zap, ShieldCheck, LucideIcon, Smartphone } from "lucide-react";
 import { MetricItem } from "@/@types/index"; // Adjust path based on your setup
 
 // Type-safe mapping for Lucide icons
 const IconMap: Record<MetricItem["iconName"], LucideIcon> = {
+  Search,
+  Smartphone,
   Zap,
-  Activity,
-  TrendingUp,
   ShieldCheck,
 };
 
@@ -75,7 +69,7 @@ function MetricCard({
   total: number;
 }) {
   const container = useRef<HTMLDivElement>(null);
-  const Icon = IconMap[metric.iconName] || Zap;
+  const Icon = IconMap[metric.iconName] || Search;
 
   const { scrollYProgress } = useScroll({
     target: container,

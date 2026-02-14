@@ -76,10 +76,10 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
 
           <div className="flex items-center gap-4">
             <Link
-              href="/contact"
-              className="hidden md:flex items-center gap-2 bg-sky-400 text-slate-950 px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-slate-950 hover:text-white transition-all shadow-xl shadow-sky-100"
+              href="/"
+              className="hidden md:flex items-center gap-2 bg-brand-midnight text-white px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-slate-950 hover:text-white transition-all shadow-xl shadow-sky-100"
             >
-              Initialize <ArrowUpRight size={14} />
+              Request New Project <ArrowUpRight size={14} />
             </Link>
 
             {/* ANIMATED HAMBURGER */}
@@ -161,11 +161,11 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               <div className="space-y-6">
                 <div className="h-px bg-slate-100 w-full" />
                 <Link
-                  href="/contact"
+                  href="/"
                   onClick={() => setIsOpen(false)}
                   className="w-full flex items-center justify-center gap-3 bg-slate-950 text-white p-5 text-xs font-black uppercase tracking-[0.2em]"
                 >
-                  Start Project <ArrowUpRight size={18} />
+                  Request Project <ArrowUpRight size={18} />
                 </Link>
               </div>
             </motion.aside>

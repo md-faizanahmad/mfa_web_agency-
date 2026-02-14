@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import BonusReasonCard from "./BonusContactCard";
 
 const reasons = [
   {
-    id: "r2",
+    id: "#Reason1",
     title: "Google will love your new website.",
     desc: "Your website is structured with clean code, proper metadata, and optimized architecture so search engines can clearly understand and rank your business.",
     points: [
@@ -15,7 +16,7 @@ const reasons = [
     img: "/eight-reason/seo-graph.svg",
   },
   {
-    id: "r3",
+    id: "#Reason2",
     title: "Reliable Modern Hosting",
     desc: "Deployed on fast, scalable infrastructure designed to handle traffic growth without complicated server management.",
     points: [
@@ -25,28 +26,28 @@ const reasons = [
     img: "/eight-reason/hosting-domain.png",
   },
   {
-    id: "r4",
+    id: "#Reason3",
     title: "Security by Architecture",
     desc: "Security is not added later — it is built into the system with secure coding practices and modern infrastructure.",
     points: ["SSL encryption included", "Reduced vulnerability risk"],
     img: "/eight-reason/privacy-shield.png",
   },
   {
-    id: "r5",
+    id: "#Reason4",
     title: "No Plugin Dependency",
     desc: "Unlike traditional theme-based websites, your system does not rely on multiple plugins that create instability.",
     points: ["No plugin conflicts", "No update surprises"],
     img: "/eight-reason/no-Plugin.png",
   },
   {
-    id: "r6",
+    id: "#Reason5",
     title: "Flexible Content Systems",
     desc: "Content is structured intelligently, allowing your website to grow without breaking layout or performance.",
     points: ["Custom structured content types", "API-ready architecture"],
     img: "/eight-reason/custom-Design.png",
   },
   {
-    id: "r7",
+    id: "#Reason6",
     title: "Smooth Platform Transition",
     desc: "Moving from an outdated website is handled with planning to ensure minimal disruption and improved performance.",
     points: ["Structured content migration", "SEO preservation"],
@@ -97,6 +98,9 @@ export default function WhyWebsiteContent() {
               className="group relative h-100 flex flex-col border border-border rounded-3xl overflow-hidden bg-card transition-all hover:border-primary/50"
             >
               {/* Background Image Container */}
+              <span className="bg-amber-500 mt-4 w-25 ms-4 rounded-full  px-3 py-1 text-xs font-bold text-white uppercase tracking-wider">
+                {reason.id}
+              </span>
               <div className="absolute inset-0 z-0">
                 <Image
                   src={reason.img}
@@ -133,6 +137,7 @@ export default function WhyWebsiteContent() {
           ))}
         </div>
       </div>
+      <BonusReasonCard />
     </section>
   );
 }

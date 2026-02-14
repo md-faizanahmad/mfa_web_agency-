@@ -16,7 +16,12 @@ export const contactSchema = z.object({
 
   goal: z.string().optional(),
 
-  message: z.string().trim().min(10, "Message must be at least 10 characters"),
+  // for project request
+  businessName: z.string().min(1, "Business name is required"),
+  description: z
+    .string()
+    .min(10, "Please provide a bit more detail (min 10 chars)"),
+  budget: z.string().min(1, "Please select a budget"),
 
   company: z.string().optional(), // honeypot
 });

@@ -24,7 +24,7 @@ export default function WhyWebsitePreview() {
 
           <button
             onClick={() => router.push("/whywebsite")}
-            className="px-8 py-4 bg-primary text-primary-foreground rounded-md font-medium hover:opacity-90 transition-all"
+            className="px-8 py-4 cursor-pointer bg-primary text-primary-foreground rounded-md font-medium hover:opacity-90 transition-all"
           >
             Explore All 8 Reasons
           </button>

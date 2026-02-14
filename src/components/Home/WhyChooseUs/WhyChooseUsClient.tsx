@@ -99,9 +99,9 @@ function MetricCard({
         </div>
 
         <div className="relative z-10 flex flex-col justify-between h-full">
-          <div className="text-5xl font-black text-slate-950 tracking-tighter flex items-baseline gap-1 group-hover:text-sky-500 transition-colors leading-none">
+          <div className="text-4xl font-black text-slate-950 tracking-tighter flex items-baseline gap-1 group-hover:text-sky-500 transition-colors leading-none">
             <Counter value={metric.value} />
-            <span className="text-2xl text-sky-400 font-bold">
+            <span className="text-2xl text-blue-950 font-bold">
               {metric.suffix}
             </span>
           </div>

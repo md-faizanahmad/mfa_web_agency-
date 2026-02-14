@@ -12,7 +12,7 @@ export const metricsData: MetricItem[] = [
   },
   {
     id: "m2",
-    value: 100,
+    value: 99,
     suffix: "%",
     label: "Mobile-First Experience",
     desc: "Optimized layouts that work smoothly across phones, tablets, and desktops.",

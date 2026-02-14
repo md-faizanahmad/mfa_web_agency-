@@ -12,7 +12,7 @@ const reasons = [
       "Technical SEO foundations from day one",
       "Structured metadata and semantic markup",
     ],
-    img: "/seo-graph.svg",
+    img: "/eight-reason/seo-graph.svg",
   },
   {
     id: "r3",
@@ -22,35 +22,35 @@ const reasons = [
       "High-performance global hosting",
       "Scalable architecture for growth",
     ],
-    img: "/hosting.png",
+    img: "/eight-reason/hosting-domain.png",
   },
   {
     id: "r4",
     title: "Security by Architecture",
     desc: "Security is not added later — it is built into the system with secure coding practices and modern infrastructure.",
     points: ["SSL encryption included", "Reduced vulnerability risk"],
-    img: "/privacy-shield.svg",
+    img: "/eight-reason/privacy-shield.png",
   },
   {
     id: "r5",
     title: "No Plugin Dependency",
     desc: "Unlike traditional theme-based websites, your system does not rely on multiple plugins that create instability.",
     points: ["No plugin conflicts", "No update surprises"],
-    img: "/no-plugin.png",
+    img: "/eight-reason/no-Plugin.png",
   },
   {
     id: "r6",
     title: "Flexible Content Systems",
     desc: "Content is structured intelligently, allowing your website to grow without breaking layout or performance.",
     points: ["Custom structured content types", "API-ready architecture"],
-    img: "/custom-design.png",
+    img: "/eight-reason/custom-Design.png",
   },
   {
     id: "r7",
     title: "Smooth Platform Transition",
     desc: "Moving from an outdated website is handled with planning to ensure minimal disruption and improved performance.",
     points: ["Structured content migration", "SEO preservation"],
-    img: "/switch-arrows.svg",
+    img: "/eight-reason/switch-arrows.svg",
   },
 ];
 
@@ -86,7 +86,7 @@ export default function WhyWebsiteContent() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
           {reasons.map((reason, index) => (
             <motion.div
               key={reason.id}
@@ -102,7 +102,7 @@ export default function WhyWebsiteContent() {
                   src={reason.img}
                   alt={reason.title}
                   fill
-                  className="object-contain object-bottom translate-y-12  group-hover:grayscale-0 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
+                  className="object-contain object-bottom translate-y-1    group-hover:scale-105 transition-all duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 {/* Gradient Overlay for Text Readability */}

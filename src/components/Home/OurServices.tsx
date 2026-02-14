@@ -4,8 +4,8 @@ import ServicesClient from "./ServicesClient";
 export const servicesData = [
   {
     id: "web",
-    title: "Web Systems",
-    desc: "website performance-first systems built for scale and speed.",
+    title: "Website ",
+    desc: "website performance-first,responsive,desktop and mobile systems built for scale and speed.",
     iconName: "Code2", // Pass as a string
     img: "/ourservices/responsive-website.png",
   },
@@ -14,7 +14,6 @@ export const servicesData = [
     title: "Performance",
     desc: "We crush the 'Speed Tax' with sub-second load times.",
     iconName: "Zap",
-
     img: "/ourservices/fast-loading-times.webp",
   },
   {
@@ -26,11 +25,11 @@ export const servicesData = [
     img: "/ourservices/performance.png",
   },
   {
-    id: "mobile",
-    title: "Mobile First UI",
-    desc: "Interfaces designed for the thumb-first digital era.",
+    id: "gsc",
+    title: "Google Search Rank",
+    desc: "google search console rank and seo .",
     iconName: "Smartphone",
-    img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop",
+    img: "/ourservices/gsc.webp",
   },
 ];
 

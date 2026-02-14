@@ -16,13 +16,13 @@ export const servicesData = [
     iconName: "Zap",
     img: "/ourservices/fast-loading-times.webp",
   },
-  {
-    id: "seo",
-    title: "Search Engine Optimization",
-    desc: "We structure your website properly so Google understands your business and shows it to the right audience.",
-    iconName: "LineChart",
-    img: "/ourservices/performance.png",
-  },
+  // {
+  //   id: "clean-code",
+  //   title: "Clean, efficient code.",
+  //   desc: "We structure your website properly so Google understands your business and shows it to the right audience.",
+  //   iconName: "LineChart",
+  //   img: "/ourservices/clean-code.png",
+  // },
   {
     id: "gsc",
     title: "Google Setup & Visibility",

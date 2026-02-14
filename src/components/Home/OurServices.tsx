@@ -5,9 +5,9 @@ export const servicesData = [
   {
     id: "web",
     title: "Web Systems",
-    desc: "Next.js performance-first systems built for scale and speed.",
+    desc: "website performance-first systems built for scale and speed.",
     iconName: "Code2", // Pass as a string
-    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+    img: "/ourservices/responsive-website.png",
   },
   {
     id: "seo",

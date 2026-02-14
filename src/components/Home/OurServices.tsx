@@ -10,17 +10,19 @@ export const servicesData = [
     img: "/ourservices/responsive-website.png",
   },
   {
-    id: "seo",
-    title: "SEO Strategy",
-    desc: "Organic growth systems that place you ahead of the competition.",
-    iconName: "LineChart",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
-  },
-  {
     id: "perf",
     title: "Performance",
     desc: "We crush the 'Speed Tax' with sub-second load times.",
     iconName: "Zap",
+
+    img: "/ourservices/fast-loading-times.webp",
+  },
+  {
+    id: "seo",
+    title: "SEO Strategy",
+    desc: "Organic growth systems that place you ahead of the competition.",
+    iconName: "LineChart",
+
     img: "/ourservices/performance.png",
   },
   {

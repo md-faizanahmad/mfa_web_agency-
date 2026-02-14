@@ -4,30 +4,29 @@ import ServicesClient from "./ServicesClient";
 export const servicesData = [
   {
     id: "web",
-    title: "Website ",
-    desc: "website performance-first,responsive,desktop and mobile systems built for scale and speed.",
-    iconName: "Code2", // Pass as a string
+    title: "Website Development",
+    desc: "We build clean, professional websites that work smoothly on mobile and desktop. Designed to represent your brand clearly and help customers contact you easily.",
+    iconName: "Code2",
     img: "/ourservices/responsive-website.png",
   },
   {
     id: "perf",
-    title: "Performance",
-    desc: "We crush the 'Speed Tax' with sub-second load times.",
+    title: "Fast Loading Websites",
+    desc: "Speed matters. We optimize your website so it loads quickly, keeps visitors engaged, and performs well even on slower internet connections.",
     iconName: "Zap",
     img: "/ourservices/fast-loading-times.webp",
   },
   {
     id: "seo",
-    title: "SEO Strategy",
-    desc: "Organic growth systems that place you ahead of the competition.",
+    title: "Search Engine Optimization",
+    desc: "We structure your website properly so Google understands your business and shows it to the right audience.",
     iconName: "LineChart",
-
     img: "/ourservices/performance.png",
   },
   {
     id: "gsc",
-    title: "Google Search Rank",
-    desc: "google search console rank and seo .",
+    title: "Google Setup & Visibility",
+    desc: "We set up Google Search Console and essential tools to monitor your website performance and improve your online visibility over time.",
     iconName: "Smartphone",
     img: "/ourservices/gsc.webp",
   },

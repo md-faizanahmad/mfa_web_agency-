@@ -1,16 +1,14 @@
-// src/components/sections/ServicesClient.tsx
 "use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight, Code2, LineChart, Zap, Smartphone } from "lucide-react";
 
-// Map the string keys to the actual Lucide components
 const IconMap = {
-  Code2: Code2,
-  LineChart: LineChart,
-  Zap: Zap,
-  Smartphone: Smartphone,
+  Code2,
+  LineChart,
+  Zap,
+  Smartphone,
 };
 
 interface ServiceItem {
@@ -27,9 +25,8 @@ export default function ServicesClient({
   services: ServiceItem[];
 }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {services.map((service, index) => {
-        // Resolve the icon component safely
         const Icon = IconMap[service.iconName as keyof typeof IconMap] || Code2;
 
         return (
@@ -38,50 +35,43 @@ export default function ServicesClient({
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{
-              duration: 0.7,
-              delay: index * 0.1,
-              ease: [0.21, 0.47, 0.32, 0.98],
-            }}
-            className="group relative cursor-pointer h-105 overflow-hidden rounded-2xl border border-brand-midnight/5 bg-white shadow-sm"
+            transition={{ duration: 0.6, delay: index * 0.08 }}
+            className="group relative h-[420px] overflow-hidden rounded-xl border border-border cursor-pointer"
           >
-            {/* Parallax Image Overlay */}
-            <div className="absolute inset-0 z-0 ">
-              <Image
-                src={service.img}
-                alt={service.title}
-                fill
-                sizes="(max-width: 640px) 100vw,
-             (max-width: 1024px) 50vw,
-             33vw"
-                className="object-cover  transition-all duration-700 group-hover:scale-105 "
-                priority={false}
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-sky-200/90 via-sky/100 to-transparent" />
-            </div>
+            {/* Background Image */}
+            <Image
+              src={service.img}
+              alt={service.title}
+              fill
+              sizes="(max-width: 1024px) 50vw, 25vw"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
 
-            <div className="relative z-10 h-full p-8 flex flex-col justify-between">
-              <div className="flex justify-between items-start">
-                <div className="p-3  rounded-xl bg-brand-ice text-brand-midnight border border-brand-midnight/5 group-hover:bg-green-900 group-hover:text-white transition-colors duration-500">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <div className="text-brand-midnight/10 group-hover:text-green-800 transition-colors transform group-hover:rotate-45">
-                  <ArrowUpRight className="w-8 h-8" />
-                </div>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-brand-midnight/20 group-hover:bg-brand-midnight/80 transition-all duration-500" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
+              {/* Top Right Arrow */}
+              <div className="flex justify-end">
+                <ArrowUpRight className="w-6 h-6 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:rotate-45" />
               </div>
 
-              <div>
-                <h3 className="text-2xl   font-black text-brand-midnight tracking-tighter uppercase mb-2">
+              {/* Bottom Content Reveal */}
+              <div className="translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="mb-4 w-12 h-12 flex items-center justify-center rounded-md bg-primary/20 text-primary">
+                  <Icon className="w-5 h-5" strokeWidth={1.8} />
+                </div>
+
+                <h3 className="text-xl font-bold text-white mb-3">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm font-semibold leading-relaxed">
+
+                <p className="text-sm text-primary-foreground/80 leading-relaxed">
                   {service.desc}
                 </p>
               </div>
             </div>
-
-            {/* Tactical Lighting Line */}
-            {/* <div className="absolute bottom-0 left-0 h-0.75 w-0 bg-sky-600 transition-all duration-700 group-hover:w-full" /> */}
           </motion.div>
         );
       })}

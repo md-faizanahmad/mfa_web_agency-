@@ -1,9 +1,8 @@
-// src/components/sections/contact/ContactClient.tsx
 "use client";
 
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Send, CheckCircle2, Loader2, Sparkles } from "lucide-react";
 import { toast } from "react-toastify";
 import { useContactForm } from "@/hooks/useContactForm";
 
@@ -15,12 +14,10 @@ export default function ContactClient() {
     submit(e.currentTarget);
   };
 
-  // 🔔 Toast side-effects (professional pattern)
   useEffect(() => {
     if (status === "success") {
-      toast.success("Your request has been sent successfully.");
+      toast.success("Project request transmitted successfully.");
     }
-
     if (status === "error" && error) {
       toast.error(error.message);
     }
@@ -28,7 +25,7 @@ export default function ContactClient() {
 
   return (
     <div className="relative bg-brand-ice/30 rounded-[2.5rem] border border-brand-midnight/5 p-8 md:p-12 shadow-2xl shadow-brand-midnight/5 overflow-hidden">
-      {/* Background Lighting Detail */}
+      {/* Background Glow */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cobalt/5 blur-[100px] -z-10" />
 
       <AnimatePresence mode="wait">
@@ -40,6 +37,7 @@ export default function ContactClient() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0, y: -20 }}
           >
+            {/* 1. Name & Email Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase tracking-widest text-brand-midnight/40 ml-1">
@@ -66,7 +64,10 @@ export default function ContactClient() {
                   className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
+            </div>
 
+            {/* 2. Mobile & Business Name Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase tracking-widest text-brand-midnight/40 ml-1">
                   Mobile Number
@@ -75,59 +76,76 @@ export default function ContactClient() {
                   name="mobile"
                   required
                   type="tel"
-                  inputMode="numeric"
-                  maxLength={10}
                   placeholder="9876543210"
+                  maxLength={10}
                   className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
 
-              {/* Honeypot */}
-              <input
-                type="text"
-                name="company"
-                tabIndex={-1}
-                autoComplete="off"
-                className="hidden"
-              />
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-brand-midnight/40 ml-1">
+                  Business Name
+                </label>
+                <input
+                  name="businessName"
+                  required
+                  type="text"
+                  placeholder="Legal Entity Name"
+                  className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
+                />
+              </div>
             </div>
 
+            {/* 3. Budget & Honeypot */}
             <div className="space-y-2">
               <label className="text-[10px] font-black uppercase tracking-widest text-brand-midnight/40 ml-1">
-                The Goal
+                Project Budget (INR)
               </label>
               <select
-                name="goal"
+                name="budget"
+                required
                 className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all appearance-none"
               >
-                <option>New High-Performance Website</option>
-                <option>SEO Strategy & Implementation</option>
-                <option>System Speed Optimization</option>
-                <option>Long-term Maintenance</option>
+                <option value="">Select range</option>
+                <option value="50k-1L">₹50,000 — ₹1,00,000</option>
+                <option value="1L-3L">₹1,00,000 — ₹3,00,000</option>
+                <option value="3L+">₹3,00,000+</option>
               </select>
             </div>
 
+            {/* Honeypot */}
+            <input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+            />
+
+            {/* 4. Description/Message */}
             <div className="space-y-2">
               <label className="text-[10px] font-black uppercase tracking-widest text-brand-midnight/40 ml-1">
-                Message
+                Project Description
               </label>
               <textarea
-                name="message"
+                name="description"
+                required
                 rows={4}
-                placeholder="Briefly describe your current technical challenges..."
+                placeholder="Briefly describe your goals and technical requirements..."
                 className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all resize-none"
               />
             </div>
 
+            {/* 5. Submit Button */}
             <button
               disabled={status === "sending"}
               type="submit"
-              className="w-full bg-brand-midnight text-white font-black uppercase tracking-widest py-5 rounded-xl flex items-center justify-center gap-3 hover:bg-brand-cobalt transition-all disabled:opacity-50 group"
+              className="w-full bg-brand-midnight text-white font-black uppercase tracking-[0.2em] text-[12px] py-5 rounded-xl flex items-center justify-center gap-3 hover:bg-brand-cobalt transition-all disabled:opacity-50 group shadow-xl shadow-brand-cobalt/10"
             >
               {status === "sending" ? (
                 <>
                   <Loader2 className="w-5 h-5 animate-spin" />
-                  Sending…
+                  Transmitting...
                 </>
               ) : (
                 <>
@@ -138,6 +156,7 @@ export default function ContactClient() {
             </button>
           </motion.form>
         ) : (
+          /* SUCCESS STATE */
           <motion.div
             key="success"
             initial={{ opacity: 0, scale: 0.9 }}
@@ -152,16 +171,18 @@ export default function ContactClient() {
               <h3 className="text-3xl font-black text-brand-midnight uppercase tracking-tighter">
                 Transmission Received.
               </h3>
-              <p className="text-muted-foreground font-medium">
-                Our lead engineer will review your audit within 24 hours.
+              <p className="text-muted-foreground font-medium max-w-xs mx-auto">
+                Our lead strategist will review your project details and reach
+                out within 24 hours.
               </p>
             </div>
 
             <button
               onClick={reset}
-              className="text-xs font-black uppercase tracking-[0.2em] text-brand-cobalt"
+              className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-brand-cobalt hover:opacity-70 transition-opacity"
             >
-              Back to form
+              <Sparkles className="w-3 h-3" />
+              New Transmission
             </button>
           </motion.div>
         )}

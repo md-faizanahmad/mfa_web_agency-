@@ -43,7 +43,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
           </Link>
 
           {/* DESKTOP NAV PILLS */}
-          <div className="hidden md:flex items-center gap-1 0 p-1 border border-slate-100">
+          <div className="hidden  md:flex items-center gap-1 0 p-1 border border-slate-100">
             {items.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -76,7 +76,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
 
           <div className="flex items-center gap-4">
             <Link
-              href="/"
+              href="/project-request"
               className="hidden md:flex items-center gap-2 bg-brand-midnight text-white px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-slate-950 hover:text-white transition-all shadow-xl shadow-sky-100"
             >
               Request New Project <ArrowUpRight size={14} />
@@ -161,7 +161,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               <div className="space-y-6">
                 <div className="h-px bg-slate-100 w-full" />
                 <Link
-                  href="/"
+                  href="/project-request"
                   onClick={() => setIsOpen(false)}
                   className="w-full flex items-center justify-center gap-3 bg-slate-950 text-white p-5 text-xs font-black uppercase tracking-[0.2em]"
                 >

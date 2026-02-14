@@ -36,7 +36,7 @@ export default function ServicesClient({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.08 }}
-            className="group relative h-[420px] overflow-hidden rounded-xl border border-border cursor-pointer"
+            className="group relative h-105 overflow-hidden rounded-xl border border-border cursor-pointer"
           >
             {/* Background Image */}
             <Image

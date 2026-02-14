@@ -7,7 +7,7 @@ export default function ServiceHero() {
           <span className="text-brand-cobalt font-bold text-xs uppercase tracking-[0.4em]"></span>
           <h1 className="text-5xl md:text-7xl font-black text-brand-midnight tracking-tight leading-tight mb-6">
             Website Services <br />
-            <span className="text-brand-midnight/20">
+            <span className="text-brand-midnight/20 hover:text-brand-cobalt">
               That Help Your Business Grow
             </span>
           </h1>

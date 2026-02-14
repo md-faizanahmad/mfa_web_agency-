@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AboutClient() {
   return (
-    <div className="relative aspect-[5/4] w-full">
+    <div className="relative aspect-5/4 w-full">
       {/* Offset Border Frame */}
       <div className="absolute -top-4 -right-4 w-full h-full border border-border -z-10 rounded-lg" />
 
@@ -25,7 +25,7 @@ export default function AboutClient() {
         />
 
         {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent" />
 
         {/* Premium Status Badge */}
         <div className="absolute bottom-8 left-8 right-8 flex items-center justify-between z-10">

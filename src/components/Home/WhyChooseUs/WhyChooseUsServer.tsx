@@ -49,7 +49,9 @@ export default function WhyChooseUs() {
 
             <h2 className="text-4xl md:text-5xl leading-tight text-foreground">
               Built With Purpose. <br />
-              <span className="text-primary">Designed for Results.</span>
+              <span className="text-gray-600 hover:text-primary">
+                Designed for Results.
+              </span>
             </h2>
 
             <p className="text-muted-foreground text-base leading-relaxed max-w-md">

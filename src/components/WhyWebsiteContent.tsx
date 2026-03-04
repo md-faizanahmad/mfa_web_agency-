@@ -75,20 +75,24 @@ const ColorizeLove = ({ text }: { text: string }) => {
     </>
   );
 };
+interface WhyWebsiteContentProps {
+  limit?: number; // Optional prop to limit the number of cards shown
+}
+export default function WhyWebsiteContent({ limit }: WhyWebsiteContentProps) {
+  const displayReason = limit ? reasons.slice(0, limit) : reasons;
 
-export default function WhyWebsiteContent() {
   return (
     <section className="bg-background py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground tracking-tight">
-            8 Reasons a Website
+            {limit || 8} Reasons a Website
             <span className="block text-primary"> Grows Your Business</span>
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 cursor-pointer">
-          {reasons.map((reason, index) => (
+          {displayReason.map((reason, index) => (
             <motion.div
               key={reason.id}
               initial={{ opacity: 0, y: 20 }}
@@ -137,7 +141,7 @@ export default function WhyWebsiteContent() {
           ))}
         </div>
       </div>
-      <BonusReasonCard />
+      {!limit && <BonusReasonCard />}
     </section>
   );
 }

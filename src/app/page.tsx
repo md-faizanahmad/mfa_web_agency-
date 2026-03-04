@@ -4,6 +4,7 @@ import ProblemSolving from "@/components/Home/ProblemSolving";
 import Process from "@/components/Home/Process/Process";
 import WhyChooseUs from "@/components/Home/WhyChooseUs/WhyChooseUsServer";
 import Hero from "@/components/Layouts/Hero";
+import WhyWebsiteContent from "@/components/WhyWebsiteContent";
 import WhyWebsitePreview from "@/components/WhyWebsitePreview";
 import type { Metadata } from "next";
 
@@ -26,6 +27,7 @@ export default function Home() {
       <OurServices />
       <WhyChooseUs />
       <Process />
+      <WhyWebsiteContent limit={3} />
       <WhyWebsitePreview />
     </main>
   );

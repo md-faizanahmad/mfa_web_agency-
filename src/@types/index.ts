@@ -1,11 +1,11 @@
-export interface MetricItem {
-  id: string;
-  value: number;
-  suffix: string;
-  label: string;
-  desc: string;
-  iconName: "Search" | "Smartphone" | "Zap" | "ShieldCheck";
-}
+// export interface MetricItem {
+//   id: string;
+//   value: number;
+//   suffix: string;
+//   label: string;
+//   desc: string;
+//   iconName: "Search" | "Smartphone" | "Zap" | "ShieldCheck";
+// }
 // src/types/index.ts
 export interface TechItem {
   id: string;
@@ -20,4 +20,18 @@ export interface Project {
   liveUrl: string;
   category: string; // "Shop", "Dashboard", "Hotel"
   benefit: string; // "Sells more", "Easy management"
+}
+// src/types/metrics.ts
+import * as Icons from "lucide-react";
+
+export type LucideIconName = keyof typeof Icons;
+
+export interface MetricItem {
+  id: string;
+  value: number;
+  suffix: string;
+  label: string;
+  desc: string;
+  iconName: LucideIconName;
+  accentColor: "cobalt" | "emerald" | "rose" | "amber"; // Strict color tokens
 }

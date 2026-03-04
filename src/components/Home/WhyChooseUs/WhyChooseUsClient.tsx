@@ -1,44 +1,24 @@
 // src/components/sections/WhyChooseUsClient.tsx
 "use client";
 
-import {
-  motion,
-  useInView,
-  useSpring,
-  useTransform,
-  useScroll,
-} from "framer-motion";
-import { useEffect, useRef } from "react";
-import { Search, Zap, ShieldCheck, LucideIcon, Smartphone } from "lucide-react";
-import { MetricItem } from "@/@types/index"; // Adjust path based on your setup
+import { motion } from "framer-motion";
+import * as Icons from "lucide-react";
+import { cn } from "@/lib/utils";
+import { MetricItem } from "@/@types";
 
-// Type-safe mapping for Lucide icons
-const IconMap: Record<MetricItem["iconName"], LucideIcon> = {
-  Search,
-  Smartphone,
-  Zap,
-  ShieldCheck,
+const colorMap = {
+  cobalt: "group-hover:bg-blue-600 group-hover:shadow-blue-100",
+  emerald: "group-hover:bg-emerald-500 group-hover:shadow-emerald-100",
+  rose: "group-hover:bg-rose-500 group-hover:shadow-rose-100",
+  amber: "group-hover:bg-amber-500 group-hover:shadow-amber-100",
 };
 
-function Counter({ value }: { value: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-
-  const spring = useSpring(0, {
-    stiffness: 45,
-    damping: 25,
-  });
-
-  const displayValue = useTransform(spring, (current: number) =>
-    value % 1 === 0 ? Math.round(current).toString() : current.toFixed(1),
-  );
-
-  useEffect(() => {
-    if (inView) spring.set(value);
-  }, [inView, spring, value]);
-
-  return <motion.span ref={ref}>{displayValue}</motion.span>;
-}
+const textMap = {
+  cobalt: "group-hover:text-blue-600",
+  emerald: "group-hover:text-emerald-500",
+  rose: "group-hover:text-rose-500",
+  amber: "group-hover:text-amber-500",
+};
 
 export default function WhyChooseUsClient({
   metrics,
@@ -46,79 +26,65 @@ export default function WhyChooseUsClient({
   metrics: MetricItem[];
 }) {
   return (
-    <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4">
-      {metrics.map((metric, index) => (
-        <MetricCard
-          key={metric.id}
-          metric={metric}
-          index={index}
-          total={metrics.length}
-        />
-      ))}
-    </div>
-  );
-}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-2xl overflow-hidden">
+      {metrics.map((metric, i) => {
+        const Icon = Icons[metric.iconName] as Icons.LucideIcon;
 
-function MetricCard({
-  metric,
-  index,
-  total,
-}: {
-  metric: MetricItem;
-  index: number;
-  total: number;
-}) {
-  const container = useRef<HTMLDivElement>(null);
-  const Icon = IconMap[metric.iconName] || Search;
+        return (
+          <motion.div
+            key={metric.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1, ease: "circOut" }}
+            className="bg-white p-10 space-y-8 group transition-all duration-500"
+          >
+            <div className="flex justify-between items-start">
+              <div
+                className={cn(
+                  "p-4 bg-slate-900 text-white transition-all duration-500 shadow-xl",
+                  colorMap[metric.accentColor],
+                )}
+              >
+                <Icon size={22} strokeWidth={2.5} />
+              </div>
+              <span
+                className={cn(
+                  "text-4xl md:text-5xl font-black italic tracking-tighter leading-none transition-colors duration-500 text-slate-900",
+                  textMap[metric.accentColor],
+                )}
+              >
+                {metric.value}
+                {metric.suffix}
+              </span>
+            </div>
 
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  });
+            <div className="space-y-3">
+              <h3 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-950">
+                {metric.label}
+              </h3>
+              <p className="text-xs text-slate-500 font-semibold leading-relaxed">
+                {metric.desc}
+              </p>
+            </div>
 
-  // Stacking scale effect for mobile/sticky
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [1, 1 - (total - index) * 0.03],
-  );
-
-  return (
-    <div
-      ref={container}
-      className="sticky top-28 md:static h-50 md:h-auto"
-      style={{ marginTop: index === 0 ? 0 : "1rem" }}
-    >
-      <motion.div
-        style={{ scale }}
-        className="group relative h-full p-8 rounded-4xl border border-slate-100 bg-white/90 backdrop-blur-xl shadow-xl shadow-slate-200/50 overflow-hidden transition-all duration-500 hover:border-sky-400/30"
-      >
-        {/* WATERMARK BACKGROUND ICON */}
-        <div className="absolute -right-4 -bottom-4 opacity-[0.03] text-sky-500 group-hover:opacity-[0.08] group-hover:-rotate-12 transition-all duration-700 pointer-events-none">
-          <Icon size={120} strokeWidth={1} />
-        </div>
-
-        <div className="relative z-10 flex flex-col justify-between h-full">
-          <div className="text-4xl font-black text-slate-950 tracking-tighter flex items-baseline gap-1 group-hover:text-sky-500 transition-colors leading-none">
-            <Counter value={metric.value} />
-            <span className="text-2xl text-blue-950 font-bold">
-              {metric.suffix}
-            </span>
-          </div>
-
-          <div className="space-y-1">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-sky-600 transition-colors">
-              {metric.label}
-            </h3>
-            <p className="text-slate-400 text-xs font-medium leading-relaxed group-hover:text-slate-600 transition-colors line-clamp-2">
-              {metric.desc}
-            </p>
-          </div>
-        </div>
-
-        {/* Sky Bottom Accent */}
-        <div className="absolute bottom-0 left-0 h-1 bg-sky-400 w-0 group-hover:w-full transition-all duration-700" />
-      </motion.div>
+            {/* Surgical Bottom Accent Line */}
+            <div className="h-0.5 w-0 group-hover:w-full transition-all duration-700 bg-slate-100 relative">
+              <div
+                className={cn(
+                  "absolute inset-0 w-0 group-hover:w-full transition-all duration-1000 delay-100",
+                  metric.accentColor === "cobalt"
+                    ? "bg-blue-600"
+                    : metric.accentColor === "emerald"
+                      ? "bg-emerald-500"
+                      : metric.accentColor === "rose"
+                        ? "bg-rose-500"
+                        : "bg-amber-500",
+                )}
+              />
+            </div>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

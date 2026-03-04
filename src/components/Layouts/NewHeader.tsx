@@ -85,7 +85,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
             {/* ANIMATED HAMBURGER */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="relative z-130 w-10 h-10 flex flex-col items-center justify-center gap-1.5 md:hidden"
+              className="relative z-130 cursor-pointer w-10 h-10 flex flex-col items-center justify-center gap-1.5 md:hidden"
               aria-label="Toggle Menu"
             >
               <motion.span

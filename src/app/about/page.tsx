@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://agency.mdfaizanahmad.in"),
-  title: "About MFA Agency | Performance-Driven Website Development",
+  title: "About MFA Agency | Website Development & UI Engineering",
   description:
-    "MFA Agency builds high-performance websites for growth-focused brands. Fast, scalable, SEO-structured digital foundations designed to generate real business results.",
+    "MFA Agency designs and builds fast, mobile-first websites and web applications. Clean architecture, SEO-ready structure, and scalable code built for modern businesses.",
   alternates: {
     canonical: "/about",
   },
@@ -25,39 +25,38 @@ export default function About() {
             </span>
 
             <h2 className="text-4xl md:text-6xl leading-tight text-foreground">
-              Digital Foundations <br />
-              <span className="text-primary">Built for Growth</span>
+              Websites Designed <br />
+              <span className="text-primary">for Real Business Use</span>
             </h2>
           </div>
 
           <div className="space-y-6 max-w-xl">
             <p>
-              For over three years, MFA Agency has been engineering
-              high-performance websites for growth-focused businesses and
-              service brands.
+              MFA Agency builds modern websites and web applications for
+              businesses that need reliable, well-structured digital platforms.
             </p>
 
             <p>
-              We treat every website as digital infrastructure — designed to
-              attract the right audience, convert efficiently, and scale with
-              the business over time.
+              The focus is simple: fast performance, clear user experience, and
+              clean technical architecture that is easy to maintain and extend
+              over time.
             </p>
 
             <p>
-              Every build is performance-first, mobile-optimized, and
-              search-structured from day one. No unnecessary complexity. No
-              bloated systems. Just disciplined execution and measurable
-              outcomes.
+              Every project is built with a mobile-first layout, structured SEO
+              foundations, and scalable code — avoiding unnecessary complexity
+              and bloated systems.
             </p>
           </div>
 
           <div className="flex gap-12 pt-6">
             <div>
               <p className="text-sm font-semibold text-foreground">
-                Performance Architecture
+                Performance & Architecture
               </p>
+
               <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">
-                Speed • Structure • Scalability
+                Fast Loading • Clean Code • Scalable
               </p>
             </div>
 
@@ -65,10 +64,11 @@ export default function About() {
 
             <div>
               <p className="text-sm font-semibold text-foreground">
-                Conversion & Search Optimized
+                Search & User Experience
               </p>
+
               <p className="text-xs tracking-widest uppercase text-muted-foreground mt-2">
-                SEO Ready • Lead Focused
+                SEO Structure • Mobile First
               </p>
             </div>
           </div>

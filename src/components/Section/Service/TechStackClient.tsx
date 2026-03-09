@@ -1,4 +1,3 @@
-// src/components/sections/services/TechStackClient.tsx
 "use client";
 
 import { TechItem } from "@/@types";
@@ -22,46 +21,71 @@ const iconMap: Record<TechItem["iconName"], LucideIcon> = {
   Search,
 };
 
+/* Accent color rotation for hover */
+const accentColors = [
+  "group-hover:text-blue-600 group-hover:bg-blue-600/10",
+  "group-hover:text-indigo-600 group-hover:bg-indigo-600/10",
+  "group-hover:text-emerald-600 group-hover:bg-emerald-600/10",
+  "group-hover:text-purple-600 group-hover:bg-purple-600/10",
+  "group-hover:text-amber-600 group-hover:bg-amber-600/10",
+  "group-hover:text-rose-600 group-hover:bg-rose-600/10",
+];
+
 export default function TechStackClient({ stack }: { stack: TechItem[] }) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+    <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
       {stack.map((item, index) => {
         const Icon = iconMap[item.iconName] || Globe;
+        const accent = accentColors[index % accentColors.length];
 
         return (
           <motion.div
             key={item.id}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
-            className="group relative p-8 cursor-pointer rounded-3xl bg-slate-50 border border-slate-100 hover:border-sky-400/30 hover:bg-white transition-all duration-500 overflow-hidden"
+            transition={{ duration: 0.45, delay: index * 0.05 }}
+            className="group relative p-8 rounded-2xl cursor-pointer
+            bg-white border border-slate-200
+            hover:border-slate-300
+            hover:shadow-lg
+            transition-all duration-500 overflow-hidden"
           >
-            {/* WATERMARK ICON */}
-            <div className="absolute -right-6 -bottom-6 opacity-[0.03] text-sky-500 group-hover:opacity-[0.1] group-hover:-rotate-12 group-hover:scale-110 transition-all duration-700 pointer-events-none">
+            {/* watermark icon */}
+            <div className="absolute -right-6 -bottom-6 opacity-[0.04] text-slate-300 group-hover:opacity-[0.08] transition-all duration-700 pointer-events-none">
               <Icon size={140} strokeWidth={1} />
             </div>
 
             <div className="relative z-10 flex flex-col h-full">
               <div className="flex justify-between items-start mb-10">
-                <div className="p-3 rounded-xl bg-white text-sky-500 border border-slate-100 group-hover:bg-sky-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                {/* icon */}
+                <div
+                  className={`p-3 rounded-xl bg-slate-100 text-slate-600 border border-slate-200 transition-all duration-300 ${accent}`}
+                >
                   <Icon className="w-5 h-5" />
                 </div>
-                <span className="text-[9px] font-black text-slate-300 uppercase tracking-widest group-hover:text-sky-400 transition-colors">
+
+                {/* category */}
+                <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest group-hover:text-slate-600 transition-colors">
                   {item.category}
                 </span>
               </div>
 
-              <h3 className="text-[19px] font-black text-slate-900 tracking-tighter uppercase mb-2">
+              <h3 className="text-[18px] font-extrabold text-slate-900 tracking-tight uppercase mb-2">
                 {item.name}
               </h3>
-              <p className="text-slate-500 text-xs font-semibold leading-relaxed">
+
+              <p className="text-slate-500 text-xs font-medium leading-relaxed">
                 {item.benefit}
               </p>
             </div>
 
-            {/* Bottom Progress Line */}
-            <div className="absolute bottom-0 left-0 h-1 w-0 bg-sky-400 transition-all duration-700 group-hover:w-full" />
+            {/* bottom accent bar */}
+            <div
+              className={`absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-700
+              group-hover:w-full
+              bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500`}
+            />
           </motion.div>
         );
       })}

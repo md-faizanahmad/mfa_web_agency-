@@ -33,7 +33,7 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: Instagram,
-      href: "https://instagram.com/",
+      href: "https://instagram.com/ahmad_web_dev",
     },
     {
       icon: Facebook,
@@ -41,7 +41,7 @@ export default function Footer() {
     },
     {
       icon: Youtube,
-      href: "https://youtube.com/",
+      href: "https://youtube.com/@tech_x_craft",
     },
   ];
 

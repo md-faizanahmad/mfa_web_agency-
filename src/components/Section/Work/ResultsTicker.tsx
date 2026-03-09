@@ -2,14 +2,14 @@
 import TickerClient from "./TickerClient";
 
 export const tickerItems = [
-  "Fast loading websites",
-  "Mobile-friendly design",
-  "Easy contact & enquiry flow",
-  "Google search ready setup",
-  "Simple admin management",
-  "Clean and modern layout",
-  "Secure and reliable websites",
-  "Built for long-term use",
+  "Fast-loading pages with optimized assets",
+  "Mobile-first responsive layouts",
+  "Clear contact and enquiry flows",
+  "SEO-ready structure and metadata",
+  "Simple content management setup",
+  "Clean and maintainable UI architecture",
+  "Secure authentication and API handling",
+  "Scalable codebase for future features",
 ];
 
 export default function ResultsTicker() {
@@ -17,7 +17,7 @@ export default function ResultsTicker() {
     <section className="bg-brand-midnight cursor-pointer py-12 overflow-hidden border-y border-white/5">
       <TickerClient items={tickerItems} direction="left" />
       <div className="h-px bg-white/5 my-8 max-w-7xl mx-auto" />
-      <TickerClient items={tickerItems.reverse()} direction="right" />
+      <TickerClient items={[...tickerItems].reverse()} direction="right" />
     </section>
   );
 }

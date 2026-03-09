@@ -1,54 +1,53 @@
-// src/components/sections/HeroClient.tsx
-"use client";
+// src/components/sections/HeroServer.tsx
 
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-export default function HeroClient() {
+export default function HeroServer() {
   return (
-    <div className="max-w-4xl">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      >
-        {/* Compact Tactical Badge */}
-        {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-sky-400/20 text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8 backdrop-blur-md">
-          <div className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-          <span>System.Initialized(2026)</span>
-        </div> */}
+    <section className=" text-white py-20 md:py-18">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-2xl">
+          {/* SEO H1 */}
+          <h1 className="text-3xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
+            Website Development for Modern Businesses
+          </h1>
 
-        <h1 className="text-5xl md:text-8xl font-black leading-[0.85] tracking-tighter text-white mb-6 uppercase">
-          Digital <br />
-          <span className="text-transparent bg-clip-text bg-linear-to-r from-sky-300 via-sky-500 to-emerald-400">
-            Systems
-          </span>{" "}
-          <br />
-          Simplified.
-        </h1>
+          {/* supporting text */}
+          <p className="text-base md:text-lg text-slate-400 leading-relaxed mb-10">
+            We design and build fast, mobile-friendly websites that help
+            businesses present their services clearly and make it easy for
+            customers to contact or book online.
+          </p>
 
-        <p className="text-base md:text-lg text-slate-400 max-w-lg font-medium leading-relaxed mb-10">
-          We engineer high-velocity digital infrastructure for brands that
-          prioritize performance over noise. Fast, lean, and scalable.
-        </p>
+          {/* CTA buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/project-request"
+              className="inline-flex items-center justify-center gap-2
+              bg-sky-400 text-brand-midnight
+              px-6 py-3 rounded-lg
+              font-semibold text-sm
+              hover:bg-white transition-colors"
+            >
+              Start a Project
+              <ArrowRight className="w-4 h-4" />
+            </Link>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="/contact"
-            className="bg-sky-400 text-brand-midnight px-8 py-4 rounded-xl font-black text-[11px] uppercase tracking-[0.2em] flex items-center justify-center gap-2 hover:bg-white transition-all group shadow-xl shadow-sky-400/10"
-          >
-            Launch Build
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <Link
-            href="/work"
-            className="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-xl font-black text-[11px] uppercase tracking-[0.2em] flex items-center justify-center hover:bg-white/10 transition-all backdrop-blur-md"
-          >
-            Case_Files
-          </Link>
+            <Link
+              href="/work"
+              className="inline-flex items-center justify-center
+              border border-white/10
+              px-6 py-3 rounded-lg
+              text-sm font-semibold
+              text-white
+              hover:bg-white/10 transition-colors"
+            >
+              View Our Work
+            </Link>
+          </div>
         </div>
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 }

@@ -2,7 +2,7 @@
 
 <p align="center">
 Modern • SEO-Optimized • Conversion-Focused
-• Mobile 
+• Mobile First 
 </p>
 
 <hr/>

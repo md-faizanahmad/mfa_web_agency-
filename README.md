@@ -1,4 +1,4 @@
-<h1 align="center">MFA Agency & More – High-Performance Business Website</h1>
+<h1 align="center">MFA Agency – High-Performance Business Website</h1>
 
 <p align="center">
 Modern • SEO-Optimized • Conversion-Focused

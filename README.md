@@ -1,4 +1,4 @@
-<h1 align="center">MFA WeB Agency.</h1>
+<h1 align="center">MFA Web Agency.</h1>
 
 <p align="center">
 Modern • SEO-Optimized • Conversion-Focused

@@ -14,10 +14,13 @@ export default function Footer() {
   //   { label: "Performance Optimization", href: "/services/performance" },
   // ];
   const servicesLinks = [
-    { label: "Website Development", href: "/services/websites" },
-    { label: "SEO Optimization", href: "/services/seo" },
+    { label: "Website Development", href: "/services/website" },
+    { label: "E-commerce Plateform", href: "/services/ecommerce" },
+    { label: "SEO Audit", href: "/services/seo" },
     { label: "Paid Ads (Meta & Google)", href: "/services/ads" },
-    { label: "Performance Optimization", href: "/services/performance" },
+    // { label: "Performance Optimization", href: "/services/performance" },
+    { label: "Web App Maintenance", href: "/services/maintenance" },
+    { label: "Hosting & Domain", href: "/services/hosting-domain" },
   ];
   const companyLinks = [
     { label: "About", href: "/about" },

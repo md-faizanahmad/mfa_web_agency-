@@ -22,9 +22,9 @@ export default function TermsPage() {
               1. Project Scope
             </h2>
             <p className="text-sm leading-relaxed text-slate-500">
-              MFA builds custom digital systems. Our work is defined by the
-              specific goals we set at the start of each project. Any changes to
-              the plan may impact the timeline.
+              WebGrowth Studio builds custom digital systems. Our work is
+              defined by the specific goals we set at the start of each project.
+              Any changes to the plan may impact the timeline.
             </p>
           </section>
 
@@ -53,7 +53,7 @@ export default function TermsPage() {
 
         {/* Footer Note */}
         <footer className="pt-10 border-t border-slate-100 text-[9px] font-black uppercase tracking-[0.3em] text-slate-300">
-          MFA Agency // Legal_Department
+          WebGrowth Studio // Legal_Department
         </footer>
       </div>
     </article>

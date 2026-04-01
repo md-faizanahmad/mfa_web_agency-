@@ -39,7 +39,7 @@ export default function HeaderClient({
           href="/"
           className="text-2xl font-black tracking-tighter text-brand-midnight hover:scale-105 transition-transform"
         >
-          MFA<span className="text-brand-cobalt">.</span>
+          WebGrowth Studio<span className="text-brand-cobalt">.</span>
         </Link>
 
         <div className="flex items-center gap-2 bg-brand-ice/50 p-1.5 rounded-full border border-brand-midnight/5">

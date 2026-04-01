@@ -3,7 +3,7 @@
 import SEOClient from "@/services/seo/seoClient";
 
 export const metadata = {
-  title: "Technical SEO & Search Growth | MFA Agency",
+  title: "Technical SEO & Search Growth | WebGrowth Studio",
   description:
     "Dominating search engine results through technical excellence. We build Next.js systems optimized for Google's latest performance standards.",
 };

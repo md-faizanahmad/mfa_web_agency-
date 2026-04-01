@@ -22,7 +22,7 @@ export default function Header() {
       {/* Mobile Top Branding Bar */}
       <div className="fixed top-0 left-0 right-0 z-50 md:hidden bg-white/90 backdrop-blur-md border-b border-brand-midnight/5 px-6 h-16 flex items-center justify-between">
         <div className="font-black text-xl tracking-tighter text-brand-midnight ">
-          MFA<span className="text-sky-400">.</span>
+          WebGrowth Studio<span className="text-sky-400">.</span>
         </div>
         <div className="md:flex hidden  items-center gap-2">
           <span className="text-[10px] font-black uppercase tracking-widest text-clip animate-pulse">

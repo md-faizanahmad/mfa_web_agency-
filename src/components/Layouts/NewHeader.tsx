@@ -29,7 +29,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
           <Link
             href="/"
             className="relative flex items-center h-8 md:h-10 z-130 hover:opacity-80 transition-opacity"
-            aria-label="MFA Home"
+            aria-label="WebGrowth Studio Home"
           >
             <span className="sr-only">
               WebGrowth Studio - Web Development & SEO , ADS

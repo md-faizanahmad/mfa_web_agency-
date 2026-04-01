@@ -3,7 +3,7 @@
 import HostingClient from "@/services/hosting-domain/Hosting";
 
 export const metadata = {
-  title: "Premium Cloud Hosting & Domain Management | MFA Agency",
+  title: "Premium Cloud Hosting & Domain Management | WebGrowth Studio",
   description:
     "Secure, high-speed cloud hosting for business-critical websites. We manage your domains and infrastructure for maximum reliability.",
 };

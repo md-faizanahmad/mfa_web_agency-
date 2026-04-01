@@ -3,7 +3,7 @@
 import UIUXClient from "@/services/ui-ux/ui-uxClient";
 
 export const metadata = {
-  title: "UI/UX Design & Conversion Strategy | MFA Agency",
+  title: "UI/UX Design & Conversion Strategy | WebGrowth Studio",
   description:
     "High-performance user interfaces designed for business growth. We build conversion-focused experiences using modern UI/UX principles.",
 };

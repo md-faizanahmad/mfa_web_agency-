@@ -3,7 +3,7 @@
 import MaintenanceClient from "@/services/maintenance/maintenanceClient";
 
 export const metadata = {
-  title: "Website Maintenance & 24/7 Support | MFA Agency",
+  title: "Website Maintenance & 24/7 Support | WebGrowth Studio",
   description:
     "Reliable system monitoring and technical support. We ensure your business website stays fast, secure, and online 24/7.",
 };

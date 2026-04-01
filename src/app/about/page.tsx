@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://agency.mdfaizanahmad.in"),
-  title: "About MFA Agency | Website Development & UI Engineering",
+  title: "About WebGrowth Studio | Website Development & SEO , Ads",
   description:
-    "MFA Agency designs and builds fast, mobile-first websites and web applications. Clean architecture, SEO-ready structure, and scalable code built for modern businesses.",
+    "WebGrowth Studio designs and builds fast, mobile-first websites and web applications. Clean architecture, SEO-ready structure, and scalable code built for modern businesses.",
   alternates: {
     canonical: "/about",
   },
@@ -21,7 +21,7 @@ export default function About() {
         <div className="lg:col-span-7 space-y-10">
           <div className="space-y-5">
             <span className="text-primary font-mono text-[10px] tracking-[0.4em] uppercase">
-              About MFA Agency
+              About WebGrowth Studio
             </span>
 
             <h2 className="text-4xl md:text-6xl leading-tight text-foreground">
@@ -32,7 +32,7 @@ export default function About() {
 
           <div className="space-y-6 max-w-xl">
             <p>
-              MFA Agency builds modern websites and web applications for
+              WebGrowth Studio builds modern websites and web applications for
               businesses that need reliable, well-structured digital platforms.
             </p>
 

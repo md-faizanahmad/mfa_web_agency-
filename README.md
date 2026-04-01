@@ -1,7 +1,8 @@
-<h1 align="center">MFA Agency – High-Performance Business Website</h1>
+<h1 align="center">MFA Website Agency.</h1>
 
 <p align="center">
 Modern • SEO-Optimized • Conversion-Focused
+• Mobile First Web App.
 </p>
 
 <hr/>

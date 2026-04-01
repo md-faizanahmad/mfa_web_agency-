@@ -20,7 +20,7 @@ export default function FooterVideo() {
   };
 
   return (
-    <div className="absolute inset-0 z-0 opacity-20 grayscale transition-opacity duration-700">
+    <div className="absolute inset-0 z-0 opacity-2.5 grayscale transition-opacity duration-700">
       <video
         ref={videoRef}
         autoPlay

@@ -7,13 +7,18 @@ import FooterVideo from "./FooterVideo";
 import { FooterColumn } from "./FooterElement";
 
 export default function Footer() {
+  // const servicesLinks = [
+  //   { label: "Website Development", href: "/services/websites" },
+  //   { label: "Web Applications", href: "/services/webapps" },
+  //   { label: "UI Engineering", href: "/services/ui-engineering" },
+  //   { label: "Performance Optimization", href: "/services/performance" },
+  // ];
   const servicesLinks = [
     { label: "Website Development", href: "/services/websites" },
-    { label: "Web Applications", href: "/services/webapps" },
-    { label: "UI Engineering", href: "/services/ui-engineering" },
+    { label: "SEO Optimization", href: "/services/seo" },
+    { label: "Paid Ads (Meta & Google)", href: "/services/ads" },
     { label: "Performance Optimization", href: "/services/performance" },
   ];
-
   const companyLinks = [
     { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
@@ -26,18 +31,18 @@ export default function Footer() {
   ];
 
   const contactLinks = [
-    { label: "Email", href: "mailto:mdahmad.dev@gmail.com" },
+    { label: "Email", href: "mailto:md.faizan.ahmad.web@gmail.com" },
     { label: "WhatsApp", href: "https://wa.me/917563092029" },
   ];
 
   const socialLinks = [
     {
       icon: Instagram,
-      href: "https://instagram.com/ahmad_web_dev",
+      href: "https://instagram.com/webgrowth_studio",
     },
     {
       icon: Facebook,
-      href: "https://facebook.com/",
+      href: "https://facebook.com/webgrowthstudio",
     },
     {
       icon: Youtube,
@@ -57,11 +62,11 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-4 group">
               <div className="p-2 bg-white/10 backdrop-blur-md border border-white/10 group-hover:border-brand-cobalt transition-colors">
                 <Image
-                  src="/brand_logo.png"
+                  src="/brand.png"
                   alt="WebGrowth Studio"
                   width={28}
                   height={28}
-                  className="object-contain invert"
+                  className="object-contain rounded-full"
                 />
               </div>
 
@@ -71,8 +76,12 @@ export default function Footer() {
             </Link>
 
             <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-              Designing high-performance websites and web applications for
-              startups and modern businesses.
+              We build high-performance websites and growth systems. WebGrowth
+              Studio helps businesses across India improve their online presence
+              through websites, SEO, and paid ads.
+            </p>
+            <p className="text-xs text-brand-cobalt pt-2">
+              Get a free growth audit → See how your business can grow online
             </p>
 
             {/* SOCIAL */}
@@ -106,13 +115,13 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <Terminal size={12} className="text-brand-cobalt" />
             <p className="text-xs uppercase tracking-widest text-white/40">
-              © {new Date().getFullYear()} MFA
+              © {new Date().getFullYear()} WebGrowth Studio
             </p>
           </div>
 
           <div className="flex items-center gap-2 text-xs text-white/40">
             <Mail size={12} />
-            mdahmad.dev@gmail.com
+            md.faizan.ahmad.web@gmail.com
           </div>
         </div>
       </div>

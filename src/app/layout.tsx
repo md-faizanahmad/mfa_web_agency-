@@ -31,12 +31,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://agency.mdfaizanahmad.in"),
 
   title: {
-    default: "MFA Agency – Web Development & SEO Services",
-    template: "%s | MFA Agency",
+    default: "WebGrowth Studio – Web Development & SEO, Ads Services",
+    template: "%s | WebGrowth Studio ",
   },
 
   description:
-    "MFA Agency provides modern website development, SEO optimization, and high-performance Next.js solutions for growing businesses.",
+    "WebGrowth Studio provides modern website development, SEO optimization, Ads and high-performance  solutions for growing businesses.",
 
   robots: {
     index: true,
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: "https://agency.mdfaizanahmad.in",
-    siteName: "MFA Agency",
-    title: "MFA Agency – Web Development & SEO Services",
+    siteName: "WebGrowth Studio ",
+    title: "WebGrowth Studio – Web Development & SEO , Ads Services",
     description:
       "High-performance websites, technical SEO, and conversion-focused UI engineering.",
     images: [
@@ -63,16 +63,15 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "MFA Agency – Web Development & SEO",
+        alt: "WebGrowth Studio – Web Development & SEO , Ads",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "MFA Agency – Web Development & SEO",
-    description:
-      "Modern websites and SEO-first digital solutions built with Next.js.",
+    title: "WebGrowth Studio – Web Development & SEO , Ads",
+    description: "Modern websites and SEO-first digital solutions .",
     images: ["/og-image.jpg"],
   },
 };

@@ -48,7 +48,7 @@ export default function NotFound() {
         <div className="pt-12 flex items-center justify-center gap-4 text-[9px] font-black text-slate-300 uppercase tracking-widest">
           <div className="flex items-center gap-2">
             <Terminal size={12} />
-            <span>MFA_Core_v2.0</span>
+            <span>WebGrowth Studio</span>
           </div>
           <div className="h-3 w-px bg-slate-100" />
           <span>Session_Secure</span>

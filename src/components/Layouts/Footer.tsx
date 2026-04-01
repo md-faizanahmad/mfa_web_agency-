@@ -14,7 +14,7 @@ export default function Footer() {
   //   { label: "Performance Optimization", href: "/services/performance" },
   // ];
   const servicesLinks = [
-    { label: "Website Development", href: "/services/website" },
+    { label: "Website Development", href: "/services/website-development" },
     { label: "E-commerce Plateform", href: "/services/ecommerce" },
     { label: "SEO Audit", href: "/services/seo" },
     { label: "Paid Ads (Meta & Google)", href: "/services/ads" },

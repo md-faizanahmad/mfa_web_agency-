@@ -12,24 +12,30 @@ export default function EcomHeroImage() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const i = setInterval(() => {
+    const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
     }, 4000);
-    return () => clearInterval(i);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="relative w-full h-80 sm:h-105 md:h-130">
+    <div className="relative w-full max-w-2xl mx-auto overflow-hidden rounded-lg border border-gray-100 bg-gray-50 shadow-sm aspect-4/3 sm:aspect-video">
       {images.map((src, i) => (
-        <Image
-          key={i}
-          src={src}
-          alt="Ecommerce UI"
-          fill
-          className={`object-cover rounded-xl border border-gray-200 transition-opacity duration-1000 ${
+        <div
+          key={src}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
-        />
+        >
+          <Image
+            src={src}
+            alt={`Ecommerce Preview ${i + 1}`}
+            fill
+            priority={i === 0}
+            className="object-contain p-2 md:p-4"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
       ))}
     </div>
   );

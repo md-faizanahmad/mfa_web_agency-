@@ -31,10 +31,12 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
             className="relative flex items-center h-8 md:h-10 z-130 hover:opacity-80 transition-opacity"
             aria-label="MFA Home"
           >
-            <span className="sr-only">MFA Agency - Web Development & SEO</span>
+            <span className="sr-only">
+              WebGrowth Studio - Web Development & SEO , ADS
+            </span>
             <Image
-              src="/brand_logo.png"
-              alt="MFA - High Performance Next.js Development Agency"
+              src="/brand.png"
+              alt="WebGrowth Studio - High Performance Next.js Development Agency"
               width={120} // Adjust based on your logo's actual shape
               height={40} // Keep this small (md-size)
               className="w-auto h-full object-contain rounded-full"

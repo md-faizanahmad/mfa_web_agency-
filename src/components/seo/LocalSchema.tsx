@@ -4,7 +4,7 @@ export default function LocalSchema() {
   const businessData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService", // Better for agencies than 'LocalBusiness'
-    name: "MFA - High Performance Development Agency",
+    name: "WebGrowth Studio - High Performance Development Agency",
     image: "https://agency.mdfaizanahmad.in/brand_logo.png",
     "@id": "https://agency.mdfaizanahmad.in",
     url: "https://agency.mdfaizanahmad.in",
@@ -19,8 +19,8 @@ export default function LocalSchema() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 24.7914, // Example for Hyderabad
-      longitude: 85.0002,
+      latitude: 24.79154, // Example for Hyderabad
+      longitude: 85.00063,
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
@@ -33,8 +33,8 @@ export default function LocalSchema() {
         "Saturday",
         "Sunday",
       ],
-      opens: "09:00",
-      closes: "20:00",
+      opens: "24:00",
+      // closes: "20:00",
     },
     sameAs: [
       "https://linkedin.com/in/mdfaizanahmad",

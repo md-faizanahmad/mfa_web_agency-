@@ -66,7 +66,7 @@ export default function ProcessTimeline() {
           <div className="absolute left-6 top-0 bottom-0 w-px bg-border md:hidden" />
 
           {/* horizontal line (desktop) */}
-          <div className="hidden md:block absolute top-10 left-0 w-full h-px bg-border" />
+          <div className="hidden md:block animate-pulse absolute top-10 left-0 w-full h-px bg-border" />
 
           {/* stages */}
           <div className="flex flex-col md:grid md:grid-cols-3 lg:grid-cols-6 gap-12 md:gap-10 relative">

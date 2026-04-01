@@ -58,7 +58,7 @@ export default function Footer() {
               <div className="p-2 bg-white/10 backdrop-blur-md border border-white/10 group-hover:border-brand-cobalt transition-colors">
                 <Image
                   src="/brand_logo.png"
-                  alt="MFA Systems Logo"
+                  alt="WebGrowth Studio"
                   width={28}
                   height={28}
                   className="object-contain invert"
@@ -66,7 +66,7 @@ export default function Footer() {
               </div>
 
               <span className="text-xl font-black uppercase tracking-tight text-white">
-                MFA
+                WebGrowth Studio
               </span>
             </Link>
 

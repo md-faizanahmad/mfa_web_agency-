@@ -15,21 +15,22 @@ export default function HeroImage() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3500); // slow = premium feel
-
+    }, 3500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-full h-75 sm:h-100 md:h-125">
+    /* aspect-video (16:9) keeps it compact but fits a desktop screenshot perfectly */
+    <div className="relative w-full aspect-video max-w-3xl mx-auto overflow-hidden rounded-lg border border-gray-200 shadow-lg bg-gray-50">
       {images.map((src, i) => (
         <Image
-          key={i}
+          key={src}
           src={src}
           alt="Website design preview"
           fill
           priority={i === 0}
-          className={`object-cover rounded-xl border border-gray-200 shadow-sm transition-opacity duration-1000 ${
+          /* object-contain ensures the full image fits inside the box without cropping */
+          className={`object-contain p-1 transition-opacity duration-1000 ${
             i === index ? "opacity-100" : "opacity-0"
           }`}
         />

@@ -46,6 +46,23 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        "slow-flow": "flow 20s infinite alternate ease-in-out",
+      },
+      keyframes: {
+        flow: {
+          "0%": { transform: "translate(0, 0) scale(1) rotate(0deg)" },
+          "33%": {
+            transform: "translate(30vw, 20vh) scale(1.2) rotate(10deg)",
+          },
+          "66%": {
+            transform: "translate(-10vw, 50vh) scale(0.8) rotate(-10deg)",
+          },
+          "100%": {
+            transform: "translate(20vw, 80vh) scale(1.1) rotate(5deg)",
+          },
+        },
+      },
     },
   },
   plugins: [tailwindAnimate],

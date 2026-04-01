@@ -1,7 +1,7 @@
 // app/services/website-development/page.tsx
 
 import HeroImage from "@/components/Section/Service/HeroImage";
-import { Globe } from "lucide-react";
+import { Globe, Store, Toolbox, User } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -14,19 +14,6 @@ export const metadata: Metadata = {
 export default function WebsiteDevelopmentPage() {
   return (
     <main className="bg-white text-black mt-10">
-      {/* // Place this inside your <main> but before the sections */}
-      {/* SERVER-SIDE DYNAMIC BACKGROUND */}
-      <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        {/* The Glowing Flowing Orb */}
-        <div
-          className="absolute top-[-10%] left-[-10%] w-[70vw] h-[70vw] rounded-full 
-    bg-gradient-to-br from-blue-50/40 via-purple-50/40 to-orange-50/40 
-    blur-[100px] animate-slow-flow opacity-60"
-        />
-
-        {/* Subtle Grain Texture (Makes it look high-end/studio) */}
-        <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-      </div>
       {/* HERO */}
       <section className="px-6 pt-20 pb-16 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -187,7 +174,7 @@ export default function WebsiteDevelopmentPage() {
               <div className="flex flex-col h-full justify-between">
                 <div>
                   {/* Minimal line icon */}
-                  <div className="w-8 h-[2px] bg-black group-hover:bg-white mb-8 transition-colors" />
+                  <div className="w-8 h-0.5 bg-black group-hover:bg-white mb-8 transition-colors" />
 
                   <h3 className="text-lg font-bold mb-3 group-hover:text-white transition-colors">
                     {item.title}
@@ -230,24 +217,28 @@ export default function WebsiteDevelopmentPage() {
                 title: "Landing Pages",
                 bg: "bg-gray-50",
                 desc: "Built for high-conversion marketing.",
+                icon: <Globe />,
               },
               {
                 id: "02",
                 title: "Business Sites",
                 bg: "bg-gray-100",
                 desc: "Corporate presence that builds trust.",
+                icon: <Store />,
               },
               {
                 id: "03",
                 title: "Portfolios",
                 bg: "bg-gray-200",
                 desc: "Immersive galleries for creative work.",
+                icon: <User />,
               },
               {
                 id: "04",
                 title: "Service Hubs",
                 bg: "bg-black text-white",
                 desc: "Complex systems made simple.",
+                icon: <Toolbox />,
               },
             ].map((item, i) => (
               <div
@@ -263,7 +254,7 @@ export default function WebsiteDevelopmentPage() {
                     {item.id}
                   </span>
                   <div className="text-xs uppercase tracking-widest font-semibold opacity-40">
-                    <Globe />
+                    {item.icon}
                   </div>
                 </div>
 

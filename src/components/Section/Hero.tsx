@@ -1,33 +1,48 @@
-// components/sections/Hero.tsx
+"use client";
 
-import { Container } from "../Layouts/Container";
-import { SectionWrapper } from "../Layouts/SectionWrapper";
+import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
+import { SectionWrapper } from "../Layouts/SectionWrapper";
+import { Container } from "../Layouts/Container";
+import { fadeUp, staggerContainer } from "@/motion/motion";
 
 export function Hero() {
   return (
     <SectionWrapper>
       <Container>
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="grid md:grid-cols-2 gap-16 items-center"
+        >
+          {/* TEXT */}
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
+            <motion.h1
+              variants={fadeUp}
+              className="text-4xl md:text-6xl font-semibold leading-tight"
+            >
               Websites that drive real business growth.
-            </h1>
+            </motion.h1>
 
-            <p className="text-gray-500 max-w-md">
+            <motion.p variants={fadeUp} className="text-gray-500 max-w-md">
               Built for performance, clarity, and conversion.
-            </p>
+            </motion.p>
 
-            <div className="flex gap-4">
+            <motion.div variants={fadeUp} className="flex gap-4">
               <Button href="/project-request">Start project</Button>
               <Button href="/work" variant="secondary">
                 View work
               </Button>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="aspect-[4/3] bg-gray-100 rounded-2xl" />
-        </div>
+          {/* VISUAL */}
+          <motion.div
+            variants={fadeUp}
+            className="aspect-[4/3] bg-gray-100 rounded-2xl"
+          />
+        </motion.div>
       </Container>
     </SectionWrapper>
   );

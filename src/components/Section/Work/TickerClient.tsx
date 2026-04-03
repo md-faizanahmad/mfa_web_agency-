@@ -32,7 +32,7 @@ export default function TickerClient({
   return (
     <div className="overflow-hidden whitespace-nowrap">
       <motion.div
-        className="flex gap-12 px-6"
+        className="flex gap-12 px-6 cursor-pointer"
         variants={scrollVariants}
         animate="animate"
       >

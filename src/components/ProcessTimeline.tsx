@@ -80,7 +80,7 @@ export default function ProcessTimeline() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex md:flex-col items-start md:items-center text-left md:text-center group relative"
+                  className="flex md:flex-col items-start md:items-center text-left md:text-center group relative cursor-pointer"
                 >
                   {/* icon */}
                   <motion.div

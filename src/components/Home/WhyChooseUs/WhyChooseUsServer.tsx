@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-4">
               <span className="text-brand-cobalt text-[10px] tracking-[0.4em] uppercase font-black font-mono">
-                System_Values_v2
+                System_Values
               </span>
 
               <h2 className="text-4xl md:text-7xl font-black text-slate-900 uppercase tracking-tighter leading-[0.85]">
@@ -30,9 +30,9 @@ export default function WhyChooseUs() {
             {/* Tactical Status Bar (Visual UI) */}
             <div className="hidden md:flex items-center gap-4 pt-4">
               <div className="h-px grow bg-slate-100" />
-              <div className="text-[9px] font-black text-slate-300 uppercase tracking-widest">
+              {/* <div className="text-[9px] font-black text-slate-300 uppercase tracking-widest">
                 Protocol: Secure // Velocity: Active
-              </div>
+              </div> */}
             </div>
           </div>
 

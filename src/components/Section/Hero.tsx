@@ -1,14 +1,16 @@
+// components/sections/Hero.tsx
+
 "use client";
 
-import { motion } from "framer-motion";
-import { Button } from "../ui/Button";
-import { SectionWrapper } from "../Layouts/SectionWrapper";
-import { Container } from "../Layouts/Container";
 import { fadeUp, staggerContainer } from "@/motion/motion";
+import { Container } from "../Layouts/Container";
+import { Button } from "../ui/Button";
+import { motion } from "framer-motion";
+import { MediaVideo } from "../Layouts/MediaVideo";
 
 export function Hero() {
   return (
-    <SectionWrapper>
+    <section className="pt-32 pb-16">
       <Container>
         <motion.div
           variants={staggerContainer}
@@ -16,20 +18,23 @@ export function Hero() {
           animate="visible"
           className="grid md:grid-cols-2 gap-16 items-center"
         >
-          {/* TEXT */}
+          {/* LEFT - TEXT */}
           <div className="space-y-6">
             <motion.h1
               variants={fadeUp}
-              className="text-4xl md:text-6xl font-semibold leading-tight"
+              className="text-4xl md:text-6xl font-semibold leading-tight tracking-tight"
             >
-              Websites that drive real business growth.
+              A complete digital system
+              <br />
+              built for growth.
             </motion.h1>
 
             <motion.p variants={fadeUp} className="text-gray-500 max-w-md">
-              Built for performance, clarity, and conversion.
+              Websites, performance, and marketing — aligned into one scalable
+              system.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex gap-4">
+            <motion.div variants={fadeUp} className="flex gap-4 pt-2">
               <Button href="/project-request">Start project</Button>
               <Button href="/work" variant="secondary">
                 View work
@@ -37,13 +42,15 @@ export function Hero() {
             </motion.div>
           </div>
 
-          {/* VISUAL */}
-          <motion.div
-            variants={fadeUp}
-            className="aspect-[4/3] bg-gray-100 rounded-2xl"
-          />
+          {/* RIGHT - VIDEO */}
+          <motion.div variants={fadeUp}>
+            <MediaVideo
+              src="/videos/services_hero.mp4"
+              className="aspect-4/3 rounded-2xl"
+            />
+          </motion.div>
         </motion.div>
       </Container>
-    </SectionWrapper>
+    </section>
   );
 }

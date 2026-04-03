@@ -1,7 +1,7 @@
 // app/services/page.tsx
 
 import { Container } from "@/components/Layouts/Container";
-import Hero from "@/components/Layouts/Hero";
+import { Hero } from "@/components/Section/Hero";
 import { SectionWrapper } from "@/components/Layouts/SectionWrapper";
 import { CTA } from "@/components/Section/CTA";
 import { Process } from "@/components/Section/Process";

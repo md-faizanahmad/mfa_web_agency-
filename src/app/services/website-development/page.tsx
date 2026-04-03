@@ -37,7 +37,7 @@ export default function ServicesPage() {
           </div>
 
           {/* ABSTRACT VISUAL */}
-          <div className="aspect-[4/3] bg-gray-100 rounded-2xl flex items-center justify-center">
+          <div className="aspect-4/3 bg-gray-100 rounded-2xl flex items-center justify-center">
             <div className="w-24 h-24 border border-gray-300 rounded-full" />
           </div>
         </div>

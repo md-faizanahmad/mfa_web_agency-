@@ -32,7 +32,7 @@ export function ServiceBlock({ title, description, outcomes, reverse }: Props) {
       </div>
 
       {/* VISUAL SIDE */}
-      <div className="aspect-[4/3] bg-gray-100 rounded-xl transition-transform duration-500 hover:scale-[1.02]" />
+      <div className="aspect-4/3 bg-gray-100 rounded-xl transition-transform duration-500 hover:scale-[1.02]" />
     </div>
   );
 }

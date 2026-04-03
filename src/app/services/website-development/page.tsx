@@ -76,12 +76,12 @@ export default function ServicesPage() {
             </Link>
           </div>
 
-          <div className="aspect-[4/3] bg-gray-100 rounded-xl" />
+          <div className="aspect-4/3 bg-gray-100 rounded-xl" />
         </div>
 
         {/* SERVICE 2 */}
         <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="order-2 md:order-1 aspect-[4/3] bg-gray-100 rounded-xl" />
+          <div className="order-2 md:order-1 aspect-4/3 bg-gray-100 rounded-xl" />
 
           <div className="order-1 md:order-2">
             <h2 className="text-3xl font-semibold mb-4">UI/UX Design</h2>

@@ -1,312 +1,230 @@
-// app/services/website-development/page.tsx
+// app/services/page.tsx
 
-import HeroImage from "@/components/Section/Service/HeroImage";
-import { Globe, Store, Toolbox, User } from "lucide-react";
-import { Metadata } from "next";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Website Development | WebGrowth Studio",
-  description:
-    "Professional website development for businesses across India. Clean, fast, and built to improve your online presence.",
-};
-
-export default function WebsiteDevelopmentPage() {
+export default function ServicesPage() {
   return (
-    <main className="bg-white text-black mt-10">
+    <main className="bg-white text-black">
       {/* HERO */}
-      <section className="px-6 pt-20 pb-16 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* LEFT */}
+      <section className="px-6 py-28 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-              Your Business Needs More Than Just a Website
+            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
+              We build websites
+              <br />
+              that actually drive revenue.
             </h1>
 
-            <p className="text-gray-600 text-base sm:text-lg">
-              We design clean, modern websites that build trust, clearly present
-              your services, and support your business growth online.
+            <p className="text-gray-500 max-w-md">
+              Not templates. Not just design. High-performance digital assets
+              built to convert, scale, and grow your business.
             </p>
 
-            <div className="flex gap-4 pt-2">
+            <div className="flex gap-4 pt-4">
               <Link
                 href="/project-request"
                 className="bg-black text-white px-6 py-3 text-sm font-medium"
               >
-                Get Started
+                Start your project
               </Link>
-
               <Link
-                href="/services/ads"
+                href="/work"
                 className="border border-gray-300 px-6 py-3 text-sm font-medium hover:border-black"
               >
-                View Ads Services
+                View work
               </Link>
             </div>
           </div>
 
-          {/* RIGHT */}
-          <HeroImage />
-        </div>
-      </section>
-
-      {/* PROBLEM SECTION - Editorial List Style */}
-      <section className="px-6 py-24 shadow bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-16 items-start">
-            {/* Sticky Header Side */}
-            <div className="lg:col-span-5 md:sticky md:top-24">
-              <span className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-4 block">
-                The Reality
-              </span>
-              <h2 className="text-3xl md:text-5xl font-bold leading-tight tracking-tighter">
-                Why most <br />
-                <span className="text-gray-400 italic">websites fail</span>{" "}
-                <br />
-                to convert.
-              </h2>
-              <p className="mt-6 text-gray-500 max-w-sm leading-relaxed">
-                A website isn&apos;t just a digital brochure; it&apos;s a
-                performance tool. When these five pillars are weak, your growth
-                stalls.
-              </p>
-            </div>
-
-            {/* Modern Numbered List */}
-            <div className="lg:col-span-7 space-y-0">
-              {[
-                {
-                  title: "Outdated Aesthetics",
-                  desc: "Design that looks stuck in 2015 immediately erodes brand authority.",
-                },
-                {
-                  title: "Vague Messaging",
-                  desc: "If a visitor can't tell what you do in 3 seconds, they leave.",
-                },
-                {
-                  title: "Mobile Friction",
-                  desc: "Clunky experiences on phones lose 60% of potential leads.",
-                },
-                {
-                  title: "Performance Lag",
-                  desc: "Slow load times are the fastest way to kill your SEO ranking.",
-                },
-                {
-                  title: "Invisible Presence",
-                  desc: "A beautiful site without an SEO foundation is a ghost town.",
-                },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="group border-t border-gray-200 py-8 flex items-start gap-8 transition-all duration-500 hover:bg-gray-50/50 px-4"
-                >
-                  <span className="text-sm font-mono text-gray-300 group-hover:text-black transition-colors">
-                    0{i + 1}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 tracking-tight">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed max-w-md">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-              {/* Bottom line to close the list */}
-              <div className="border-t border-gray-200"></div>
-            </div>
+          {/* ABSTRACT VISUAL */}
+          <div className="aspect-[4/3] bg-gray-100 rounded-2xl flex items-center justify-center">
+            <div className="w-24 h-24 border border-gray-300 rounded-full" />
           </div>
         </div>
       </section>
 
-      {/* SOLUTION SECTION - Minimalist Value Grid */}
-      <section className="px-6 py-24 max-w-7xl mx-auto border-t border-gray-100">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Built for Impact, <br />
-              Designed for Results
-            </h2>
-            <p className="text-gray-500 leading-relaxed">
-              We don&apos;t just build pages. We build high-performance assets
-              that serve as the foundation for your brand’s digital authority.
+      {/* TRUST BAR */}
+      <section className="border-y border-gray-200 py-6">
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 text-sm text-gray-500">
+          <span>50+ Projects Delivered</span>
+          <span>2M+ Users Impacted</span>
+          <span>Fast, Scalable, SEO-Ready</span>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="px-6 py-28 max-w-5xl mx-auto space-y-32">
+        {/* SERVICE 1 */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl font-semibold mb-4">Web Development</h2>
+            <p className="text-gray-500 mb-6">
+              Custom-built websites engineered for performance and scalability.
             </p>
+
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• Conversion-focused architecture</li>
+              <li>• Lightning-fast performance</li>
+              <li>• Scalable, clean codebase</li>
+            </ul>
+
+            <Link
+              href="/contact"
+              className="inline-block mt-6 text-sm font-medium underline"
+            >
+              Start project →
+            </Link>
           </div>
-          <div className="text-right">
-            <span className="text-sm font-medium px-4 py-2 bg-gray-100 rounded-full">
-              Full-Stack Delivery
-            </span>
+
+          <div className="aspect-[4/3] bg-gray-100 rounded-xl" />
+        </div>
+
+        {/* SERVICE 2 */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="order-2 md:order-1 aspect-[4/3] bg-gray-100 rounded-xl" />
+
+          <div className="order-1 md:order-2">
+            <h2 className="text-3xl font-semibold mb-4">UI/UX Design</h2>
+            <p className="text-gray-500 mb-6">
+              Interfaces designed to guide users, not confuse them.
+            </p>
+
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• Clear user flows</li>
+              <li>• High-end visual systems</li>
+              <li>• Mobile-first precision</li>
+            </ul>
+
+            <Link
+              href="/contact"
+              className="inline-block mt-6 text-sm font-medium underline"
+            >
+              View process →
+            </Link>
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200 overflow-hidden">
-          {[
-            {
-              title: "Visual Trust",
-              desc: "Modern, high-end aesthetics that immediately build credibility with your visitors.",
-            },
-            {
-              title: "Mobile Precision",
-              desc: "Pixel-perfect layouts optimized for every screen, ensuring a seamless experience.",
-            },
-            {
-              title: "Speed Optimization",
-              desc: "Lightning-fast load times that keep visitors engaged and search engines happy.",
-            },
-            {
-              title: "Business Logic",
-              desc: "Strategic site structure focused on guiding users toward your conversion goals.",
-            },
-            {
-              title: "SEO Foundation",
-              desc: "Clean code and meta-optimization built-in from day one for organic growth.",
-            },
-            {
-              title: "Total Control",
-              desc: "Scalable architecture that’s easy for your team to manage and update as you grow.",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="group bg-white p-10 hover:bg-black transition-all duration-500"
+        {/* SERVICE 3 */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl font-semibold mb-4">E-commerce</h2>
+            <p className="text-gray-500 mb-6">
+              Online stores built for conversion, not just catalog display.
+            </p>
+
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• Optimized checkout flow</li>
+              <li>• Product-focused UX</li>
+              <li>• Scalable backend systems</li>
+            </ul>
+
+            <Link
+              href="/contact"
+              className="inline-block mt-6 text-sm font-medium underline"
             >
-              <div className="flex flex-col h-full justify-between">
-                <div>
-                  {/* Minimal line icon */}
-                  <div className="w-8 h-0.5 bg-black group-hover:bg-white mb-8 transition-colors" />
+              Build store →
+            </Link>
+          </div>
 
-                  <h3 className="text-lg font-bold mb-3 group-hover:text-white transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-400 transition-colors">
-                    {item.desc}
-                  </p>
-                </div>
+          <div className="aspect-[4/3] bg-gray-100 rounded-xl" />
+        </div>
 
-                <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-white text-xs font-bold uppercase tracking-widest">
-                    Standard Feature
-                  </span>
-                </div>
+        {/* SERVICE 4 */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="order-2 md:order-1 aspect-[4/3] bg-gray-100 rounded-xl" />
+
+          <div className="order-1 md:order-2">
+            <h2 className="text-3xl font-semibold mb-4">Performance & SEO</h2>
+            <p className="text-gray-500 mb-6">
+              Speed, structure, and visibility — built from the ground up.
+            </p>
+
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• Core Web Vitals optimization</li>
+              <li>• Technical SEO foundation</li>
+              <li>• Clean semantic structure</li>
+            </ul>
+
+            <Link
+              href="/contact"
+              className="inline-block mt-6 text-sm font-medium underline"
+            >
+              Optimize →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="px-6 py-28 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-16">
+            Simple process. High-quality output.
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8 text-sm">
+            {["Discovery", "Strategy", "Execution", "Launch"].map((step, i) => (
+              <div key={i}>
+                <span className="text-gray-400">0{i + 1}</span>
+                <h3 className="mt-2 font-medium">{step}</h3>
+                <p className="text-gray-500 mt-1">
+                  {step === "Discovery" && "Understand business & goals"}
+                  {step === "Strategy" && "Define structure & direction"}
+                  {step === "Execution" && "Design & develop system"}
+                  {step === "Launch" && "Deploy & optimize"}
+                </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DIFFERENTIATOR */}
+      <section className="px-6 py-28 max-w-4xl mx-auto text-center space-y-6">
+        <h2 className="text-4xl font-semibold tracking-tight">
+          No templates.
+          <br />
+          No shortcuts.
+        </h2>
+
+        <p className="text-gray-500">
+          Every project is designed and built from scratch — aligned with your
+          business goals, not pre-made layouts.
+        </p>
+      </section>
+
+      {/* CASE STUDIES */}
+      <section className="px-6 pb-28 max-w-6xl mx-auto space-y-12">
+        <h2 className="text-3xl font-semibold">Selected work</h2>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {[1, 2, 3].map((item) => (
+            <div key={item} className="space-y-3">
+              <div className="aspect-[4/3] bg-gray-100 rounded-xl" />
+              <p className="text-sm text-gray-600">
+                Increased conversions by 2x with redesigned flow.
+              </p>
             </div>
           ))}
         </div>
       </section>
-      {/* TYPES SECTION - Sticky Stacking Reveal */}
-      <section className="px-6 py-24 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-20">
-            <span className="text-sm font-mono text-gray-400 uppercase tracking-widest block mb-4">
-              Our Specializations
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">
-              Solutions for{" "}
-              <span className="text-gray-400 italic font-serif">
-                Every Scale
-              </span>
-            </h2>
-          </div>
 
-          {/* The Stacking Container */}
-          <div className="relative space-y-4">
-            {[
-              {
-                id: "01",
-                title: "Landing Pages",
-                bg: "bg-gray-50",
-                desc: "Built for high-conversion marketing.",
-                icon: <Globe />,
-              },
-              {
-                id: "02",
-                title: "Business Sites",
-                bg: "bg-gray-100",
-                desc: "Corporate presence that builds trust.",
-                icon: <Store />,
-              },
-              {
-                id: "03",
-                title: "Portfolios",
-                bg: "bg-gray-200",
-                desc: "Immersive galleries for creative work.",
-                icon: <User />,
-              },
-              {
-                id: "04",
-                title: "Service Hubs",
-                bg: "bg-black text-white",
-                desc: "Complex systems made simple.",
-                icon: <Toolbox />,
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                style={{
-                  top: `${100 + i * 20}px`, // Small increment for compact stacking
-                  zIndex: i + 1,
-                }}
-                className={`sticky w-full min-h-40 rounded-2xl p-6 border border-gray-200/50 shadow-sm flex flex-col justify-between ${item.bg} transition-transform duration-500`}
-              >
-                <div className="flex justify-between items-center">
-                  <span className="font-mono text-xs opacity-50">
-                    {item.id}
-                  </span>
-                  <div className="text-xs uppercase tracking-widest font-semibold opacity-40">
-                    {item.icon}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold tracking-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm opacity-70 leading-snug mt-1 max-w-60">
-                    {item.desc}
-                  </p>
-                </div>
-
-                {/* Subtle accent line */}
-                <div className="absolute right-6 bottom-6 w-8 h-px bg-current opacity-20" />
-              </div>
-            ))}
-          </div>
-
-          {/* Spacer to allow the last card to scroll past */}
-          <div className="h-40" />
-        </div>
-      </section>
-
-      {/* POSITIONING (Centered, no grid) */}
-      <section className="px-6 py-20 max-w-3xl mx-auto text-center space-y-6">
-        <h2 className="text-2xl sm:text-3xl font-semibold">
-          Built for Real Business Needs
-        </h2>
-
-        <p className="text-gray-600">
-          Your website becomes the foundation for SEO, ads, and your entire
-          online presence. It’s not just design — it’s how your business is
-          presented online.
-        </p>
-      </section>
-
-      {/* CTA (Full width band style) */}
-      <section className="px-6 py-20 bg-black text-white text-center">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-semibold">
-            Start Building Your Online Presence
+      {/* FINAL CTA */}
+      <section className="bg-black text-white py-24 text-center">
+        <div className="max-w-xl mx-auto space-y-6">
+          <h2 className="text-3xl font-semibold">
+            Ready to build something that performs?
           </h2>
 
-          <p className="text-white/70 text-sm">
-            Get a website that actually represents your business properly.
+          <p className="text-white/60 text-sm">
+            Stop wasting traffic on weak websites.
           </p>
 
           <Link
             href="/project-request"
             className="inline-block bg-white text-black px-8 py-3 text-sm font-medium"
           >
-            Get Free Growth Audit
+            Start your project
           </Link>
         </div>
       </section>

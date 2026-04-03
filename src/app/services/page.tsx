@@ -1,10 +1,13 @@
-// src/app/services/page.tsx
+// app/services/page.tsx
 
-import ServiceGrid from "@/components/Section/Service/ServiceGrid";
-import ServiceHero from "@/components/Section/Service/ServiceHero";
-import TechStackServer from "@/components/Section/Service/TechStack";
-
-import type { Metadata } from "next";
+import { Container } from "@/components/Layouts/Container";
+import Hero from "@/components/Layouts/Hero";
+import { SectionWrapper } from "@/components/Layouts/SectionWrapper";
+import { CTA } from "@/components/Section/CTA";
+import { Process } from "@/components/Section/Process";
+import { TrustBar } from "@/components/Section/TrustBar";
+import { ServiceList } from "@/components/Service/ServiceList";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://agency.mdfaizanahmad.in"),
@@ -16,12 +19,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Services() {
+export default function ServicesPage() {
   return (
-    <main className="pt-20">
-      <ServiceHero />
-      <ServiceGrid />
-      <TechStackServer />
+    <main className="bg-white text-black">
+      <Hero />
+      <TrustBar />
+
+      <SectionWrapper>
+        <Container>
+          <ServiceList />
+        </Container>
+      </SectionWrapper>
+
+      <Process />
+      <CTA />
     </main>
   );
 }

@@ -1,4 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 type Props = {
   title: string;
@@ -15,41 +21,82 @@ export function ServiceBlock({
   reverse,
   image,
 }: Props) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const textVariants = {
+    hidden: { opacity: 0, x: reverse ? 30 : -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6, staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <div className="relative rounded-2xl overflow-hidden">
-      {/* RIGHT SIDE BACKGROUND IMAGE */}
-      <div className="absolute inset-y-0 right-0 w-1/2">
-        <Image src={image} alt={title} fill className="object-cover " />
-
-        {/* soft fade instead of dark overlay */}
-        <div className="absolute inset-0 bg-linear-to-l from-transparent via-white/5" />
-      </div>
-
-      {/* CONTENT */}
+    <div ref={ref} className="py-10 px-4 md:px-0 overflow-hidden">
       <div
-        className={`relative grid md:grid-cols-2 gap-12 p-8 md:p-14 items-center ${
-          reverse ? "md:[&>*:first-child]:order-2" : ""
+        className={`flex flex-col md:flex-row items-center gap-10 max-w-6xl mx-auto ${
+          reverse ? "md:flex-row-reverse" : ""
         }`}
       >
-        {/* TEXT */}
-        <div className="max-w-lg">
-          <h3 className="text-3xl font-semibold mb-4">{title}</h3>
+        {/* IMAGE - Compact Size Retained */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative h-65 md:h-105 w-full md:w-1/2 rounded-2xl overflow-hidden shadow-sm"
+        >
+          <Image src={image} alt={title} fill className="object-cover " />
+        </motion.div>
 
-          <p className="text-gray-500 mb-6">{description}</p>
+        {/* TEXT - Animated & Compact */}
+        <motion.div
+          variants={textVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="w-full md:w-1/2 flex flex-col"
+        >
+          <motion.h3
+            variants={itemVariants}
+            className="text-2xl md:text-3xl font-bold tracking-tight mb-3 text-gray-900"
+          >
+            {title}
+          </motion.h3>
 
-          <ul className="space-y-2 text-sm text-gray-700">
+          <motion.p
+            variants={itemVariants}
+            className="text-gray-500 text-base mb-5 leading-relaxed"
+          >
+            {description}
+          </motion.p>
+
+          <motion.ul variants={itemVariants} className="space-y-3 mb-6">
             {outcomes.map((item, i) => (
-              <li key={i}>• {item}</li>
+              <li
+                key={i}
+                className="flex items-center gap-2 text-sm md:text-base text-gray-700"
+              >
+                <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
+                <span>{item}</span>
+              </li>
             ))}
-          </ul>
+          </motion.ul>
 
-          <button className="mt-6 text-sm font-medium underline">
-            Start project →
-          </button>
-        </div>
-
-        {/* RIGHT EMPTY (image is already background) */}
-        <div />
+          <motion.div variants={itemVariants}>
+            <Link href="/project-request" className="inline-block">
+              <div className="flex items-center cursor-pointer gap-2 text-sm font-semibold text-gray-900 hover:text-blue-600 transition-colors group">
+                Start project
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

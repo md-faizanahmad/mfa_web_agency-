@@ -11,7 +11,7 @@ const services = [
       "Fast, scalable performance",
       "Clear user journey & structure",
     ],
-    image: "/ourservices/website_development.png",
+    image: "/ourservices/website_development_2.png",
   },
   {
     title: "E-commerce Systems",
@@ -22,7 +22,7 @@ const services = [
       "Secure and scalable backend",
     ],
     reverse: true,
-    image: "/ourservices/responsive-website.png",
+    image: "/ourservices/ecommerce.png",
   },
   {
     title: "Performance & SEO",
@@ -32,7 +32,7 @@ const services = [
       "Technical SEO foundation",
       "Search-ready architecture",
     ],
-    image: "/ourservices/gsc.webp",
+    image: "/ourservices/gsc&perform.png",
   },
   {
     title: "Paid Ads",
@@ -43,7 +43,7 @@ const services = [
       "Tracking & scaling systems",
     ],
     reverse: true,
-    image: "/ourservices/responsive-website.png",
+    image: "/ourservices/ads_campaign.png",
   },
   {
     title: "Local Growth (GMB)",
@@ -53,7 +53,7 @@ const services = [
       "Local ranking boost",
       "Review & trust systems",
     ],
-    image: "/ourservices/responsive-website.png",
+    image: "/ourservices/gmb.png",
   },
 ];
 

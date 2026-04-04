@@ -4,10 +4,10 @@ import { Container } from "@/components/Layouts/Container";
 import { Hero } from "@/components/Section/Hero";
 import { SectionWrapper } from "@/components/Layouts/SectionWrapper";
 import { CTA } from "@/components/Section/CTA";
-import { Process } from "@/components/Section/Process";
 import TrustBar from "@/components/Section/TrustBar";
 import { ServiceList } from "@/components/Service/ServiceList";
 import { Metadata } from "next";
+import Process from "@/components/Home/Process/Process";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://agency.mdfaizanahmad.in"),

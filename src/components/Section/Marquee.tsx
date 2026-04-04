@@ -8,6 +8,14 @@ const LOGOS = [
     src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
   },
   {
+    name: "React.js",
+    src: "https://upload.wikipedia.org/wiki/React_(software)#/media/File:React_Logo_SVG.svg",
+  },
+  {
+    name: "Tailwind CSs",
+    src: "https://upload.wikipedia.org/wiki/Tailwind_CSS#/media/File:Tailwind_CSS_logo_with_dark_text.svg",
+  },
+  {
     name: "TypeScript",
     src: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Typescript.svg",
   },
@@ -27,7 +35,7 @@ const LOGOS = [
 
 export function Marquee() {
   return (
-    <div className="w-full py-6 border-y border-gray-200">
+    <div className="w-full py-6   ">
       {/* Label */}
       <p className="text-[10px] text-center uppercase tracking-widest text-gray-400 mb-6">
         Technologies I Work With

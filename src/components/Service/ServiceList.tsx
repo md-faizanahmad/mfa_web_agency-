@@ -4,70 +4,56 @@ import { ServiceBlock } from "./ServiceBlock";
 
 const services = [
   {
-    title: "Web Development",
-    description: "Built for performance and scalability.",
+    title: "Conversion-Focused Websites",
+    description: "Designed and built to turn visitors into customers.",
     outcomes: [
-      "Conversion-focused structure",
-      "Fast load speed",
-      "Clean architecture",
+      "High-converting UI/UX",
+      "Fast, scalable performance",
+      "Clear user journey & structure",
     ],
     image: "/ourservices/responsive-website.png",
   },
   {
-    title: "UI/UX Design",
-    description: "Designed for clarity and usability.",
+    title: "E-commerce Systems",
+    description: "Online stores engineered for sales and scale.",
     outcomes: [
-      "Clear user journeys",
-      "High-end visual systems",
-      "Mobile-first precision",
+      "Optimized checkout experience",
+      "Product-driven UX",
+      "Secure and scalable backend",
     ],
     reverse: true,
     image: "/ourservices/responsive-website.png",
   },
   {
-    title: "E-commerce",
-    description: "Stores built to convert, not just display.",
-    outcomes: [
-      "Optimized checkout flow",
-      "Product-focused UX",
-      "Scalable backend systems",
-    ],
-    image: "/ourservices/responsive-website.png",
-  },
-  {
     title: "Performance & SEO",
-    description: "Speed and visibility built-in.",
+    description: "Built to rank, load fast, and stay visible.",
     outcomes: [
       "Core Web Vitals optimization",
       "Technical SEO foundation",
       "Search-ready architecture",
     ],
-    reverse: true,
     image: "/ourservices/gsc.webp",
   },
-
-  // NEW — ACQUISITION LAYER
-
   {
     title: "Paid Ads",
-    description: "Drive targeted traffic that converts into customers.",
+    description: "Drive high-intent traffic that converts.",
     outcomes: [
-      "Google Ads campaign setup",
-      "High-converting landing pages",
-      "Performance tracking & scaling",
+      "Google Ads campaigns",
+      "Landing page optimization",
+      "Tracking & scaling systems",
     ],
+    reverse: true,
     image: "/ourservices/responsive-website.png",
   },
   {
-    title: "Google My Business",
-    description: "Dominate local search and capture nearby demand.",
+    title: "Local Growth (GMB)",
+    description: "Capture nearby customers and dominate local search.",
     outcomes: [
-      "Profile optimization",
-      "Local SEO visibility",
-      "Review & trust management",
+      "GMB optimization",
+      "Local ranking boost",
+      "Review & trust systems",
     ],
     image: "/ourservices/responsive-website.png",
-    reverse: true,
   },
 ];
 

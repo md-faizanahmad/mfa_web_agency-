@@ -22,9 +22,9 @@ const METRICS = [
 
 export default function TrustBar() {
   return (
-    <div className="w-full border-y border-gray-200 bg-white">
+    <div className="w-full  bg-white">
       <div className="max-w-5xl mx-auto flex items-center justify-center gap-6 px-4 py-3 text-sm">
-        {METRICS.map((item, i) => (
+        {METRICS.map((item) => (
           <TrustItem
             key={item.title}
             icon={item.icon}
@@ -33,7 +33,7 @@ export default function TrustBar() {
           />
         ))}
       </div>
-      <div className="w-full max-w-2xl px-6">
+      <div className="">
         <Marquee />
       </div>
     </div>

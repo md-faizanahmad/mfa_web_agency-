@@ -4,7 +4,6 @@ import ProblemSolving from "@/components/Home/ProblemSolving";
 import Process from "@/components/Home/Process/Process";
 import WhyChooseUs from "@/components/Home/WhyChooseUs/WhyChooseUsServer";
 import Hero from "@/components/Layouts/Hero";
-import ProcessTimeline from "@/components/ProcessTimeline";
 import ResultsTicker from "@/components/Section/Work/ResultsTicker";
 import WhyWebsiteContent from "@/components/WhyWebsiteContent";
 import WhyWebsitePreview from "@/components/WhyWebsitePreview";
@@ -31,7 +30,6 @@ export default function Home() {
       <Process />
       <WhyWebsiteContent limit={3} />
       <WhyWebsitePreview />
-      <ProcessTimeline />
       <ResultsTicker />
     </main>
   );

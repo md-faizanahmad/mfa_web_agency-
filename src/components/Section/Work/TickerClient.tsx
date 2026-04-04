@@ -38,7 +38,7 @@ export default function TickerClient({
       >
         {loopItems.map((item, index) => (
           <div key={`${item}-${index}`} className="flex items-center gap-6">
-            <span className="text-3xl md:text-5xl font-black text-white/10 uppercase tracking-tight hover:text-brand-cobalt transition-colors">
+            <span className="text-3xl md:text-2xl  text-gray-600  tracking-tight hover:text-brand-cobalt transition-colors">
               {item}
             </span>
             <div className="w-2 h-2 rounded-full bg-brand-cobalt" />

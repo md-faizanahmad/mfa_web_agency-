@@ -14,10 +14,10 @@ export const tickerItems = [
 
 export default function ResultsTicker() {
   return (
-    <section className="bg-brand-midnight cursor-pointer py-12 overflow-hidden border-y border-white/5">
+    <section className=" cursor-pointer py-12 overflow-hidden border-y border-white/5">
       <TickerClient items={tickerItems} direction="left" />
-      <div className="h-px bg-white/5 my-8 max-w-7xl mx-auto" />
-      <TickerClient items={[...tickerItems].reverse()} direction="right" />
+      {/* <div className="h-px bg-white/5 my-8 max-w-7xl mx-auto" /> */}
+      {/* <TickerClient items={[...tickerItems].reverse()} direction="right" /> */}
     </section>
   );
 }

@@ -1,5 +1,3 @@
-// src/components/sections/ProcessServer.tsx
-
 import ProcessClient from "./ProcessClient";
 
 export const steps = [

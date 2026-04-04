@@ -11,6 +11,7 @@ const services = [
       "Fast load speed",
       "Clean architecture",
     ],
+    image: "/ourservices/responsive-website.png",
   },
   {
     title: "UI/UX Design",
@@ -21,6 +22,7 @@ const services = [
       "Mobile-first precision",
     ],
     reverse: true,
+    image: "/ourservices/responsive-website.png",
   },
   {
     title: "E-commerce",
@@ -30,6 +32,7 @@ const services = [
       "Product-focused UX",
       "Scalable backend systems",
     ],
+    image: "/ourservices/responsive-website.png",
   },
   {
     title: "Performance & SEO",
@@ -40,6 +43,7 @@ const services = [
       "Search-ready architecture",
     ],
     reverse: true,
+    image: "/ourservices/responsive-website.png",
   },
 
   // NEW — ACQUISITION LAYER
@@ -52,6 +56,7 @@ const services = [
       "High-converting landing pages",
       "Performance tracking & scaling",
     ],
+    image: "/ourservices/responsive-website.png",
   },
   {
     title: "Google My Business",
@@ -61,6 +66,7 @@ const services = [
       "Local SEO visibility",
       "Review & trust management",
     ],
+    image: "/ourservices/responsive-website.png",
     reverse: true,
   },
 ];

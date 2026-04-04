@@ -50,7 +50,7 @@ export function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative p-10 border border-gray-100 hover:bg-gray-50 transition-colors duration-500 min-h-[300px] flex flex-col justify-center"
+              className="group relative p-10 border border-gray-100 hover:bg-gray-50 transition-colors duration-500 min-h-75 flex flex-col justify-center"
             >
               {/* Step Number - Top Left */}
               <span className="absolute top-8 left-10 text-xs font-mono text-gray-300 group-hover:text-black transition-colors">

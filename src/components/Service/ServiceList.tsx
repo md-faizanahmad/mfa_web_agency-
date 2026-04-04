@@ -43,7 +43,7 @@ const services = [
       "Search-ready architecture",
     ],
     reverse: true,
-    image: "/ourservices/responsive-website.png",
+    image: "/ourservices/gsc.webp",
   },
 
   // NEW — ACQUISITION LAYER

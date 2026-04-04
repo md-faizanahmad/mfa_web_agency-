@@ -21,14 +21,14 @@ export const servicesData = [
     title: "Search Visibility Setup",
     desc: "We set up essential tools and structure your site properly so it can appear in search results and grow over time.",
     iconName: "Search",
-    img: "/ourservices/gsc.webp",
+    img: "/ourservices/google-sc.png",
   },
   {
     id: "ads",
-    title: "Google Ads Setup",
+    title: "Google & Meta Ads Setup",
     desc: "We create and set up targeted ad campaigns to bring real enquiries and help you reach customers faster.",
     iconName: "Megaphone",
-    img: "/ourservices/Ads.png",
+    img: "/ourservices/ADS.png",
   },
 ];
 

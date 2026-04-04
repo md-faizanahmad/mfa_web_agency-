@@ -11,7 +11,7 @@ const services = [
       "Fast, scalable performance",
       "Clear user journey & structure",
     ],
-    image: "/ourservices/responsive-website.png",
+    image: "/ourservices/website_development.png",
   },
   {
     title: "E-commerce Systems",

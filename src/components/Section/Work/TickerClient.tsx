@@ -59,7 +59,7 @@ export default function TickerClient({
               </span>
 
               {/* Subtle visual anchor */}
-              <span className="h-[3px] w-[3px] rounded-full  " />
+              <span className="h-0.75 w-0.75 rounded-full  " />
             </div>
           ))}
         </motion.div>

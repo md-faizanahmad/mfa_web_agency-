@@ -36,7 +36,7 @@ export const metricsData: MetricItem[] = [
     suffix: "/7",
     label: "Support_Architecture",
     desc: "Continuous technical monitoring and structured post-launch optimization.",
-    iconName: "ShieldCheck",
+    iconName: "Clock",
     accentColor: "amber",
   },
 ];

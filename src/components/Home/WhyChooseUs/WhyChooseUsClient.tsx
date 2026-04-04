@@ -1,24 +1,8 @@
-// src/components/sections/WhyChooseUsClient.tsx
 "use client";
 
 import { motion } from "framer-motion";
 import * as Icons from "lucide-react";
-import { cn } from "@/lib/utils";
 import { MetricItem } from "@/@types";
-
-const colorMap = {
-  cobalt: "group-hover:bg-blue-600 group-hover:shadow-blue-100",
-  emerald: "group-hover:bg-emerald-500 group-hover:shadow-emerald-100",
-  rose: "group-hover:bg-rose-500 group-hover:shadow-rose-100",
-  amber: "group-hover:bg-amber-500 group-hover:shadow-amber-100",
-};
-
-const textMap = {
-  cobalt: "group-hover:text-blue-600",
-  emerald: "group-hover:text-emerald-500",
-  rose: "group-hover:text-rose-500",
-  amber: "group-hover:text-amber-500",
-};
 
 export default function WhyChooseUsClient({
   metrics,
@@ -26,7 +10,7 @@ export default function WhyChooseUsClient({
   metrics: MetricItem[];
 }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-2xl overflow-hidden">
+    <div className="grid grid-cols-1 sm:grid-cols-2 border border-slate-200 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 rounded-xl overflow-hidden">
       {metrics.map((metric, i) => {
         const Icon = Icons[metric.iconName] as Icons.LucideIcon;
 
@@ -35,52 +19,39 @@ export default function WhyChooseUsClient({
             key={metric.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, ease: "circOut" }}
-            className="bg-white p-10 space-y-8 group transition-all duration-500"
+            transition={{ delay: i * 0.08, ease: "easeOut" }}
+            className="group bg-white p-8 md:p-10 transition-all duration-300 hover:bg-slate-50"
           >
-            <div className="flex justify-between items-start">
-              <div
-                className={cn(
-                  "p-4 bg-slate-900 text-white transition-all duration-500 shadow-xl",
-                  colorMap[metric.accentColor],
-                )}
-              >
-                <Icon size={22} strokeWidth={2.5} />
+            {/* top row */}
+            <div className="flex items-start justify-between mb-6">
+              {/* icon */}
+              <div className="p-3 rounded-lg bg-slate-100 text-slate-700 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                <Icon size={20} strokeWidth={2} />
               </div>
-              <span
-                className={cn(
-                  "text-4xl md:text-5xl font-black italic tracking-tighter leading-none transition-colors duration-500 text-slate-900",
-                  textMap[metric.accentColor],
-                )}
-              >
+
+              {/* value */}
+              <div className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight">
                 {metric.value}
-                {metric.suffix}
-              </span>
+                <span className="text-slate-400 text-lg ml-1">
+                  {metric.suffix}
+                </span>
+              </div>
             </div>
 
-            <div className="space-y-3">
-              <h3 className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-950">
+            {/* content */}
+            <div className="space-y-2">
+              <h3 className="text-sm font-semibold text-slate-900">
                 {metric.label}
               </h3>
-              <p className="text-xs text-slate-500 font-semibold leading-relaxed">
+
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {metric.desc}
               </p>
             </div>
 
-            {/* Surgical Bottom Accent Line */}
-            <div className="h-0.5 w-0 group-hover:w-full transition-all duration-700 bg-slate-100 relative">
-              <div
-                className={cn(
-                  "absolute inset-0 w-0 group-hover:w-full transition-all duration-1000 delay-100",
-                  metric.accentColor === "cobalt"
-                    ? "bg-blue-600"
-                    : metric.accentColor === "emerald"
-                      ? "bg-emerald-500"
-                      : metric.accentColor === "rose"
-                        ? "bg-rose-500"
-                        : "bg-amber-500",
-                )}
-              />
+            {/* subtle hover line */}
+            <div className="mt-6 h-px bg-slate-200 overflow-hidden">
+              <div className="w-0 group-hover:w-full h-full bg-slate-900 transition-all duration-500" />
             </div>
           </motion.div>
         );

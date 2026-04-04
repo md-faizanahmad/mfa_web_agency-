@@ -2,35 +2,49 @@
   {
     "title": "MyStore Admin Dashboard",
     "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1766169967/AdminDash_c87c4j.png",
-
-    "liveUrl": "https://admin.myazstore.shop"
+    "liveUrl": "https://admin.myazstore.shop",
+    "problem": "Manual product and order management causing inefficiency and errors",
+    "solution": "Built a centralized admin system with real-time control, structured workflows, and optimized UI for speed",
+    "outcome": "Faster operations, reduced manual errors, scalable backend management"
   },
   {
-    "title": "MyStore Shop",
+    "title": "MyStore E-commerce Platform",
     "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1766169968/ShopUI_evspte.png",
-
-    "liveUrl": "https://myazstore.shop"
+    "liveUrl": "https://myazstore.shop",
+    "problem": "Low conversion potential due to poor UX and unoptimized flow",
+    "solution": "Designed a mobile-first storefront with fast loading, clean navigation, and optimized checkout experience",
+    "outcome": "Improved user engagement, smoother buying flow, higher conversion potential"
   },
   {
-    "title": "Luman Studio – Interactive Storytelling Website",
+    "title": "Luman Studio",
     "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1768824853/luman-stdio-2_h1llq5.png",
-
-    "liveUrl": "https://luman-studio.vercel.app"
+    "liveUrl": "https://luman-studio.vercel.app",
+    "problem": "Generic websites fail to engage users or communicate brand depth",
+    "solution": "Built an immersive storytelling experience using motion, transitions, and layered UI interactions",
+    "outcome": "Higher user engagement, stronger brand perception, memorable digital experience"
   },
   {
-    "title": "Luman Hotel – Luxury Hotel Frontend Experience",
+    "title": "Luman Hotel Experience",
     "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1768824858/luman-hotel1_v5vv6v.png",
-
-    "liveUrl": "https://luman-hotel.vercel.app"
+    "liveUrl": "https://luman-hotel.vercel.app",
+    "problem": "Luxury brands losing impact due to basic and outdated web presence",
+    "solution": "Created a premium UI experience focused on visuals, spacing, and smooth interactions",
+    "outcome": "Elevated brand feel, improved visual trust, better user perception"
   },
   {
-    "title": "School Website",
+    "title": "School Website System",
     "image": "https://res.cloudinary.com/daqb5wglu/image/upload/v1769510303/schoo_uvcdaa.png",
-    "liveUrl": "https://school-demo-sepia.vercel.app/"
+    "liveUrl": "https://school-demo-sepia.vercel.app/",
+    "problem": "Schools lack structured digital presence and clear communication channels",
+    "solution": "Developed a simple, responsive website with clear information hierarchy and accessibility",
+    "outcome": "Improved communication, easier access to information for students and parents"
   },
   {
-    "title": "Clinic Web App",
+    "title": "Clinic Web Application",
     "image": "https://res.cloudinary.com/dyefyrszz/image/upload/v1772646779/clinic_dvbalk.png",
-    "liveUrl": "https://clinic-web-app-nine.vercel.app"
+    "liveUrl": "https://clinic-web-app-nine.vercel.app",
+    "problem": "Patient management and appointment flow not streamlined",
+    "solution": "Built a structured web app for handling appointments, records, and user flow efficiently",
+    "outcome": "Better workflow management, improved usability for staff and patients"
   }
 ]

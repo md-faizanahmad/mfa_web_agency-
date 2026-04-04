@@ -30,7 +30,7 @@ export default function Home() {
       <Process />
       <WhyWebsiteContent limit={3} />
       <WhyWebsitePreview />
-      <ResultsTicker />
+      {/* <ResultsTicker /> */}
     </main>
   );
 }

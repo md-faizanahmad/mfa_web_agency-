@@ -5,11 +5,14 @@ import { motion, Variants, useReducedMotion } from "framer-motion";
 interface TickerProps {
   items: string[];
   direction?: "left" | "right";
+  /** Higher is slower. 60-80 is ideal for readability */
+  speed?: number;
 }
 
 export default function TickerClient({
   items,
   direction = "left",
+  speed = 70,
 }: TickerProps) {
   const shouldReduceMotion = useReducedMotion();
 
@@ -20,31 +23,47 @@ export default function TickerClient({
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: shouldReduceMotion ? 0 : 30,
+          duration: shouldReduceMotion ? 0 : speed,
           ease: "linear",
         },
       },
     },
   };
 
-  const loopItems = [...items, ...items];
+  // Ensure enough items to prevent flickering on loop
+  const loopItems = [...items, ...items, ...items, ...items];
 
   return (
-    <div className="overflow-hidden whitespace-nowrap">
-      <motion.div
-        className="flex gap-12 px-6 cursor-pointer"
-        variants={scrollVariants}
-        animate="animate"
+    <section className="w-full py-4">
+      <div
+        className="relative overflow-hidden"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+        }}
       >
-        {loopItems.map((item, index) => (
-          <div key={`${item}-${index}`} className="flex items-center gap-6">
-            <span className="text-3xl md:text-2xl  text-gray-600  tracking-tight hover:text-brand-cobalt transition-colors">
-              {item}
-            </span>
-            <div className="w-2 h-2 rounded-full bg-brand-cobalt" />
-          </div>
-        ))}
-      </motion.div>
-    </div>
+        <motion.div
+          className="flex w-max items-center gap-8 md:gap-12"
+          variants={scrollVariants}
+          animate="animate"
+        >
+          {loopItems.map((item, index) => (
+            <div
+              key={`${item}-${index}`}
+              className="flex items-center gap-8 md:gap-12"
+            >
+              <span className="text-[11px] md:text-sm font-semibold uppercase tracking-[0.2em] text-slate-500  whitespace-nowrap">
+                {item}
+              </span>
+
+              {/* Subtle visual anchor */}
+              <span className="h-[3px] w-[3px] rounded-full  " />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }

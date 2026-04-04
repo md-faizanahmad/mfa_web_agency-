@@ -32,11 +32,5 @@
     "title": "Clinic Web App",
     "image": "https://res.cloudinary.com/dyefyrszz/image/upload/v1772646779/clinic_dvbalk.png",
     "liveUrl": "https://clinic-web-app-nine.vercel.app"
-  },
-
-  {
-    "title": "Rent Ride",
-    "image": "https://res.cloudinary.com/duvavjepw/image/upload/v1753026934/rentride_eb2in3.png",
-    "liveUrl": "https://rentrideapp.vercel.app/"
   }
 ]

@@ -5,13 +5,5 @@ import AboutIntro from "@/components/Section/About/AboutIntro";
 import AboutStack from "@/components/Section/About/AboutStack";
 
 export default function AboutPage() {
-  return (
-    <main className="bg-white">
-      <AboutHero />
-      <AboutIntro />
-      <AboutApproach />
-      <AboutStack />
-      <AboutCTA />
-    </main>
-  );
+  return <main className="bg-white"></main>;
 }

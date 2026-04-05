@@ -24,7 +24,7 @@ export default function AboutHero() {
 
         {/* RIGHT: IMAGE */}
         <div className="lg:col-span-5 relative">
-          <div className="relative w-full h-[260px] md:h-[380px] lg:h-[420px] overflow-hidden border border-slate-200 bg-slate-50">
+          <div className="relative w-full h-65 md:h-95 lg:h-105 overflow-hidden border border-slate-200 bg-slate-50">
             <Image
               src="/ourservices/about-hero.png"
               alt="Web system architecture and performance-focused development"
@@ -34,7 +34,7 @@ export default function AboutHero() {
             />
 
             {/* subtle overlay for premium feel */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent" />
           </div>
         </div>
       </div>

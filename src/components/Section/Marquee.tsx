@@ -4,16 +4,36 @@ import Image from "next/image";
 
 const LOGOS = [
   {
+    name: "CSS",
+    src: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Official_CSS_Logo.svg",
+  },
+  {
+    name: "HTML",
+    src: "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+  },
+  {
+    name: "JS",
+    src: "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
+  },
+  {
+    name: "Python",
+    src: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+  },
+  {
+    name: "PHP",
+    src: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
+  },
+  {
     name: "Next.js",
     src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
   },
   {
     name: "React.js",
-    src: "https://upload.wikipedia.org/wiki/React_(software)#/media/File:React_Logo_SVG.svg",
+    src: "https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg",
   },
   {
     name: "Tailwind CSs",
-    src: "https://upload.wikipedia.org/wiki/Tailwind_CSS#/media/File:Tailwind_CSS_logo_with_dark_text.svg",
+    src: "https://upload.wikimedia.org/wikipedia/commons/0/06/Tailwind_CSS_logo_with_dark_text.svg",
   },
   {
     name: "TypeScript",

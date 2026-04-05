@@ -7,9 +7,9 @@ interface Props {
 
 export function AboutHero({ title }: Props) {
   return (
-    <section className="relative min-h-[80vh] flex items-center px-6 overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center px-6 overflow-hidden ">
       {/* Background Image */}
-      <div className="absolute inset-0 ">
+      <div className="absolute inset-0 py-10 ">
         <Image
           src="/ourservices/about-hero.jpg"
           alt="Abstract system visual representing scalable digital infrastructure"

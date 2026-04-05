@@ -1,5 +1,5 @@
-import AboutContainer from "@/components/Section/About/AboutContainer";
+import AboutSection from "@/components/Section/About/AboutSection.server";
 
 export default function AboutPage() {
-  return <AboutContainer />;
+  return <AboutSection />;
 }

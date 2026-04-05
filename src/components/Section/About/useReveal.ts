@@ -16,7 +16,7 @@ export const revealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 40,
-    filter: "blur(20px)",
+    filter: "blur(16px)",
   },
   visible: {
     opacity: 1,

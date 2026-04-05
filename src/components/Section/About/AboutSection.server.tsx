@@ -22,7 +22,7 @@ const content: AboutContent = {
 
 export default function AboutSection() {
   return (
-    <section className="bg-neutral-50 text-neutral-900">
+    <section className="bg-neutral-50 text-neutral-900 mt-20">
       <AboutHero title={content.hero.title} />
       <AboutIdentity {...content.identity} />
       <AboutProcess steps={content.process.steps} />

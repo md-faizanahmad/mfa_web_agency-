@@ -10,6 +10,13 @@ export const servicesData = [
     img: "/ourservices/responsive-website.png",
   },
   {
+    id: "hosting",
+    title: "Hosting and Domain",
+    desc: "We create and set up Hosting and Domain help you reach customers faster.",
+    iconName: "Domain",
+    img: "/ourservices/web-hosting.jpg",
+  },
+  {
     id: "perf",
     title: "Performance Optimization",
     desc: "We improve speed, stability, and responsiveness so your website loads quickly and keeps visitors engaged.",

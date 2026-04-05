@@ -25,7 +25,7 @@ export default function ServicesClient({
   services: ServiceItem[];
 }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
       {services.map((service, index) => {
         const Icon = IconMap[service.iconName as keyof typeof IconMap] || Code2;
 
@@ -44,7 +44,7 @@ export default function ServicesClient({
               alt={service.title}
               fill
               sizes="(max-width: 1024px) 50vw, 25vw"
-              className="object-fill transition-transform duration-700 group-hover:scale-105"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
 
             {/* Overlay */}

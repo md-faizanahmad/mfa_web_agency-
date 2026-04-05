@@ -4,7 +4,7 @@ import ProblemSolving from "@/components/Home/ProblemSolving";
 import Process from "@/components/Home/Process/Process";
 import WhyChooseUs from "@/components/Home/WhyChooseUs/WhyChooseUsServer";
 import Hero from "@/components/Layouts/Hero";
-import ResultsTicker from "@/components/Section/Work/ResultsTicker";
+// import ResultsTicker from "@/components/Section/Work/ResultsTicker";
 import WhyWebsiteContent from "@/components/WhyWebsiteContent";
 import WhyWebsitePreview from "@/components/WhyWebsitePreview";
 import type { Metadata } from "next";

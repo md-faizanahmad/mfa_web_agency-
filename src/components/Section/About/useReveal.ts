@@ -1,6 +1,6 @@
 "use client";
 
-import { useInView } from "framer-motion";
+import { useInView, Variants } from "framer-motion";
 import { useRef } from "react";
 
 export function useReveal() {
@@ -12,7 +12,7 @@ export function useReveal() {
 
   return { ref, isInView };
 }
-export const revealVariants = {
+export const revealVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 40,

@@ -101,7 +101,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               />
               <motion.span
                 animate={isOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-sky-800 block origin-center"
+                className="w-6 h-0.5 bg-slate-950 block origin-center"
               />
             </button>
           </div>
@@ -127,11 +127,11 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               className="fixed top-0 right-0 h-full w-[88%] bg-white z-115 md:hidden flex flex-col"
             >
               {/* TOP BAR */}
-              <div className="flex items-center justify-between px-6 h-20 border-b border-black/5">
+              {/* <div className="flex items-center justify-between px-6 mt-10 h-20 border-b border-black/5">
                 <span className="text-[10px] font-semibold tracking-[0.3em] text-black/40 uppercase">
                   Menu
                 </span>
-              </div>
+              </div> */}
 
               {/* NAV */}
               <div className="flex-1 flex flex-col justify-center px-6">

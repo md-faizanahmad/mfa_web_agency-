@@ -7,14 +7,14 @@ export default function HeroServer() {
     <section className="relative py-24 md:py-28 bg-brand-midnight text-white overflow-hidden mt-20">
       {/* GIF BACKGROUND */}
       <div className="absolute inset-0 z-0">
-        <Image
+        {/* <Image
           src="/hero/home-hero-gif.gif"
           alt="background animation"
           fill
           priority
           sizes="100vw"
           className="object-cover opacity-10 scale-110"
-        />
+        /> */}
 
         {/* overlay */}
       </div>

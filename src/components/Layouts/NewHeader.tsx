@@ -30,18 +30,19 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
           <Link
             href="/"
             className="relative flex items-center h-8 md:h-10 z-130 hover:opacity-80 transition-opacity"
-            aria-label="WebGrowth Studio Home"
+            aria-label="Go to homepage"
           >
             <span className="sr-only">
               WebGrowth Studio - Web Development & SEO , ADS
             </span>
             <Image
               src="/brand.png"
-              alt="WebGrowth Studio - High Performance Next.js Development Agency"
+              alt="WebGrowth Studio"
               width={120} // Adjust based on your logo's actual shape
               height={40} // Keep this small (md-size)
               className="w-auto h-full object-contain rounded-full"
               priority // Eager load for LCP performance
+              role="presentation"
             />
           </Link>
 
@@ -53,6 +54,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
                 <Link
                   key={item.name}
                   href={item.href}
+                  aria-current={isActive ? "page" : undefined}
                   className={cn(
                     "relative px-5 py-2 text-[10px] font-black uppercase tracking-widest transition-colors duration-300",
                     isActive
@@ -80,6 +82,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
           <div className="flex items-center gap-4">
             <Link
               href="/project-request"
+              aria-label="Request a new project"
               className="hidden md:flex items-center gap-2 bg-brand-midnight text-white px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-slate-950 hover:text-white transition-all shadow-xl shadow-sky-100"
             >
               Request New Project <ArrowUpRight size={14} />
@@ -89,7 +92,9 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="relative z-130 cursor-pointer w-10 h-10 flex flex-col items-center justify-center gap-1.5 md:hidden"
-              aria-label="Toggle Menu"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
               <motion.span
                 animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
@@ -116,10 +121,14 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              aria-label="Close menu"
               onClick={() => setIsOpen(false)}
               className="fixed inset-0 bg-slate-950/20 backdrop-blur-sm z-110 md:hidden"
             />
             <motion.aside
+              id="mobile-menu"
+              role="dialog"
+              aria-modal="true"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -147,6 +156,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
                         transition={{ delay: i * 0.05 }}
                       >
                         <Link
+                          aria-label="Arrow"
                           href={item.href}
                           onClick={() => setIsOpen(false)}
                           className={cn(
@@ -178,6 +188,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
                 <MobileContactStrip />
                 <Link
                   href="/project-request"
+                  aria-label="Request a new project"
                   onClick={() => setIsOpen(false)}
                   className="w-full flex items-center justify-center gap-2 border border-black text-black py-4 text-xs font-semibold tracking-widest uppercase hover:bg-black hover:text-white transition-all duration-300"
                 >

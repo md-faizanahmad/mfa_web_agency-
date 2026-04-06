@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import MobileContactStrip from "@/shared/MobileContactStrip";
 // Ensure this matches your interface in types
 interface NavItem {
   name: string;
@@ -87,7 +88,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
             {/* ANIMATED HAMBURGER */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="relative z-130 w-10 h-10 flex flex-col items-center justify-center gap-1.5 md:hidden"
+              className="relative z-130 cursor-pointer w-10 h-10 flex flex-col items-center justify-center gap-1.5 md:hidden"
               aria-label="Toggle Menu"
             >
               <motion.span
@@ -96,11 +97,11 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               />
               <motion.span
                 animate={isOpen ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
-                className="w-6 h-0.5 bg-slate-950 block"
+                className="w-6 h-0.5 bg-blue-500 block"
               />
               <motion.span
                 animate={isOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-slate-950 block origin-center"
+                className="w-6 h-0.5 bg-sky-800 block origin-center"
               />
             </button>
           </div>
@@ -122,52 +123,65 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 h-full w-[85%] bg-white z-115 p-8 pt-32 md:hidden flex flex-col justify-between shadow-2xl"
+              transition={{ type: "spring", damping: 30, stiffness: 220 }}
+              className="fixed top-0 right-0 h-full w-[88%] bg-white z-115 md:hidden flex flex-col"
             >
-              <div className="space-y-12">
-                <span className="text-[9px] font-black uppercase tracking-[0.4em] text-sky-500 font-mono"></span>
-                <nav className="flex flex-col gap-4">
+              {/* TOP BAR */}
+              <div className="flex items-center justify-between px-6 h-20 border-b border-black/5">
+                <span className="text-[10px] font-semibold tracking-[0.3em] text-black/40 uppercase">
+                  Menu
+                </span>
+              </div>
+
+              {/* NAV */}
+              <div className="flex-1 flex flex-col justify-center px-6">
+                <nav className="flex flex-col gap-6">
                   {items.map((item, i) => {
                     const isActive = pathname === item.href;
+
                     return (
                       <motion.div
                         key={item.name}
-                        initial={{ x: 20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 0.1 + i * 0.05 }}
-                        className="relative"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.05 }}
                       >
                         <Link
                           href={item.href}
                           onClick={() => setIsOpen(false)}
                           className={cn(
-                            "text-4xl font-black uppercase tracking-tighter leading-none block py-2 transition-colors",
-                            isActive ? "text-sky-500" : "text-slate-900",
+                            "flex items-center justify-between group transition-all duration-300",
+                            "text-xl font-semibold tracking-tight",
+                            isActive
+                              ? "text-black"
+                              : "text-black/40 hover:text-black",
                           )}
                         >
-                          {item.name}
+                          <span>{item.name}</span>
+
+                          {/* subtle arrow */}
+                          <span className="opacity-0 group-hover:opacity-100 transition">
+                            ↗
+                          </span>
                         </Link>
-                        {isActive && (
-                          <motion.div
-                            layoutId="mobile-pill"
-                            className="absolute -left-4 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-sky-400"
-                          />
-                        )}
+
+                        {/* divider */}
+                        <div className="mt-4 h-px bg-black/5" />
                       </motion.div>
                     );
                   })}
                 </nav>
               </div>
 
-              <div className="space-y-6">
-                <div className="h-px bg-slate-100 w-full" />
+              {/* BOTTOM CTA */}
+              <div className="px-6 pb-8">
+                <MobileContactStrip />
                 <Link
                   href="/project-request"
                   onClick={() => setIsOpen(false)}
-                  className="w-full flex items-center justify-center gap-3 bg-slate-950 text-white p-5 text-xs font-black uppercase tracking-[0.2em]"
+                  className="w-full flex items-center justify-center gap-2 border border-black text-black py-4 text-xs font-semibold tracking-widest uppercase hover:bg-black hover:text-white transition-all duration-300"
                 >
-                  Request Project <ArrowUpRight size={18} />
+                  Start Project <ArrowUpRight size={16} />
                 </Link>
               </div>
             </motion.aside>

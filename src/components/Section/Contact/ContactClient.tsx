@@ -24,7 +24,7 @@ export default function ContactClient() {
   }, [status, error]);
 
   return (
-    <div className="relative bg-brand-ice/30 rounded-[2.5rem] border border-brand-midnight/5 p-8 md:p-12 shadow-2xl shadow-brand-midnight/5 overflow-hidden">
+    <div className="relative bg-brand-ice/10  border border-brand-midnight/5 p-8 md:p-12 shadow-4xl shadow-brand-midnight/5 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cobalt/5 blur-[100px] -z-10" />
 
@@ -48,7 +48,7 @@ export default function ContactClient() {
                   required
                   type="text"
                   placeholder="John Doe"
-                  className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
+                  className="w-full bg-white border border-brand-midnight/10  px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
 
@@ -61,7 +61,7 @@ export default function ContactClient() {
                   required
                   type="email"
                   placeholder="john@company.com"
-                  className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
+                  className="w-full bg-white border border-brand-midnight/10  px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function ContactClient() {
                   type="tel"
                   placeholder="9876543210"
                   maxLength={10}
-                  className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
+                  className="w-full bg-white border border-brand-midnight/10  px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
 
@@ -91,7 +91,7 @@ export default function ContactClient() {
                   required
                   type="text"
                   placeholder="Legal Entity Name"
-                  className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
+                  className="w-full bg-white border border-brand-midnight/10  px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all"
                 />
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function ContactClient() {
               <select
                 name="budget"
                 required
-                className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all appearance-none"
+                className="w-full bg-white border border-brand-midnight/10  px-5 py-4 text-brand-midnight focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all appearance-none"
               >
                 <option value="">Select range</option>
                 <option value="50k-1L">₹50,000 — ₹1,00,000</option>
@@ -132,7 +132,7 @@ export default function ContactClient() {
                 required
                 rows={4}
                 placeholder="Briefly describe your goals and technical requirements..."
-                className="w-full bg-white border border-brand-midnight/10 rounded-xl px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all resize-none"
+                className="w-full bg-white border border-brand-midnight/10  px-5 py-4 text-brand-midnight placeholder:text-brand-midnight/20 focus:outline-none focus:ring-2 focus:ring-brand-cobalt/20 focus:border-brand-cobalt transition-all resize-none"
               />
             </div>
 
@@ -140,7 +140,7 @@ export default function ContactClient() {
             <button
               disabled={status === "sending"}
               type="submit"
-              className="w-full bg-brand-midnight text-white font-black uppercase tracking-[0.2em] text-[12px] py-5 rounded-xl flex items-center justify-center gap-3 hover:bg-brand-cobalt transition-all disabled:opacity-50 group shadow-xl shadow-brand-cobalt/10"
+              className="w-full bg-brand-midnight text-white font-black uppercase tracking-[0.2em] text-[12px] py-5  flex items-center justify-center gap-3 hover:bg-brand-cobalt transition-all disabled:opacity-50 group shadow-xl shadow-brand-cobalt/10"
             >
               {status === "sending" ? (
                 <>

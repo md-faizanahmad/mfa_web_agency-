@@ -20,14 +20,23 @@ export function useContactForm() {
     const formData = new FormData(form);
 
     const rawData: Record<string, FormDataEntryValue | null> = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      mobile: formData.get("mobile"),
-      goal: formData.get("goal"),
-      message: formData.get("message"),
-      company: formData.get("company"),
+      name: formData.get("name") ?? "",
+      email: formData.get("email") ?? "",
+      mobile: formData.get("mobile") ?? "",
+      businessName: formData.get("businessName") ?? "",
+      budget: formData.get("budget") ?? "",
+      description: formData.get("description") ?? "",
+      company: formData.get("company") ?? "",
     };
-
+    // const rawData = {
+    //   name: formData.get("name") ?? "",
+    //   email: formData.get("email") ?? "",
+    //   mobile: formData.get("mobile") ?? "",
+    //   businessName: formData.get("businessName") ?? "",
+    //   budget: formData.get("budget") ?? "",
+    //   description: formData.get("description") ?? "",
+    //   company: formData.get("company") ?? "",
+    // };
     // 🔒 Zod validation (client-side)
     const parsed = contactSchema.safeParse(rawData);
 

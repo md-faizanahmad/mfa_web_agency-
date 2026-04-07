@@ -91,9 +91,10 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("API Error:", err);
+    console.error("API Error FULL:", err);
+
     return NextResponse.json(
-      { error: "Failed to send request" },
+      { error: err instanceof Error ? err.message : "Unknown error" },
       { status: 500 },
     );
   }

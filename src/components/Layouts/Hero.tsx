@@ -1,21 +1,25 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroServer() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden text-white">
       {/* BACKGROUND IMAGE */}
-      <img
+      <Image
+        fill
+        priority
+        sizes="100vw"
         src="/hero/hero.png"
         alt="hero background"
         className="absolute inset-0 w-full h-full object-cover scale-105"
       />
 
       {/* DARK GRADIENT OVERLAY (CRITICAL) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/20" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/70 to-black/20" />
 
       {/* OPTIONAL BRAND TINT (PRO LOOK) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-900/20 to-transparent mix-blend-overlay" />
+      <div className="absolute inset-0 bg-linear-to-r from-sky-900/20 to-transparent mix-blend-overlay" />
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">

@@ -18,14 +18,29 @@ interface NavItem {
 export default function NewHeader({ items = [] }: { items: NavItem[] }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
 
+    handleScroll(); // run once
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "unset";
   }, [isOpen]);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-120 bg-white/80 backdrop-blur-md border-b border-slate-100">
+      {/* <header className="fixed top-0   left-0 right-0 z-120 "> */}
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-120  transition-all duration-300",
+          scrolled ? "bg-white/80 backdrop-blur-md " : "bg-transparent",
+        )}
+      >
         <nav className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
           <Link
             href="/"
@@ -47,7 +62,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
           </Link>
 
           {/* DESKTOP NAV PILLS */}
-          <div className="hidden  md:flex items-center gap-1 0 p-1 border border-slate-100">
+          <div className="hidden  md:flex items-center gap-2 ms-15 0 p-1 border border-slate-70 rounded-full">
             {items.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -59,13 +74,13 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
                     "relative px-5 py-2 text-[10px] font-black uppercase tracking-widest transition-colors duration-300",
                     isActive
                       ? "text-white"
-                      : "text-slate-500 hover:text-slate-900",
+                      : "text-slate-500 hover:text-sky-500",
                   )}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="active-pill"
-                      className="absolute inset-0 bg-slate-950 shadow-lg shadow-slate-200"
+                      className="absolute inset-0 bg-sky-950 rounded-full shadow-lg shadow-slate-200"
                       transition={{
                         type: "spring",
                         bounce: 0.15,
@@ -91,22 +106,22 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
             {/* ANIMATED HAMBURGER */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="relative z-130 cursor-pointer w-10 h-10 flex flex-col items-center justify-center gap-1.5 md:hidden"
+              className="relative z-130 cursor-pointer w-10 h-10 bg-white/80 backdrop-blur-md rounded-sm  flex flex-col items-center justify-center gap-1.5 md:hidden"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
             >
               <motion.span
                 animate={isOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-slate-950 block origin-center"
+                className="w-6 h-0.5 bg-slate-500 block origin-center"
               />
               <motion.span
                 animate={isOpen ? { opacity: 0, x: -10 } : { opacity: 1, x: 0 }}
-                className="w-6 h-0.5 bg-blue-500 block"
+                className="w-4 h-0.5 bg-red-700 block"
               />
               <motion.span
                 animate={isOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-                className="w-6 h-0.5 bg-slate-950 block origin-center"
+                className="w-6 h-0.5 bg-slate-700 block origin-center"
               />
             </button>
           </div>

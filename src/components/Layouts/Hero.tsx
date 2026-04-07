@@ -1,36 +1,36 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 
 export default function HeroServer() {
   return (
-    <section className="relative py-24 md:py-28 bg-brand-midnight text-white overflow-hidden mt-20">
-      {/* GIF BACKGROUND */}
-      <div className="absolute inset-0 z-0">
-        {/* <Image
-          src="/hero/home-hero-gif.gif"
-          alt="background animation"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-10 scale-110"
-        /> */}
+    <section className="relative min-h-screen flex items-center overflow-hidden text-white">
+      {/* BACKGROUND IMAGE */}
+      <img
+        src="/hero/hero.png"
+        alt="hero background"
+        className="absolute inset-0 w-full h-full object-cover scale-105"
+      />
 
-        {/* overlay */}
-      </div>
+      {/* DARK GRADIENT OVERLAY (CRITICAL) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/20" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      {/* OPTIONAL BRAND TINT (PRO LOOK) */}
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-900/20 to-transparent mix-blend-overlay" />
+
+      {/* CONTENT */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* LEFT CONTENT */}
           <div className="max-w-xl">
-            <h1 className="text-3xl md:text-5xl font-semibold leading-tight tracking-tight mb-6">
-              Websites That Actually Grow Your Business
+            <h1 className="text-4xl md:text-6xl font-semibold leading-tight tracking-tight mb-6">
+              Websites That Actually
+              <br />
+              Grow Your Business
             </h1>
 
-            <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-10">
-              We design and build fast, conversion-focused websites that turn
-              visitors into leads — backed by SEO, ads, and performance
-              strategy.
+            <p className="text-slate-300 text-base md:text-lg leading-relaxed mb-10">
+              We design and build high-performance websites that turn traffic
+              into revenue — powered by SEO, ads, and conversion strategy.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -49,7 +49,7 @@ export default function HeroServer() {
               <Link
                 href="/work"
                 className="inline-flex items-center justify-center
-                border border-white/10
+                border border-white/20
                 px-6 py-3 rounded-lg
                 text-sm font-semibold
                 hover:bg-white/10 transition-colors"
@@ -59,26 +59,13 @@ export default function HeroServer() {
             </div>
           </div>
 
-          {/* RIGHT DEVICE */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-              >
-                <source src="/hero/home-hero-video.mp4" type="video/mp4" />
-              </video>
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none" />
-            </div>
-
-            <div className="absolute -inset-10 bg-sky-500/10 blur-3xl -z-10" />
-          </div>
+          {/* RIGHT SIDE (EMPTY FOR CINEMATIC SPACE) */}
+          <div />
         </div>
       </div>
+
+      {/* BOTTOM FADE (DEPTH) */}
+      <div className="absolute bottom-0 left-0 w-full h-40 bg-linear-to-t from-black to-transparent" />
     </section>
   );
 }

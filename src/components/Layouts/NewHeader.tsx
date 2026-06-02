@@ -41,7 +41,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
           scrolled ? "bg-white/80 backdrop-blur-md " : "bg-transparent",
         )}
       >
-        <nav className="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-8 h-16 md:h-20 flex items-center justify-between">
           <Link
             href="/"
             className="relative flex items-center h-8 md:h-10 z-130 hover:opacity-80 transition-opacity"

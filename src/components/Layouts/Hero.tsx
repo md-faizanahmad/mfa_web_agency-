@@ -25,7 +25,7 @@ export default function HeroServer() {
       <div className="absolute inset-0 bg-black/20" />
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grow flex flex-col justify-center pt-38 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grow flex flex-col justify-center pt-38 pb-12">
         <div className="max-w-2xl">
           {/* BADGES */}
           <div className="flex flex-wrap gap-3 mb-6">
@@ -73,7 +73,7 @@ export default function HeroServer() {
       </div>
 
       {/* FOOTER */}
-      <div className="relative z-10 w-full px-6 pb-10">
+      <div className="relative z-10 w-full px-2 pb-10">
         <div className="block text-right">
           <div className="max-w-sm md:text-right border-l md:border-l-0 md:border-r border-sky-500/40 pl-5 md:pl-0 md:pr-5 ml-auto">
             <p className="text-sm md:text-[15px] text-gray-300 leading-relaxed italic">

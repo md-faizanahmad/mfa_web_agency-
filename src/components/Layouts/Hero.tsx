@@ -25,7 +25,7 @@ export default function HeroServer() {
       <div className="absolute inset-0 bg-black/20" />
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grow flex flex-col justify-center pt-32 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grow flex flex-col justify-center pt-38 pb-16">
         <div className="max-w-2xl">
           {/* BADGES */}
           <div className="flex flex-wrap gap-3 mb-6">

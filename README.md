@@ -6,7 +6,6 @@ Modern • SEO-Optimized • Conversion-Focused
 </p>
 
 <hr/>
-
 <h2>🚀 Live Website</h2>
 <p>
 <strong>Production URL:</strong><br/>

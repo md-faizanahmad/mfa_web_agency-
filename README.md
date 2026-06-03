@@ -30,7 +30,6 @@ resold to agencies, consultants, startups, or local businesses.
 <hr/>
 
 <h2>🎯 What This Project Delivers</h2>
-
 <ul>
   <li>SEO-first architecture using modern metadata standards</li>
   <li>Mobile-first responsive layout</li>

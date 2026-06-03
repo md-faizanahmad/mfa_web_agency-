@@ -17,7 +17,6 @@ Visit Our Official Website
 <hr/>
 
 <h2>📌 Overview</h2>
-
 <p>
 MFA Agency is a production-ready, high-performance agency landing page built for
 businesses that need credibility, speed, and search visibility.

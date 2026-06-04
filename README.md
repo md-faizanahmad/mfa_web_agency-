@@ -41,8 +41,7 @@ resold to agencies, consultants, startups, or local businesses.
 
 <hr/>
 
-<h2>🧠 Tech Stack</h2>
-
+<h2>🧠 Tech Stack;</h2>
 <ul>
   <li><strong>Framework:</strong> Next.js (App Router)</li>
   <li><strong>Language:</strong> TypeScript</li>

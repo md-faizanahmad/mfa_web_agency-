@@ -1,4 +1,4 @@
-<h1 align="center">WebGrowth Studio Website .</h1>
+<h1 align="center">WebGrowth Studio .</h1>
 
 <p align="center">
 Modern • SEO-Optimized • Conversion-Focused

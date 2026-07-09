@@ -97,7 +97,7 @@ export default function ProblemSolving() {
                     </div>
                   </div>
 
-                  <button className="p-2 rounded-full border border-brand-midnight/5 hover:bg-brand-midnight hover:text-white transition-all">
+                  <button className="p-2 cursor-pointer rounded-full border border-brand-midnight/5 hover:bg-brand-midnight hover:text-white transition-all">
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>

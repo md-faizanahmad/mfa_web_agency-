@@ -116,16 +116,16 @@ export default function Footer() {
         {/* BOTTOM BAR */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <Terminal size={12} className="text-brand-cobalt" />
+            {/* <Terminal size={12} className="text-brand-cobalt" /> */}
             <p className="text-xs uppercase tracking-widest text-white/40">
               © {new Date().getFullYear()} WebGrowth Studio
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs text-white/40">
+          {/* <div className="flex items-center gap-2 text-xs text-white/40">
             <Mail size={12} />
-            md.faizan.ahmad.web@gmail.com
-          </div>
+            <Link href="mailto:md.faizan.ahmad.web@gmail.com">Email Us</Link>
+          </div> */}
         </div>
       </div>
     </footer>

@@ -39,7 +39,7 @@ const problems = [
 
 export default function ProblemSolving() {
   return (
-    <section className="bg-white py-24 px-6 overflow-visible">
+    <section className="bg-white py-24 px-6 overflow-visible cursor-pointer">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         {/* Left Side: Sticky Title (Stays as you scroll) */}
         <div className="lg:sticky lg:top-40 space-y-6">
@@ -103,14 +103,14 @@ export default function ProblemSolving() {
                 </div>
 
                 {/* Tactical Detail Bar */}
-                <div className="mt-6 pt-4 border-t border-brand-midnight/5 flex justify-between items-center">
+                {/* <div className="mt-6 pt-4 border-t border-brand-midnight/5 flex justify-between items-center">
                   <span className="text-[10px] font-bold text-brand-midnight/20 uppercase tracking-widest">
                     Systematic Resolve
                   </span>
                   <span className="text-[10px] font-bold text-brand-cobalt/60">
                     ACTIVE_MODE
                   </span>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}

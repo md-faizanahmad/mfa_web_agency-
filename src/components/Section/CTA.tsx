@@ -6,36 +6,48 @@ import { ArrowUpRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="relative py-12 md:py-16 bg-[#050505]">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-white/10 rounded-2xl px-6 md:px-10 py-6 md:py-8 bg-white/2 backdrop-blur"
-        >
-          {/* Left Content */}
-          <div className="max-w-lg">
-            <h3 className="text-xl md:text-2xl font-medium text-white tracking-tight">
-              Let’s build something that converts.
-            </h3>
-            <p className="text-white/50 text-sm md:text-base mt-1">
-              No templates. No fluff. Just performance.
-            </p>
+    <section className="bg-[#050505] py-20 md:py-28 px-6 border-t border-white/5">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          {/* Left Side: Typography Headline */}
+          <div className="lg:col-span-8 space-y-4">
+            <span className="text-brand-cobalt text-xs font-mono tracking-widest uppercase block">
+              Work With Us
+            </span>
+            <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter leading-[1.05]">
+              Have a project in mind? <br />
+              <span className="text-neutral-500 font-normal italic">
+                Let’s talk strategy.
+              </span>
+            </h2>
           </div>
 
-          {/* CTA Button */}
-          <Link
-            href="/project-request"
-            className="group inline-flex items-center gap-2 text-sm md:text-base font-medium text-white border border-white/20 px-5 py-2.5 rounded-full hover:bg-white hover:text-black transition-all duration-300"
-          >
-            Start Project
-            <ArrowUpRight
-              size={18}
-              className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-            />
-          </Link>
-        </motion.div>
+          {/* Right Side: Raw Interaction Link */}
+          <div className="lg:col-span-4 flex lg:justify-end items-center pt-4 lg:pt-0">
+            <Link
+              href="/project-request"
+              className="group relative block w-full sm:w-auto"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-between gap-8 border-b-2 border-white pb-3 text-white transition-colors duration-300 group-hover:text-neutral-400 group-hover:border-neutral-400"
+              >
+                <span className="text-lg md:text-xl font-bold tracking-tight">
+                  Start Your Project
+                </span>
+                <div className="p-2 rounded-full bg-white text-black group-hover:bg-brand-cobalt group-hover:text-white transition-colors duration-300">
+                  <ArrowUpRight
+                    size={20}
+                    strokeWidth={2.5}
+                    className="transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </div>
+              </motion.div>
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

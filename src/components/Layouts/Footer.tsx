@@ -63,12 +63,12 @@ export default function Footer() {
           {/* BRAND */}
           <div className="lg:col-span-4 space-y-6">
             <Link href="/" className="inline-flex items-center gap-4 group">
-              <div className="p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 group-hover:border-brand-cobalt transition-colors">
+              <div className=" rounded-full bg-white/10 backdrop-blur-md border border-white/10 group-hover:border-brand-cobalt transition-colors">
                 <Image
                   src="/brand.png"
                   alt="WebGrowth Studio"
-                  width={28}
-                  height={28}
+                  width={34}
+                  height={34}
                   className="object-contain rounded-full"
                 />
               </div>

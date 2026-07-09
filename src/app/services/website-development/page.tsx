@@ -1,8 +1,9 @@
-// app/services/page.tsx
+// src/app/services/website-development/page.tsx
 
+import { MotionWrapper } from "@/components/Section/About/MotionWrapper";
 import Link from "next/link";
 
-export default function ServicesPage() {
+export default function WebsiteDevelopmentPage() {
   return (
     <main className="bg-white text-black">
       {/* HERO */}
@@ -10,14 +11,14 @@ export default function ServicesPage() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
-              We build websites
+              Websites engineered to perform —
               <br />
-              that actually drive revenue.
+              not just exist.
             </h1>
 
             <p className="text-gray-500 max-w-md">
-              Not templates. Not just design. High-performance digital assets
-              built to convert, scale, and grow your business.
+              We build high-performance websites focused on speed, scalability,
+              and conversion — designed from scratch, never templates.
             </p>
 
             <div className="flex gap-4 pt-4">
@@ -27,6 +28,7 @@ export default function ServicesPage() {
               >
                 Start your project
               </Link>
+
               <Link
                 href="/work"
                 className="border border-gray-300 px-6 py-3 text-sm font-medium hover:border-black"
@@ -36,9 +38,9 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          {/* ABSTRACT VISUAL */}
-          <div className="aspect-4/3 bg-gray-100 rounded-2xl flex items-center justify-center">
-            <div className="w-24 h-24 border border-gray-300 rounded-full" />
+          {/* VISUAL */}
+          <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+            <div className="text-sm text-gray-400">UI + Code Preview</div>
           </div>
         </div>
       </section>
@@ -47,149 +49,158 @@ export default function ServicesPage() {
       <section className="border-y border-gray-200 py-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 text-sm text-gray-500">
           <span>50+ Projects Delivered</span>
-          <span>2M+ Users Impacted</span>
-          <span>Fast, Scalable, SEO-Ready</span>
+          <span>High Performance Systems</span>
+          <span>SEO-Ready Architecture</span>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="px-6 py-28 max-w-5xl mx-auto space-y-32">
-        {/* SERVICE 1 */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="text-3xl font-semibold mb-4">Web Development</h2>
-            <p className="text-gray-500 mb-6">
-              Custom-built websites engineered for performance and scalability.
-            </p>
-
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Conversion-focused architecture</li>
-              <li>• Lightning-fast performance</li>
-              <li>• Scalable, clean codebase</li>
-            </ul>
-
-            <Link
-              href="/contact"
-              className="inline-block mt-6 text-sm font-medium underline"
-            >
-              Start project →
-            </Link>
-          </div>
-
-          <div className="aspect-4/3 bg-gray-100 rounded-xl" />
-        </div>
-
-        {/* SERVICE 2 */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="order-2 md:order-1 aspect-4/3 bg-gray-100 rounded-xl" />
-
-          <div className="order-1 md:order-2">
-            <h2 className="text-3xl font-semibold mb-4">UI/UX Design</h2>
-            <p className="text-gray-500 mb-6">
-              Interfaces designed to guide users, not confuse them.
-            </p>
-
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Clear user flows</li>
-              <li>• High-end visual systems</li>
-              <li>• Mobile-first precision</li>
-            </ul>
-
-            <Link
-              href="/contact"
-              className="inline-block mt-6 text-sm font-medium underline"
-            >
-              View process →
-            </Link>
-          </div>
-        </div>
-
-        {/* SERVICE 3 */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="text-3xl font-semibold mb-4">E-commerce</h2>
-            <p className="text-gray-500 mb-6">
-              Online stores built for conversion, not just catalog display.
-            </p>
-
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Optimized checkout flow</li>
-              <li>• Product-focused UX</li>
-              <li>• Scalable backend systems</li>
-            </ul>
-
-            <Link
-              href="/contact"
-              className="inline-block mt-6 text-sm font-medium underline"
-            >
-              Build store →
-            </Link>
-          </div>
-
-          <div className="aspect-[4/3] bg-gray-100 rounded-xl" />
-        </div>
-
-        {/* SERVICE 4 */}
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="order-2 md:order-1 aspect-[4/3] bg-gray-100 rounded-xl" />
-
-          <div className="order-1 md:order-2">
-            <h2 className="text-3xl font-semibold mb-4">Performance & SEO</h2>
-            <p className="text-gray-500 mb-6">
-              Speed, structure, and visibility — built from the ground up.
-            </p>
-
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Core Web Vitals optimization</li>
-              <li>• Technical SEO foundation</li>
-              <li>• Clean semantic structure</li>
-            </ul>
-
-            <Link
-              href="/contact"
-              className="inline-block mt-6 text-sm font-medium underline"
-            >
-              Optimize →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="px-6 py-28 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-16">
-            Simple process. High-quality output.
+      {/* WHAT WE BUILD */}
+      <section className="px-6 py-28 max-w-5xl mx-auto space-y-20">
+        <MotionWrapper>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+            What we actually build
           </h2>
+        </MotionWrapper>
 
-          <div className="grid md:grid-cols-4 gap-8 text-sm">
-            {["Discovery", "Strategy", "Execution", "Launch"].map((step, i) => (
-              <div key={i}>
-                <span className="text-gray-400">0{i + 1}</span>
-                <h3 className="mt-2 font-medium">{step}</h3>
-                <p className="text-gray-500 mt-1">
-                  {step === "Discovery" && "Understand business & goals"}
-                  {step === "Strategy" && "Define structure & direction"}
-                  {step === "Execution" && "Design & develop system"}
-                  {step === "Launch" && "Deploy & optimize"}
-                </p>
-              </div>
+        {/* GRID */}
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* CARD 1 */}
+          <MotionWrapper>
+            <div className="space-y-4">
+              <h3 className="text-xl font-medium">
+                Custom Website Development
+              </h3>
+              <p className="text-gray-500 text-sm">
+                Fully custom-built websites aligned with your business logic —
+                not pre-made templates or page builders.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Clean scalable codebase</li>
+                <li>• Business-first structure</li>
+                <li>• Modular architecture</li>
+              </ul>
+            </div>
+          </MotionWrapper>
+
+          {/* CARD 2 */}
+          <MotionWrapper>
+            <div className="space-y-4">
+              <h3 className="text-xl font-medium">Performance Engineering</h3>
+              <p className="text-gray-500 text-sm">
+                Built for speed from the ground up — not optimized later.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Core Web Vitals optimized</li>
+                <li>• Lazy loading & code splitting</li>
+                <li>• SSR / SSG rendering</li>
+              </ul>
+            </div>
+          </MotionWrapper>
+
+          {/* CARD 3 */}
+          <MotionWrapper>
+            <div className="space-y-4">
+              <h3 className="text-xl font-medium">Scalable Architecture</h3>
+              <p className="text-gray-500 text-sm">
+                Built to grow with your business — not break under it.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• API-first structure</li>
+                <li>• Clean folder architecture</li>
+                <li>• Database-ready systems</li>
+              </ul>
+            </div>
+          </MotionWrapper>
+
+          {/* CARD 4 */}
+          <MotionWrapper>
+            <div className="space-y-4">
+              <h3 className="text-xl font-medium">
+                Conversion-Focused Structure
+              </h3>
+              <p className="text-gray-500 text-sm">
+                Every section is designed to move users toward action.
+              </p>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li>• Clear user flow</li>
+                <li>• Strategic CTA placement</li>
+                <li>• Business-driven UX</li>
+              </ul>
+            </div>
+          </MotionWrapper>
+        </div>
+      </section>
+
+      {/* TECH STACK */}
+      <section className="px-6 py-28 bg-gray-50">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <h2 className="text-3xl font-semibold">Built with modern stack</h2>
+
+          <div className="flex flex-wrap gap-6 text-sm text-gray-600">
+            {[
+              "Next.js",
+              "TypeScript",
+              "Tailwind CSS",
+              "Node.js",
+              "Prisma",
+              "PostgreSQL",
+            ].map((tech) => (
+              <span
+                key={tech}
+                className="border border-gray-300 px-4 py-2 rounded-full"
+              >
+                {tech}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* DIFFERENTIATOR */}
+      {/* PROCESS */}
+      <section className="px-6 py-28 max-w-6xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-16">
+          Simple process. High-quality output.
+        </h2>
+
+        <div className="grid md:grid-cols-4 gap-8 text-sm">
+          {[
+            {
+              title: "Discovery",
+              desc: "Understand business goals and requirements",
+            },
+            {
+              title: "Strategy",
+              desc: "Define structure, flow, and architecture",
+            },
+            {
+              title: "Development",
+              desc: "Build scalable and high-performance system",
+            },
+            {
+              title: "Launch",
+              desc: "Deploy, test, and optimize continuously",
+            },
+          ].map((step, i) => (
+            <MotionWrapper key={i}>
+              <div>
+                <span className="text-gray-400">0{i + 1}</span>
+                <h3 className="mt-2 font-medium">{step.title}</h3>
+                <p className="text-gray-500 mt-1">{step.desc}</p>
+              </div>
+            </MotionWrapper>
+          ))}
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
       <section className="px-6 py-28 max-w-4xl mx-auto text-center space-y-6">
         <h2 className="text-4xl font-semibold tracking-tight">
-          No templates.
-          <br />
-          No shortcuts.
+          Most websites fail because they’re built for looks.
         </h2>
 
         <p className="text-gray-500">
-          Every project is designed and built from scratch — aligned with your
-          business goals, not pre-made layouts.
+          We build for speed, structure, scalability, and conversion. Design
+          supports the system — not the other way around.
         </p>
       </section>
 
@@ -199,12 +210,16 @@ export default function ServicesPage() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {[1, 2, 3].map((item) => (
-            <div key={item} className="space-y-3">
-              <div className="aspect-[4/3] bg-gray-100 rounded-xl" />
-              <p className="text-sm text-gray-600">
-                Increased conversions by 2x with redesigned flow.
-              </p>
-            </div>
+            <MotionWrapper key={item}>
+              <div className="space-y-3">
+                <div className="aspect-[4/3] bg-gray-100 rounded-xl" />
+
+                <p className="text-sm text-gray-600">
+                  Reduced load time from 4.2s → 1.1s. Increased engagement by
+                  38%.
+                </p>
+              </div>
+            </MotionWrapper>
           ))}
         </div>
       </section>
@@ -213,12 +228,10 @@ export default function ServicesPage() {
       <section className="bg-black text-white py-24 text-center">
         <div className="max-w-xl mx-auto space-y-6">
           <h2 className="text-3xl font-semibold">
-            Ready to build something that performs?
+            If your website isn’t generating business, it’s a liability.
           </h2>
 
-          <p className="text-white/60 text-sm">
-            Stop wasting traffic on weak websites.
-          </p>
+          <p className="text-white/60 text-sm">Let’s fix it.</p>
 
           <Link
             href="/project-request"

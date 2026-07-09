@@ -1,27 +1,24 @@
-<h1 align="center">MFA Website Agency.</h1>
+<h1 align="center">WebGrowth Studio</h1>
 
 <p align="center">
 Modern • SEO-Optimized • Conversion-Focused
-• Mobile First Web App.
+• Mobile First Web App
 </p>
 
 <hr/>
-
 <h2>🚀 Live Website</h2>
-
 <p>
 <strong>Production URL:</strong><br/>
 <a href="https://agency.mdfaizanahmad.in" target="_blank">
-Live Demo
+Visit Our Official Website.
 </a>
 </p>
 
 <hr/>
 
 <h2>📌 Overview</h2>
-
 <p>
-MFA Agency is a production-ready, high-performance agency landing page built for
+Webgrowth Studio Agency is a production-ready, high-performance agency landing page built for
 businesses that need credibility, speed, and search visibility.
 </p>
 
@@ -33,7 +30,6 @@ resold to agencies, consultants, startups, or local businesses.
 <hr/>
 
 <h2>🎯 What This Project Delivers</h2>
-
 <ul>
   <li>SEO-first architecture using modern metadata standards</li>
   <li>Mobile-first responsive layout</li>
@@ -45,8 +41,7 @@ resold to agencies, consultants, startups, or local businesses.
 
 <hr/>
 
-<h2>🧠 Tech Stack</h2>
-
+<h2>🧠 Tech Stack;</h2>
 <ul>
   <li><strong>Framework:</strong> Next.js (App Router)</li>
   <li><strong>Language:</strong> TypeScript</li>

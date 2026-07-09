@@ -27,7 +27,7 @@ export default function ProcessClient({ steps }: { steps: Step[] }) {
       <div className="absolute left-4.75 top-2 bottom-2 w-0.5 bg-brand-midnight/5 hidden md:block">
         <motion.div
           style={{ scaleY, originY: 0 }}
-          className="w-full h-full bg-brand-cobalt"
+          className="w-full h-full bg-yellow-500"
         />
       </div>
 
@@ -50,7 +50,7 @@ export default function ProcessClient({ steps }: { steps: Step[] }) {
               <span className="text-4xl font-black text-brand-midnight/10 group-hover:text-brand-cobalt/20 transition-colors">
                 {step.no}
               </span>
-              <span className="px-3 py-1 rounded-md bg-brand-ice text-brand-cobalt text-[10px] font-bold uppercase tracking-widest">
+              <span className="px-3 py-1 rounded-md bg-brand-ice text-yellow-400 text-[10px] font-bold uppercase tracking-widest">
                 {step.tag}
               </span>
             </div>

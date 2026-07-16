@@ -1,7 +1,7 @@
 <h1 align="center">WebGrowth Studio</h1>
 
 <p align="center">
-Modern Web App & Ads Development Agency 
+Modern Web App & Ads Development Agency.
 </p>
 
 <hr/>

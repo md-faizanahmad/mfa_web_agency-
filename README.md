@@ -1,8 +1,7 @@
 <h1 align="center">WebGrowth Studio</h1>
 
 <p align="center">
-Modern • SEO-Optimized • Conversion-Focused
-• Mobile First Web App
+Modern 
 </p>
 
 <hr/>

@@ -1,4 +1,6 @@
-<h1 align="center">WebGrowth Studio</h1>
+
+
+<h3 align="center">WebGrowth Studio</h3>
 
 <p align="center">
 Modern Web App & Ads Development Agency.

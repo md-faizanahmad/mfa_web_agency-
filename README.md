@@ -1,4 +1,4 @@
-<img src="https://agency.mdfaizanahmad.in/brand.png" alt />
+<img src="https://agency.mdfaizanahmad.in/brand.png" alt="Brand logo" />
 <h1 align="center">WebGrowth Studio</h1>
 
 <p align="center">

@@ -98,7 +98,7 @@ export default function Header({ items = [] }: { items: NavItem[] }) {
             <Link
               href="/project-request"
               aria-label="Request a new project"
-              className="hidden md:flex items-center gap-2 bg-brand-midnight text-white px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-slate-950 hover:text-white transition-all shadow-xl shadow-sky-100"
+              className="hidden md:flex items-center gap-2 bg-brand-midnight text-white px-6 py-3 text-[10px] font-black uppercase tracking-widest hover:bg-slate-950 transition-all"
             >
               Request New Project <ArrowUpRight size={14} />
             </Link>

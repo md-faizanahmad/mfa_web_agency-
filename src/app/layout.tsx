@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Layouts/Footer";
 import { navItems } from "@/data/navigation";
-import NewHeader from "@/components/Layouts/NewHeader";
+import Header from "@/components/Layouts/Header";
 import ToastProvider from "@/providers/ToastProvider";
 import LocalSchema from "@/components/seo/LocalSchema";
 
@@ -89,7 +89,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-white text-brand-midnight selection:bg-brand-cobalt selection:text-white`}
       >
-        <NewHeader items={navItems} />
+        <Header items={navItems} />
         {/* <Header /> */}
         {/* Added min-h-screen to ensure footer stays at bottom on short pages */}
         <main className="min-h-screen">

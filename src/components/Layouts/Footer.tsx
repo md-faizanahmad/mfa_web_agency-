@@ -1,7 +1,7 @@
 // src/components/layout/Footer.tsx
 import Link from "next/link";
 import Image from "next/image";
-import { Terminal, Instagram, Facebook, Youtube, Mail } from "lucide-react";
+import { Instagram, Facebook, Youtube } from "lucide-react";
 
 import FooterVideo from "./FooterVideo";
 import { FooterColumn } from "./FooterElement";
@@ -65,7 +65,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-4 group">
               <div className=" rounded-full bg-white/10 backdrop-blur-md border border-white/10 group-hover:border-brand-cobalt transition-colors">
                 <Image
-                  src="/brand.png"
+                  src="/brand_logo.png"
                   alt="WebGrowth Studio"
                   width={34}
                   height={34}

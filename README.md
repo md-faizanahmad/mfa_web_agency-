@@ -1,16 +1,16 @@
+<img src="https://agency.mdfaizanahmad.in/brand.png" alt="Brand logo" />
 <h1 align="center">WebGrowth Studio</h1>
 
 <p align="center">
-Modern • SEO-Optimized • Conversion-Focused
-• Mobile First Web App
+Modern Web App & Ads Development Agency.
 </p>
 
 <hr/>
 <h2>🚀 Live Website</h2>
 <p>
-<strong>Production URL:</strong><br/>
+<strong>Visit Our  </strong><br/>
 <a href="https://agency.mdfaizanahmad.in" target="_blank">
-Visit Our Official Website.
+Official Website.
 </a>
 </p>
 

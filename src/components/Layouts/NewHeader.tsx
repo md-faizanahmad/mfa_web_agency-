@@ -51,7 +51,7 @@ export default function NewHeader({ items = [] }: { items: NavItem[] }) {
               WebGrowth Studio - Web Development & SEO , ADS
             </span>
             <Image
-              src="/brand.png"
+              src="/brand_logo.png"
               alt="WebGrowth Studio"
               width={120} // Adjust based on your logo's actual shape
               height={40} // Keep this small (md-size)

@@ -26,11 +26,11 @@ export default function ServicesClient({
   return (
     <div
       className="
-        flex gap-4 overflow-x-auto snap-x snap-mandatory
-        pb-4 -mx-6 px-6
-        sm:grid sm:grid-cols-2 sm:overflow-visible sm:mx-0 sm:px-0
-        lg:grid-cols-5
+        flex snap-x snap-mandatory gap-4
+        overflow-x-auto pb-4
         scrollbar-hide
+        sm:grid sm:grid-cols-2 sm:overflow-visible
+        lg:grid-cols-5
       "
     >
       {services.map((service) => {
@@ -41,11 +41,11 @@ export default function ServicesClient({
             key={service.id}
             className="
               group relative
-              h-[420px]
-              min-w-[82vw] snap-start
+              h-105
+              w-[82vw] min-w-[82vw] shrink-0 snap-start
               overflow-hidden
               border border-border
-              sm:min-w-0
+              sm:w-auto sm:min-w-0
             "
           >
             {/* Background */}
@@ -80,8 +80,9 @@ export default function ServicesClient({
                   className="
                     h-6 w-6 text-white
                     transition-all duration-300
-                    sm:opacity-0 sm:group-hover:opacity-100
+                    sm:opacity-0
                     sm:group-hover:rotate-45
+                    sm:group-hover:opacity-100
                   "
                 />
               </div>

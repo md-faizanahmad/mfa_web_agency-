@@ -26,7 +26,7 @@ export default function MobileHeader({
 }: MobileHeaderProps) {
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-120 md:hidden bg-transparent">
+      <header className="fixed top-0 left-0 right-0 z-120 md:hidden bg-white">
         <nav
           aria-label="Mobile navigation"
           className="px-5 h-16 flex items-center justify-between"

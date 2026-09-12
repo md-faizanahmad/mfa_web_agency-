@@ -11,22 +11,14 @@ interface NavItem {
 interface DesktopHeaderProps {
   items: NavItem[];
   pathname: string;
-  scrolled: boolean;
 }
 
-export default function DesktopHeader({
-  items,
-  pathname,
-  scrolled,
-}: DesktopHeaderProps) {
+export default function DesktopHeader({ items, pathname }: DesktopHeaderProps) {
   return (
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-120 hidden md:block",
-        "border-b transition-all duration-300",
-        scrolled
-          ? "border-slate-200 bg-white/95 backdrop-blur-sm"
-          : "border-transparent bg-white/0",
+        "border-b border-slate-200 bg-white",
       )}
     >
       <nav
@@ -52,7 +44,7 @@ export default function DesktopHeader({
         {/* Navigation */}
         <ul
           aria-label="Primary navigation"
-          className="flex h-full items-center gap-8"
+          className="flex h-full items-center gap-9"
         >
           {items.map((item) => {
             const isActive = pathname === item.href;
@@ -63,7 +55,7 @@ export default function DesktopHeader({
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(
-                    "relative flex h-full items-center",
+                    "group relative flex h-full items-center",
                     "text-[11px] font-medium uppercase tracking-[0.16em]",
                     "transition-colors duration-200",
                     isActive
@@ -73,15 +65,15 @@ export default function DesktopHeader({
                 >
                   {item.name}
 
-                  {/* Active indicator */}
                   <span
                     aria-hidden="true"
                     className={cn(
                       "absolute bottom-0 left-0 right-0 h-px",
-                      "origin-center transition-transform duration-200",
+                      "origin-center bg-slate-950",
+                      "transition-transform duration-200",
                       isActive
-                        ? "scale-x-100 bg-slate-950"
-                        : "scale-x-0 bg-slate-950 group-hover:scale-x-100",
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100",
                     )}
                   />
                 </Link>
@@ -93,7 +85,7 @@ export default function DesktopHeader({
         {/* CTA */}
         <Link
           href="/project-request"
-          aria-label="Request a new project"
+          aria-label="Start a new project"
           className={cn(
             "group flex items-center gap-3",
             "border border-slate-950 px-5 py-3",

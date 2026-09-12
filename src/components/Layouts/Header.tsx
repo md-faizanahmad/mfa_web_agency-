@@ -25,9 +25,7 @@ export default function Header({ items = [] }: HeaderProps) {
     };
 
     handleScroll();
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -35,7 +33,6 @@ export default function Header({ items = [] }: HeaderProps) {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
-
     return () => {
       document.body.style.overflow = "";
     };
@@ -43,7 +40,7 @@ export default function Header({ items = [] }: HeaderProps) {
 
   return (
     <>
-      <DesktopHeader items={items} pathname={pathname} scrolled={scrolled} />
+      <DesktopHeader items={items} pathname={pathname} />
 
       <MobileHeader
         items={items}

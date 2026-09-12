@@ -22,20 +22,22 @@ export default function DesktopHeader({
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-120 hidden md:block",
-        "transition-all duration-300",
-        scrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent",
+        "fixed inset-x-0 top-0 z-120 hidden md:block",
+        "border-b transition-all duration-300",
+        scrolled
+          ? "border-slate-200 bg-white/95 backdrop-blur-sm"
+          : "border-transparent bg-white/0",
       )}
     >
       <nav
         aria-label="Main navigation"
-        className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between"
+        className="mx-auto flex h-19 max-w-7xl items-center justify-between px-8"
       >
-        {/* Logo */}
+        {/* Brand */}
         <Link
           href="/"
           aria-label="WebGrowth Studio home"
-          className="relative z-130 flex items-center h-10 transition-opacity hover:opacity-80"
+          className="flex h-9 items-center transition-opacity duration-200 hover:opacity-70"
         >
           <Image
             src="/brand_logo.png"
@@ -43,49 +45,72 @@ export default function DesktopHeader({
             width={120}
             height={40}
             priority
-            className="w-auto h-full object-contain rounded-full"
+            className="h-full w-auto object-contain"
           />
         </Link>
 
         {/* Navigation */}
-        <div className="flex items-center gap-2 ms-15 p-1 border border-slate-200 rounded-full">
+        <ul
+          aria-label="Primary navigation"
+          className="flex h-full items-center gap-8"
+        >
           {items.map((item) => {
             const isActive = pathname === item.href;
 
             return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={isActive ? "page" : undefined}
-                className={cn(
-                  "relative px-5 py-2 rounded-full",
-                  "text-[10px] font-black uppercase tracking-widest",
-                  "transition-all duration-300",
-                  isActive
-                    ? "bg-sky-950 text-white shadow-lg shadow-slate-200"
-                    : "text-slate-500 hover:text-sky-500 hover:bg-slate-50",
-                )}
-              >
-                {item.name}
-              </Link>
+              <li key={item.href} className="h-full">
+                <Link
+                  href={item.href}
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "relative flex h-full items-center",
+                    "text-[11px] font-medium uppercase tracking-[0.16em]",
+                    "transition-colors duration-200",
+                    isActive
+                      ? "text-slate-950"
+                      : "text-slate-500 hover:text-slate-950",
+                  )}
+                >
+                  {item.name}
+
+                  {/* Active indicator */}
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "absolute bottom-0 left-0 right-0 h-px",
+                      "origin-center transition-transform duration-200",
+                      isActive
+                        ? "scale-x-100 bg-slate-950"
+                        : "scale-x-0 bg-slate-950 group-hover:scale-x-100",
+                    )}
+                  />
+                </Link>
+              </li>
             );
           })}
-        </div>
+        </ul>
 
         {/* CTA */}
         <Link
           href="/project-request"
           aria-label="Request a new project"
           className={cn(
-            "flex items-center gap-2",
-            "bg-brand-midnight text-white px-6 py-3",
-            "text-[10px] font-black uppercase tracking-widest",
-            "transition-colors duration-300",
-            "hover:bg-slate-950",
+            "group flex items-center gap-3",
+            "border border-slate-950 px-5 py-3",
+            "text-[10px] font-semibold uppercase tracking-[0.14em]",
+            "text-slate-950",
+            "transition-colors duration-200",
+            "hover:bg-slate-950 hover:text-white",
           )}
         >
-          Request New Project
-          <ArrowUpRight size={14} aria-hidden="true" />
+          <span>Start a Project</span>
+
+          <ArrowUpRight
+            size={14}
+            strokeWidth={1.8}
+            aria-hidden="true"
+            className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
         </Link>
       </nav>
     </header>

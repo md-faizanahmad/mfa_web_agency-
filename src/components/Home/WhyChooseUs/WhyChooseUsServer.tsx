@@ -4,7 +4,7 @@ import BrandLabel from "@/components/ui/BrandLabel";
 
 export default function WhyChooseUs() {
   return (
-    <section className="border-b border-slate-200 bg-white px-6 py-16 md:py-20">
+    <section className=" bg-white px-6 py-16 md:py-20">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-8 border-b border-slate-900 pb-10 lg:flex-row lg:items-end lg:justify-between">
           {/* HEADER */}

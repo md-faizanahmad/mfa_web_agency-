@@ -41,8 +41,8 @@ export default function ProcessClient({ steps }: { steps: Step[] }) {
           className="relative pl-0 md:pl-16 group"
         >
           {/* Milestone Marker */}
-          <div className="hidden md:flex absolute left-0 top-0 w-10 h-10 rounded-full border-2 border-brand-midnight/5 bg-white items-center justify-center z-10 group-hover:border-brand-cobalt transition-colors duration-500">
-            <div className="w-2 h-2 rounded-full bg-brand-midnight group-hover:bg-brand-cobalt transition-colors" />
+          <div className="hidden md:flex absolute cursor-pointer left-0 top-0 w-10 h-10 rounded-full border-2  bg-white items-center justify-center z-10 border-green-600 transition-colors duration-500">
+            <div className="w-2 h-2 rounded-full  bg-red-500 transition-colors" />
           </div>
 
           <div className="space-y-4">

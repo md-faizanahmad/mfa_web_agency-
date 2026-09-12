@@ -9,6 +9,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import BrandLabel from "../ui/BrandLabel";
 
 const problems = [
   {
@@ -43,10 +44,7 @@ export default function ProblemSolving() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         {/* Left Side: Sticky Title (Stays as you scroll) */}
         <div className="lg:sticky lg:top-40 space-y-6">
-          <div className="flex items-center gap-3 text-brand-cobalt font-bold text-xs uppercase tracking-[0.2em]">
-            <span className="w-8 h-0.5 bg-brand-cobalt" />
-            Strategic Resolutions
-          </div>
+          <BrandLabel>Strategic Resolutions</BrandLabel>
           <h2 className="text-4xl md:text-5xl font-black text-brand-midnight leading-tight tracking-tighter">
             WE FIX THE FRICTION <br />
             <span className="text-muted-foreground/30 font-outline-2">

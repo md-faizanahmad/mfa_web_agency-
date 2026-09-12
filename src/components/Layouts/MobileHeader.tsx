@@ -57,7 +57,7 @@ export default function MobileHeader({
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             className={cn(
-              "relative z-130 w-10 h-10",
+              "relative z-130 w-10 h-10 cursor-pointer",
               "bg-white/80 backdrop-blur-md rounded-sm",
               "flex flex-col items-center justify-center gap-1.5",
               "transition-all duration-300",
@@ -67,7 +67,7 @@ export default function MobileHeader({
             <span
               aria-hidden="true"
               className={cn(
-                "block w-6 h-0.5 bg-slate-500 origin-center",
+                "block w-6 h-0.5 bg-[#036AF1] origin-center",
                 "transition-transform duration-300",
                 isOpen && "translate-y-2 rotate-45",
               )}
@@ -76,7 +76,7 @@ export default function MobileHeader({
             <span
               aria-hidden="true"
               className={cn(
-                "block w-4 h-0.5 bg-red-700",
+                "block w-4 h-0.5 bg-[#0ABE96]",
                 "transition-all duration-200",
                 isOpen && "opacity-0 -translate-x-2",
               )}
@@ -85,7 +85,7 @@ export default function MobileHeader({
             <span
               aria-hidden="true"
               className={cn(
-                "block w-6 h-0.5 bg-slate-700 origin-center",
+                "block w-6 h-0.5 bg-[#F75122] origin-center",
                 "transition-transform duration-300",
                 isOpen && "-translate-y-2 -rotate-45",
               )}

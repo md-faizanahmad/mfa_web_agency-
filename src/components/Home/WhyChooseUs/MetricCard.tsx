@@ -60,14 +60,14 @@ export default function MetricCard({
     <article
       ref={cardRef}
       className="
-        group sticky top-20
-        flex min-h-65 flex-col justify-between
-        overflow-hidden border border-slate-200 bg-white p-6
-        transition-colors duration-300
-        hover:border-slate-300
+    group sticky top-20
+    flex min-h-45 cursor-pointer flex-col justify-between
+    overflow-hidden border border-slate-200 bg-white p-6
+    transition-colors duration-300
+    hover:border-slate-300
 
-        sm:static
-      "
+    sm:relative
+  "
       style={{
         zIndex: index + 1,
       }}
@@ -139,7 +139,7 @@ export default function MetricCard({
       <div
         aria-hidden="true"
         className="
-          relative z-10 mt-5 flex h-px w-full
+          relative z-10 mt-5 flex h-0.5 w-full
           overflow-hidden bg-slate-100
         "
       >
